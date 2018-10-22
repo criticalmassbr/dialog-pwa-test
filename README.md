@@ -17,10 +17,10 @@ Desenvolver uma aplicação para consultar álbuns de um determinado artista
 
 ## Wireframes
 ### Desktop Browser
-![web](./browser01.png)
+![web](./docs/browser01.png)
 
 ### Mobile Browser
-![mobo](./mobo01.png)
+![mobo](./docs/mobo01.png)
 
 ## Pull Request
 Submeter uma PR [para esse repositório](https://github.com/criticalmassbr/cm-pwa-test) com o README atualizado sobre como executar o projeto.
