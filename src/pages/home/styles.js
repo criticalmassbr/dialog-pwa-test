@@ -5,8 +5,8 @@ export const Container = styled.div`
   display: grid;
   grid-template-areas:
     "header header header header"
-    ". main main ."
-    "list list list list";
+    ". input input ."
+    "artist artist artist artist";
 `
 
 export const PageHeader = styled.h1`

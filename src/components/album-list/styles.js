@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 
-export const AlbumListWrapper = styled.div`
-  grid-area: list;
-  justify-self: center;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+export const ListWrapper = styled.div`
+  display: grid;
+  grid-gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(208px, 1fr));
+  justify-items: center;
+  padding: 32px;
 `;
 
 export const Album = styled.div`
@@ -14,16 +14,15 @@ export const Album = styled.div`
   align-items: center;
   width: 208px;
   padding: 8px;
-  margin: 8px;
   background-color: #212121;
 `;
 
-export const AlbumCover = styled.img`
+export const Cover = styled.img`
   height: 208px;
   margin-bottom: 8px;
 `;
 
-export const AlbumTitle = styled.div`
+export const Title = styled.div`
   text-align: center;
   color: white;
 `;
