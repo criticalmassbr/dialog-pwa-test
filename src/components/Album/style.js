@@ -13,7 +13,7 @@ export const TitleSection = styled.section`
 
 
 export const Title = styled.span`
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-weight: 600;
   margin: 1rem;
 `;
@@ -123,8 +123,9 @@ export const AlbumTitle = styled.p`
   margin: 0;
 `;
 
-export const AlbumNotFound = styled.span`
+export const AlbumNotFound = styled.p`
   font-size: 2rem;
   font-weight: 600;
   margin: 2rem;
+  text-align: center;
 `;
