@@ -1,26 +1,12 @@
-# Critical Mass PWA Test
+Esse projeto tem como objetivo listar Álbuns de um determinado artista seguindo e atendendo as diretrizes especifícadas. Alcançando todos os requisitos necessários para ser considerado um PWA, segundo [Lighthouse](https://developers.google.com/web/tools/lighthouse/).
 
-## Objetivo
+**Sequência de comandos necessários para a execução ( todos no diretório raiz do projeto )**
 
-Desenvolver uma aplicação para consultar álbuns de um determinado artista
+- npm i ([instalação do npm](https://www.npmjs.com/get-npm))
+- npm run build
+- now ([instalação do now](https://zeit.co/docs))
+- E pronto! Você irá receber um link como esse [https://criticalmasstest.mathiew0.now.sh/](https://criticalmasstest.mathiew0.now.sh/) e poderá testar.
 
-## Stack
+**Imagem da avaliação do Lighthouse**
 
-- React
-- styled-components
-  - CSS Grid
-- MobX
-- [API GraphQL Spotify](https://spotify-graphql-server.herokuapp.com/graphql?query=%7B%0A%20%20queryArtists(byName%3A%20%22Metallica%22)%20%7B%0A%20%20%20%20name%0A%20%20%20%20id%0A%20%20%20%20image%0A%20%20%20%20albums%20%7B%0A%20%20%20%20%20%20name%0A%20%20%20%20%20%20id%0A%20%20%20%20%20%20image%20%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D%0A)
-  - Para simplificar o App, considere o primeiro item do array de `queryArtists`
-- Service Worker
-  - App deve funcionar off-line
-
-## Wireframes
-### Desktop Browser
-![web](./docs/browser01.png)
-
-### Mobile Browser
-![mobo](./docs/mobo01.png)
-
-## Pull Request
-Submeter uma PR [para esse repositório](https://github.com/criticalmassbr/cm-pwa-test) com o README atualizado sobre como executar o projeto.
+![teste](./teste.png)
