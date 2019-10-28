@@ -1,5 +1,13 @@
 # Critical Mass PWA Test
 
+## How to run
+
+```console
+  yarn
+  yarn start
+
+```
+
 ## Objetivo
 
 Desenvolver uma aplicação para consultar álbuns de um determinado artista
