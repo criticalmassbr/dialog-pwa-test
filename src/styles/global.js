@@ -19,10 +19,6 @@ export default createGlobalStyle`
     height: 100%;
   }
 
-  #root{
-    display: grid;
-  }
-
   body {
     -webkit-font-smoothing: antialiased;
   }

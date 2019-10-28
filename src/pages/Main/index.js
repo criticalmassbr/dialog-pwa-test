@@ -1,9 +1,30 @@
-import React, { useState, useMemo, useCallback, useEffect } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
+import Albums from '~/components/Albums';
+import DB from '~/db.json';
 
-import { Container, MainName, InputSearch, ArtistContainer } from './styles';
+import {
+  Container,
+  MainName,
+  InputSearch,
+  ArtistContainer,
+  List,
+} from './styles';
 
 export default function Main() {
   const [search, setSearch] = useState('');
+  const [albuns, setAlbubns] = useState([]);
+  const [album] = useState(DB.data.queryArtists[0]);
+
+  useEffect(() => {
+    setAlbubns(DB.data.queryArtists[0].albums);
+  }, []);
+
+  const foundAlbums = useMemo(() => {
+    const Exp = new RegExp(search, 'gi');
+    const results = albuns.filter(el => el.name.match(Exp));
+
+    return results;
+  }, [albuns, search]);
 
   return (
     <Container>
@@ -16,12 +37,12 @@ export default function Main() {
         placeholder="Search"
       />
       <ArtistContainer>
-        <img
-          src="https://api.adorable.io/avatars/285/abott@adorable.png"
-          alt="https://api.adorable.io/avatars/285/abott@adorable.png"
-        />
-        <span>Artsista</span>
+        <img src={album.image} alt={album.iamge} />
+        <span>{album.name}</span>
       </ArtistContainer>
+      <List>
+        <Albums data={foundAlbums} />
+      </List>
     </Container>
   );
 }

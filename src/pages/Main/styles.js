@@ -1,38 +1,40 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
+  display: flex;
   color: #333;
-  display: grid;
-  text-align: center;
-  grid-template-areas:
-    'header header header header header'
-    '. input input input .'
-    'artist artist artist artist artist';
+
+  margin: 20px 0;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 `;
 
-export const MainName = styled.h1`
-  grid-area: header;
+export const MainName = styled.div`
+  text-align: center;
+  margin-bottom: 20px;
 `;
 
 export const InputSearch = styled.input`
-  grid-area: input;
   color: #333;
   line-height: 18px;
   padding: 5px 10px;
   height: 36px;
-
+  margin-bottom: 10px;
+  max-width: 360px;
+  width: 100%;
   border-radius: 5px;
   border: 1px solid #33333380;
+
+  @media (max-width: 768px) {
+    max-width: 80%;
+  }
 `;
 
 export const ArtistContainer = styled.div`
-  grid-area: artist;
-  display: grid;
-  grid-template-columns: auto auto auto auto;
-  grid-gap: 20px;
-
-  justify-self: center;
-  align-self: center;
+  display: flex;
+  width: 100%;
+  justify-content: center;
 
   img {
     width: 96px;
@@ -40,8 +42,19 @@ export const ArtistContainer = styled.div`
   }
 
   span {
+    padding-left: 10px;
     align-self: center;
     color: #222;
-    font-size: 20px;
+    font-size: 30px;
   }
+`;
+
+export const List = styled.div`
+  grid-area: list;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-gap: 10px;
+
+  justify-self: center;
+  align-self: center;
 `;
