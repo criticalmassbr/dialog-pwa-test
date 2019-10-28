@@ -1,12 +1,17 @@
 import React from 'react';
-import { hot } from 'react-hot-loader/root';
+import { Router } from 'react-router-dom';
+import history from './services/history';
+import Routes from './routes';
+
+import GlobalStyle from './styles/global';
 
 function App() {
   return (
-    <div className="App">
-      <span>teste</span>
-    </div>
+    <Router history={history}>
+      <GlobalStyle />
+      <Routes />
+    </Router>
   );
 }
 
-export default hot(App);
+export default App;

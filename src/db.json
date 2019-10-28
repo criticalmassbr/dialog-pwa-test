@@ -1,0 +1,154 @@
+{
+  "data": {
+    "queryArtists": [
+      {
+        "name": "Metallica",
+        "id": "2ye2Wgw4gimLv2eAKyk1NB",
+        "image": "https://i.scdn.co/image/5a06711d7fc48d5e0e3f9a3274ffed3f0af1bd91",
+        "albums": [
+          {
+            "name": "Helping Hands…Live & Acoustic At The Masonic",
+            "id": "5tEW32iyrRuYPQQ4bwUiCf",
+            "image": "https://i.scdn.co/image/81918615d3ba5f15fe77b6efa535e19715aeb710"
+          },
+          {
+            "name": "Helping Hands...Live & Acoustic at The Masonic",
+            "id": "3KESkLVC8ivaWmZAoDinoc",
+            "image": "https://i.scdn.co/image/ab67616d0000b2732861274cf2dca79cb53334b6"
+          },
+          {
+            "name": "Hardwired…To Self-Destruct (Deluxe)",
+            "id": "4bcUiX49wpmDRhrC8TvDWV",
+            "image": "https://i.scdn.co/image/38aae3e851571d7a8a1b4c610b7523ae8c104b7b"
+          },
+          {
+            "name": "Hardwired…To Self-Destruct (Deluxe)",
+            "id": "1TKCBDHIWLiqjWTxomqniD",
+            "image": "https://i.scdn.co/image/ab67616d0000b273d534cd7750f657bc2e361666"
+          },
+          {
+            "name": "Hardwired…To Self-Destruct",
+            "id": "7LwifLL1anaEd9eIIfIkx7",
+            "image": "https://i.scdn.co/image/38aae3e851571d7a8a1b4c610b7523ae8c104b7b"
+          },
+          {
+            "name": "Hardwired…To Self-Destruct",
+            "id": "4kizef5du9TgAGfNhWbKmt",
+            "image": "https://i.scdn.co/image/ab67616d0000b273f2651ad6c2b8c509055f410e"
+          },
+          {
+            "name": "Metallica Through The Never (Music From The Motion Picture)",
+            "id": "0ecPxTAKqXdr2MJYdYOM7e",
+            "image": "https://i.scdn.co/image/f05af824e04c87f1d11a0d93c4dbfab9b23a6ad8"
+          },
+          {
+            "name": "Metallica Through The Never (Music from the Motion Picture)",
+            "id": "72grIwGP38Iy2S1jxt1Gjd",
+            "image": "https://i.scdn.co/image/ab67616d0000b273f1a501610a71d48c526c7ecd"
+          },
+          {
+            "name": "Lulu",
+            "id": "3FgLMfp5o2h2rAny7S6h57",
+            "image": "https://i.scdn.co/image/ab67616d0000b273bf3f45395f620f8bbf98d919"
+          },
+          {
+            "name": "Death Magnetic",
+            "id": "0lf5ceMub7KQhLfGxCdM06",
+            "image": "https://i.scdn.co/image/ab67616d0000b273dfe44d577f07e08564ec73ed"
+          },
+          {
+            "name": "Death Magnetic",
+            "id": "3bK58rVcWBh3V3vxMLzi0V",
+            "image": "https://i.scdn.co/image/5f22a21ebc5d4a8b88fb79baa1af1a7c4a173b1f"
+          },
+          {
+            "name": "Some Kind Of Monster (Live)",
+            "id": "3A0FTyAAcjgfhPibPsuVSc",
+            "image": "https://i.scdn.co/image/ab67616d0000b27396134a0376892706d87910c4"
+          },
+          {
+            "name": "St. Anger",
+            "id": "4ljK2LVKvEPd5xPgUJn0Bs",
+            "image": "https://i.scdn.co/image/ab67616d0000b2732fe08610316f3e5ebaa06d68"
+          },
+          {
+            "name": "St. Anger",
+            "id": "0HKpzK9ZoJ0oVA43E5gewM",
+            "image": "https://i.scdn.co/image/2c2e3aa42388ce837bc0e15daba8308a12a91c1a"
+          },
+          {
+            "name": "S&M",
+            "id": "3kVRcb2fuCcKcqltzczxRP",
+            "image": "https://i.scdn.co/image/ab67616d0000b2736b275d72474c508ce2b405a4"
+          },
+          {
+            "name": "S&M",
+            "id": "1OZaosC2RtsE2TEqLziwAD",
+            "image": "https://i.scdn.co/image/8705059acc5ced26b76fe40325b2430716bd52e1"
+          },
+          {
+            "name": "Garage, Inc.",
+            "id": "5b7HQ04lPT7eGJQ7fmVsjC",
+            "image": "https://i.scdn.co/image/ab67616d0000b2737e1f85f69323acac962516c4"
+          },
+          {
+            "name": "Garage Inc.",
+            "id": "0vshXZYhBkbIoqxyC2fXcF",
+            "image": "https://i.scdn.co/image/39b3632645249f6a37e3cdefbc17a9278f7b134b"
+          },
+          {
+            "name": "Reload",
+            "id": "7KDqRmr937ylvGilPGWxfD",
+            "image": "https://i.scdn.co/image/ab67616d0000b273a49eff6d64cafc2551553380"
+          },
+          {
+            "name": "Reload",
+            "id": "0Ip2GlQPoAIgdkqCO2YkMa",
+            "image": "https://i.scdn.co/image/bf2521aa578dd77781dbae7ee94ca322a9fb2056"
+          }
+        ]
+      },
+      {
+        "name": "Metallica: Burton",
+        "id": "7I2EiRxYEZigLPzgu43HWq",
+        "image": "",
+        "albums": [
+          {
+            "name": "Piano Pieces",
+            "id": "44XCqPtCUzBqj3ol2GOIHc",
+            "image": "https://i.scdn.co/image/ab67616d0000b273773f87257840c336822a204a"
+          }
+        ]
+      },
+      {
+        "name": "Metallica Tribute Band",
+        "id": "61OPB1XJSYA5JoAvWZUQ4Z",
+        "image": "",
+        "albums": [
+          {
+            "name": "World's Greatest Rock Anthems - The Only Rock Tributes Album You'll Ever Need! (Deluxe Version)",
+            "id": "0d46fAXed00IK1603ClpRs",
+            "image": "https://i.scdn.co/image/ab67616d0000b273085a1423cbc41c7c1be6c989"
+          },
+          {
+            "name": "World's Greatest Rock Anthems - The only Rock Tributes album you'll ever need!",
+            "id": "0EfUKn64vJoiRlRXFVtcT8",
+            "image": "https://i.scdn.co/image/ab67616d0000b27338cf5ac08a5aff5753a69d9a"
+          }
+        ]
+      },
+      {
+        "name": "Made famous by Metallica",
+        "id": "7xXiZGPcqDEijirJubILoZ",
+        "image": "",
+        "albums": [
+          {
+            "name": "Best Karaoke Metallica",
+            "id": "6Ez5cb8yiyJqixXtyKpcUx",
+            "image": "https://i.scdn.co/image/ab67616d0000b27363c1d550b7d60722b9344fc5"
+          }
+        ]
+      }
+    ]
+  }
+}
