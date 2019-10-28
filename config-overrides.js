@@ -7,5 +7,6 @@ module.exports = override(
     {
       rootPathSuffix: 'src',
     },
+    'react-hot-loader/babel',
   ])
 );

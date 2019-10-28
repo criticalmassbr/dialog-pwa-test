@@ -1,7 +1,12 @@
 import React from 'react';
+import { hot } from 'react-hot-loader/root';
 
 function App() {
-  return <div className="App" />;
+  return (
+    <div className="App">
+      <span>teste</span>
+    </div>
+  );
 }
 
-export default App;
+export default hot(App);
