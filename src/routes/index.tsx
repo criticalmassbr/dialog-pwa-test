@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 // pages
-import Artist from '@pages/Artist';
+import Artist from '../pages/Artist';
 
 const Routes = () => (
   <BrowserRouter>
