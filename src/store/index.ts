@@ -20,7 +20,7 @@ interface ReduxPersist {
 
 const persistConfig: ReduxPersist = {
   key: 'root',
-  whitelist: ['login', 'configuration'],
+  whitelist: ['artists'],
   storage,
 };
 
