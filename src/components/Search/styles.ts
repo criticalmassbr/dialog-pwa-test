@@ -13,7 +13,19 @@ export const FormContainer = styled.div`
   padding: 0 10px;
 `;
 
-export const Form = styled.form``;
+export const Form = styled.form`
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  i {
+    font-size: 20px;
+    position: absolute;
+    right: 15px;
+    color: #999;
+  }
+`;
 
 export const Input = styled.input`
   width: 100%;

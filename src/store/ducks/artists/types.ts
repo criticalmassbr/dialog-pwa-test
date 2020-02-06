@@ -22,7 +22,7 @@ export interface IData {
 }
 
 export interface ArtistsState {
-  readonly data: IData | any;
+  readonly data: IData | [];
   readonly loading: boolean;
   readonly error: boolean;
 }

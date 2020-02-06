@@ -4,7 +4,7 @@ import { ArtistsState, ArtistsTypes } from './types';
 const INITIAL_STATE: ArtistsState = {
   data: [],
   error: false,
-  loading: true,
+  loading: false,
 };
 
 const reducer: Reducer<ArtistsState> = (state = INITIAL_STATE, action) => {
