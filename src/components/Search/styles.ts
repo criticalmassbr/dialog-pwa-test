@@ -10,6 +10,7 @@ export const Container = styled.div`
 export const FormContainer = styled.div`
   width: 100%;
   max-width: 500px;
+  padding: 0 10px;
 `;
 
 export const Form = styled.form``;
