@@ -4,21 +4,25 @@ export enum ArtistsTypes {
   LOAD_FAILURE = '@artists/LOAD_FAILURE',
 }
 
-export interface IAlbuns {
+export interface IAlbun {
   id: string;
   name: string;
   image: string;
+}
+
+export interface IArtist {
+  id: string;
+  name: string;
+  image: string;
+  albuns: IAlbun[];
 }
 
 export interface IQueryArtists {
-  id: string;
-  name: string;
-  image: string;
-  albuns: IAlbuns[];
+  queryArtists: IArtist[];
 }
 
 export interface IData {
-  data: IQueryArtists[];
+  data: IQueryArtists;
 }
 
 export interface ArtistsState {
