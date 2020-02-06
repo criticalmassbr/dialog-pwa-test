@@ -13,6 +13,8 @@ const GlobalStyles = createGlobalStyle`
     -webkit-font-smoothing: antialiased !important;
     font-family: sans-serif;
     width: 100%;
+    display: flex;
+    flex-direction: column;
   }
   `;
 

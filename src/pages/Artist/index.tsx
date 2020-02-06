@@ -1,9 +1,15 @@
 import React from 'react';
 
-// import { Container } from './styles';
+import Header from '../../components/Header';
+import Search from '../../components/Search';
 
 const Artist: React.FC = () => {
-  return <h1>Artist</h1>;
+  return (
+    <>
+      <Header />
+      <Search />
+    </>
+  );
 };
 
 export default Artist;
