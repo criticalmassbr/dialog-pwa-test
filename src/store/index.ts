@@ -3,10 +3,14 @@ import createSagaMiddleware from 'redux-saga';
 import { persistStore, persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 
+import { ArtistsState } from './ducks/artists/types';
+
 import rootReducer from './ducks/rootReducer';
 import rootSaga from './ducks/rootSaga';
 
-export interface ApplicationState {}
+export interface ApplicationState {
+  artists: ArtistsState;
+}
 
 interface ReduxPersist {
   key: string;
