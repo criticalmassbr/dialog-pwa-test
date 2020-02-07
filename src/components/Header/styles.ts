@@ -8,6 +8,7 @@ export const Container = styled.header`
   display: flex;
   align-items: center;
   padding: 0 20px;
+  z-index: 2;
 `;
 
 export const Title = styled.h1`

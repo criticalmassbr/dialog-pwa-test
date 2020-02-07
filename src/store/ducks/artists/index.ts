@@ -2,7 +2,7 @@ import { Reducer } from 'redux';
 import { ArtistsState, ArtistsTypes } from './types';
 
 const INITIAL_STATE: ArtistsState = {
-  data: [],
+  data: null,
   error: false,
   loading: false,
 };
@@ -26,7 +26,7 @@ const reducer: Reducer<ArtistsState> = (state = INITIAL_STATE, action) => {
         ...state,
         loading: false,
         error: true,
-        data: [],
+        data: null,
       };
     default:
       return state;

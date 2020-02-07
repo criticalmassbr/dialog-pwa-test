@@ -15,12 +15,15 @@ const Search: React.FC = () => {
 
   const handleSearch = (value: string) => {
     setSearch(value);
-    clearTimeout(timer.current);
 
-    timer.current = setTimeout(
-      () => dispatch(ArtistsActions.loadRequest(value)),
-      500,
-    );
+    if (value) {
+      clearTimeout(timer.current);
+
+      timer.current = setTimeout(
+        () => dispatch(ArtistsActions.loadRequest(value)),
+        500,
+      );
+    }
   };
 
   return (
