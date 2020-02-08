@@ -1,6 +1,7 @@
 # Spotify Albuns Musicais
 
-PWA (Progressive Web App) desenvolvido com o intuito de exibir os álbuns musicais no Spotify de determinado artista. Para isso foi consumida a API [API GraphQL Spotify](<https://spotify-graphql-server.herokuapp.com/graphql?query=%7B%0A%20%20queryArtists(byName%3A%20%22Metallica%22)%20%7B%0A%20%20%20%20name%0A%20%20%20%20id%0A%20%20%20%20image%0A%20%20%20%20albums%20%7B%0A%20%20%20%20%20%20name%0A%20%20%20%20%20%20id%0A%20%20%20%20%20%20image%20%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D%0A>)
+PWA (Progressive Web App) desenvolvido com o intuito de exibir os álbuns musicais no Spotify de determinado artista. Para isso foi consumida a API [API GraphQL Spotify](<https://spotify-graphql-server.herokuapp.com/graphql?query=%7B%0A%20%20queryArtists(byName%3A%20%22Metallica%22)%20%7B%0A%20%20%20%20name%0A%20%20%20%20id%0A%20%20%20%20image%0A%20%20%20%20albums%20%7B%0A%20%20%20%20%20%20name%0A%20%20%20%20%20%20id%0A%20%20%20%20%20%20image%20%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D%0A>).
+O aplicativo tem o funcionamento offline, no qual é persistido no local strorage do navegador a última busca feita.
 
 ## Desenvolvido com
 
