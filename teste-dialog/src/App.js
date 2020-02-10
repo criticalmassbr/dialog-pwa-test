@@ -7,7 +7,7 @@ import Routes from "./routes";
 function App() {
   return (
     <BrowserRouter>
-      {/* <Header /> */}
+      <Header />
       <Routes />
     </BrowserRouter>
   );
