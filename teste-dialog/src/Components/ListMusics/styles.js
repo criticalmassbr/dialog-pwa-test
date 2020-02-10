@@ -12,26 +12,26 @@ export const DivMusic = styled.div`
   border-radius: 6px;
   width: 280px;
   height: 300px;
-  display: flex;
   background: #282828;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
   flex: 1;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 `;
 
 export const Image = styled.img`
-  width: 100px;
-  border-radius: 4px;
-  margin-right: 15px;
+  width: 220px;
+  height: 220px;
+  border-radius: 5px;
   object-fit: cover;
   object-position: center;
-  border-radius: 50px;
+  background-image: no-repeat center top;
 `;
 
 export const NameMusic = styled.h2`
   color: #fff;
   font-family: sans-serif;
   font-size: 20px;
-  margin-left: 15px;
+  margin-top: 15px;
 `;
