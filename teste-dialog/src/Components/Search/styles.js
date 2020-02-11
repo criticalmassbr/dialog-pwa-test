@@ -19,15 +19,16 @@ export const InputSearch = styled.input`
   height: 35px;
   border: #fff;
   width: 100%;
-  padding-left: 40px;
-  padding-right: 15px;
+  padding-left: 10px;
+  padding-right: 40px;
   font-family: sans-serif;
 `;
 
 export const AlignIcon = styled.div`
-  float: right;
-  right: 0;
   margin-top: -30px;
+  margin-right: 10px;
+  display: flex;
+  justify-content: flex-end;
 `;
 
 export const FormContainer = styled.div`

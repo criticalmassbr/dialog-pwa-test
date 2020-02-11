@@ -15,12 +15,12 @@ export default function Search() {
     <Container>
       <FormContainer>
         <DivSearch>
-          <AlignIcon>
-            <MdSearch size={26} color="#fff" />
-          </AlignIcon>
           <LabelSearch>
             <InputSearch placeholder="Busque músicas, artistas, podcasts..." />
           </LabelSearch>
+          <AlignIcon>
+            <MdSearch size={26} color="#000" />
+          </AlignIcon>
         </DivSearch>
       </FormContainer>
     </Container>
