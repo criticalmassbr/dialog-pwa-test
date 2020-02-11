@@ -1,5 +1,10 @@
 {
   "dependencies": {
-    "create-react-app": "^3.3.1"
+    "create-react-app": "^3.3.1",
+    "reactotron-react-js": "^3.3.7",
+    "reactotron-redux": "^3.1.2",
+    "reactotron-redux-saga": "^4.2.3",
+    "redux": "^4.0.5",
+    "redux-saga": "^1.1.3"
   }
 }
