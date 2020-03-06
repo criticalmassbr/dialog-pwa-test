@@ -1,4 +1,4 @@
-const CACHE_VERSION = 5;
+const CACHE_VERSION = 1;
 const CACHE_NAMES = {
   default: `spotifynder-cache-v${CACHE_VERSION}`,
 };
@@ -42,9 +42,9 @@ self.addEventListener('fetch', (event) => {
     return;
   };
 
-/*   if (!(/https?/.test(event.request.url))) {
+  if (!(/https?/.test(event.request.url))) {
     return;
-  } */
+  }
 
   event.respondWith((async () => {
     const cache = await caches.open(CACHE_NAMES.default);
