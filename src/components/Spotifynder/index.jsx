@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import Header from '../Header/index';
 import Artist from '../Artist/index.jsx';
-import Albuns from '../Albuns';
+import Albuns from '../Albums';
 import Loading from '../Loading/index.jsx';
 
 import {
