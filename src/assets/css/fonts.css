@@ -1,0 +1,23 @@
+@font-face {
+  font-family: 'MaaxRounded';
+  src: url('../fonts/MaaxRounded.eot');
+  src: url('../fonts/MaaxRounded.ttf') format('truetype'),
+       url('../fonts/MaaxRounded.woff2') format('woff2'),
+       url('../fonts/MaaxRounded.woff') format('woff'),
+       url('../fonts/MaaxRounded.eot?#iefix') format('embedded-opentype');
+}
+
+@font-face {
+  font-family: 'MaaxRounded Bold';
+  src: url('../fonts/MaaxRoundedBold.eot');
+  src: url('../fonts/MaaxRoundedBold.ttf') format('truetype'),
+       url('../fonts/MaaxRoundedBold.woff2') format('woff2'),
+       url('../fonts/MaaxRoundedBold.woff') format('woff'),
+       url('../fonts/MaaxRoundedBold.eot?#iefix') format('embedded-opentype');
+}
+
+* {
+  font-family: "MaaxRounded", "BlinkMacSystemFont", "Segoe UI",
+  "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
+  "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
