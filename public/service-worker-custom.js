@@ -4,6 +4,7 @@ const CACHE_NAMES = {
 };
 
 self.addEventListener('install', function(event) {
+  event.skipWaiting();
   event.waitUntil((async () => {
     try {
       const cache = await caches.open(CACHE_NAMES.default);
