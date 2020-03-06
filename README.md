@@ -25,14 +25,15 @@ Desenvolver uma aplicação para consultar álbuns de um determinado artista
 ## Pull Request
 Submeter uma PR [para esse repositório](https://github.com/criticalmassbr/cm-pwa-test) com o README atualizado sobre como executar o projeto.
 
-### Instruções para executar o projeto aqui:
-
-Baixar o projeto e executá-lo localmente:
+### Instruções para executar o projeto:
 
 ```
 $ git clone https://github.com/mouragguilab/cm-pwa-test.git
 $ cd cm-pwa-test
 $ npm install
 $ npm start
-
 ```
+
+### Projeto online:
+
+[Spotifynder]()
