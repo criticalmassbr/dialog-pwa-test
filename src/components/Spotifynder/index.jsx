@@ -16,10 +16,10 @@ function Spotifynder () {
   const [loading, setLoading] = useState(false);
   const [researched, setResearched] = useState(false);
   
-  const generateQuery = (search) => {
+  const generateQuery = (search = '') => {
     return encodeURIComponent(
       `{
-        queryArtists(byName: "${search}") {
+        queryArtists(byName: "${search.trim()}") {
           name
           id
           image
