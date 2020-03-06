@@ -1,4 +1,4 @@
-const CACHE_VERSION = 2;
+const CACHE_VERSION = 3;
 const CACHE_NAMES = {
   default: `spotifynder-cache-v${CACHE_VERSION}`,
 };
