@@ -20,8 +20,8 @@ export const ArtistImage = styled.img`
   transition: all .4s;
 
   @media (max-width: 768px) {
-    width: 250px;
-    height: 250px;
+    width: 150px;
+    height: 150px;
   }
 `;
 
