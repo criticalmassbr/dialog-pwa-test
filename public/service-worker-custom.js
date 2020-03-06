@@ -54,7 +54,7 @@ self.addEventListener('fetch', (event) => {
     }
     
     cache.add(event.request)
-      .catch(() => {})
+      .catch(() => cache.delete(event.request))
 
     return fetch(event.request);
   })());
