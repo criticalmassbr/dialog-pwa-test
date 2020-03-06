@@ -1,9 +1,10 @@
-const CACHE_VERSION = 9;
+const CACHE_VERSION = 8;
 const CACHE_NAMES = {
   default: `spotifynder-cache-v${CACHE_VERSION}`,
 };
 
 self.addEventListener('install', function(event) {
+  self.skipWaiting();
   event.waitUntil((async () => {
     try {
       const cache = await caches.open(CACHE_NAMES.default);
