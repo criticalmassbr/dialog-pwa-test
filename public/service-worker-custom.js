@@ -7,7 +7,7 @@ self.addEventListener('install', function(event) {
   event.waitUntil((async () => {
     try {
       const cache = await caches.open(CACHE_NAMES.default);
-      const assets = await fetch('asset-manifest.json').then(res => res.json());
+      const assets = await fetch('/asset-manifest.json').then(res => res.json());
       
       const files = [
         ...Object.values(assets.files),
@@ -26,6 +26,7 @@ self.addEventListener('install', function(event) {
 });
 
 self.addEventListener('activate', function(event) {
+  event.waitUntil(self.clients.claim());
   event.waitUntil((async () => {
     const NAMES = Object.values(CACHE_NAMES);
     const cacheNames = await caches.keys();
