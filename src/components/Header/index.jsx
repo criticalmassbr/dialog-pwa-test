@@ -21,6 +21,7 @@ function Header ({ onSearch }) {
     if (event.keyCode !== 13) return;
 
     onSearch(event.target.value);
+    setSearch('');
   };
 
   return (
@@ -39,7 +40,10 @@ function Header ({ onSearch }) {
           onKeyDown={onKeyDown}
           placeholder="Busque por artistas"
         />
-        <HeaderSearchButton onClick={() => onSearch(search)}>
+        <HeaderSearchButton onClick={() => {
+          onSearch(search);
+          setSearch('');
+        }}>
           <i className="fa fa-search" />
         </HeaderSearchButton>
       </HeaderSearchContent>
