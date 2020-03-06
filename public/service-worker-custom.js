@@ -1,4 +1,4 @@
-const CACHE_VERSION = 13;
+const CACHE_VERSION = 7;
 const CACHE_NAMES = {
   default: `spotifynder-cache-v${CACHE_VERSION}`,
 };
@@ -52,13 +52,10 @@ self.addEventListener('fetch', (event) => {
     if (cacheResponse) {
       return cacheResponse;
     }
+    
+    cache.add(event.request)
+      .catch(() => cache.delete(event.request))
 
-    try {
-      const response = await fetch(event.request);
-      cache.put(event.request, response.clone())
-      return response;
-    } catch (error) {
-      return error;
-    }
+    return fetch(event.request);
   })());
 });
