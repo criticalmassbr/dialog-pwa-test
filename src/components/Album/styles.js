@@ -26,10 +26,12 @@ export const AlbumDescription = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  box-sizing: border-box;
   top: 0px;
   left: 0px;
   height: 100%;
   width: 100%;
+  padding: 12px;
   background-color: rgba(0,0,0,.8);
   z-index: 10;
   opacity: 0;
@@ -47,4 +49,5 @@ export const AlbumName = styled.h3`
   font-weight: 400;
   margin: 0px;
   margin-top: 24px;
+  text-align: center;
 `;

@@ -13,7 +13,7 @@ function Album ({ album }) {
     <Container>
       <AlbumCover src={ album.image } />
       <AlbumDescription data-album-desc>
-        <PlayIcon className="fas fa-play-circle" />
+        <PlayIcon className="fa fa-play-circle" />
         <AlbumName>
           { album.name }
         </AlbumName>
