@@ -42,9 +42,9 @@ self.addEventListener('fetch', (event) => {
     return;
   };
 
-  if (!(/https?/.test(event.request.url))) {
+/*   if (!(/https?/.test(event.request.url))) {
     return;
-  }
+  } */
 
   event.respondWith((async () => {
     const cache = await caches.open(CACHE_NAMES.default);
