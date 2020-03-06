@@ -1,0 +1,25 @@
+{
+  "short_name": "Spotifynder",
+  "name": "Spotifynder",
+  "icons": [
+    {
+      "src": "icons/favicon-96x96.png",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "images/logo-197.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "images/logo-400.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
