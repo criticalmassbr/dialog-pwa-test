@@ -11,7 +11,10 @@ import {
 function Album ({ album }) {
   return (
     <Container>
-      <AlbumCover src={ album.image } />
+      <AlbumCover
+        alt={album.name}
+        src={ album.image }
+      />
       <AlbumDescription data-album-desc>
         <PlayIcon className="fa fa-play-circle" />
         <AlbumName>

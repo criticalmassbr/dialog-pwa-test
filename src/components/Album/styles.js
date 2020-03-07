@@ -41,6 +41,11 @@ export const AlbumDescription = styled.div`
 export const PlayIcon = styled.i`
   color: #fff;
   font-size: 28px;
+  transition: all .3s;
+
+  @media (max-width: 768px) {
+    font-size: 60px;
+  }
 `;
 
 export const AlbumName = styled.h3`
@@ -50,4 +55,9 @@ export const AlbumName = styled.h3`
   margin: 0px;
   margin-top: 24px;
   text-align: center;
+  transition: all .3s;
+
+  @media (max-width: 768px) {
+    font-size: 24px;
+  }
 `;
