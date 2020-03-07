@@ -9,6 +9,7 @@ import {
   Label,
   Container,
   MarginWrapper,
+  GlobalStyle,
 } from './styles';
 
 function Spotifynder () {
@@ -95,6 +96,7 @@ function Spotifynder () {
     <Container>
       <Header onSearch={onSearch} />
       <Content />
+      <GlobalStyle />
     </Container>
   );
 }
