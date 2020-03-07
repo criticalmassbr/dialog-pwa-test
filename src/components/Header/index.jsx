@@ -27,7 +27,10 @@ function Header ({ onSearch }) {
   return (
     <Container>
       <HeaderTitleContent>
-        <HeaderLogo src={require('../../assets/icons/spotify-logo.svg')} />
+        <HeaderLogo
+          alt="Logo do Spotify"
+          src={require('../../assets/icons/logo.svg')}
+        />
         <HeaderTitle>
           Spotifynder
         </HeaderTitle>
