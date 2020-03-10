@@ -25,6 +25,7 @@ function Home() {
 
   return (
     <div className="App">
+      {console.log('data', data)}
       <h1>hello world</h1>
     </div>
   )
