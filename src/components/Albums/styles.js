@@ -9,18 +9,6 @@ export const Container = styled.div`
   margin-top: 50px;
 
   @media (min-width: 576px) {
-    grid-template-columns: repeat(1, 100%);
-  }
-
-  @media (min-width: 768px) {
-    grid-template-columns: repeat(2, 50%);
-  }
-
-  @media (min-width: 810px) {
-    grid-template-columns: repeat(3, 33%);
-  }
-
-  @media (min-width: 1200px) {
-    grid-template-columns: repeat(4, 250px);
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   }
 `;
