@@ -65,7 +65,7 @@ const Home = () => {
     <Container>
       <Form onSubmit={handleFormSubmit}>
         <Title>Album Finder</Title>
-        <Input value={search} onChange={e => setSearch(e.target.value)} />
+        <Input value={search} onChange={e => setSearch(e.target.value)} placeholder="Search..." />
       </Form>
 
       {useMemo(renderContent, [loading, error, data])}
