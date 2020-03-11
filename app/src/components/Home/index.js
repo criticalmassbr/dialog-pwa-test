@@ -2,6 +2,9 @@ import React from 'react'
 import gql from 'graphql-tag'
 import { useQuery } from '@apollo/react-hooks'
 
+// Components
+import Header from '../Header'
+
 const GET_ALBUMS = gql`
   {
     queryArtists(byName: "Metallica") {
@@ -24,10 +27,9 @@ function Home() {
   if (error) return `Error! ${error.message}`
 
   return (
-    <div className="App">
-      {console.log('data', data)}
-      <h1>hello world</h1>
-    </div>
+    <>
+      <Header />
+    </>
   )
 }
 
