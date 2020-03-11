@@ -14,7 +14,7 @@ export const HeaderWrapper = styled.header`
     position: relative;
 
     &:hover:after {
-      width: 80%;
+      width: 90%;
       bottom: -6px;
     }
 
@@ -29,7 +29,7 @@ export const HeaderWrapper = styled.header`
       left: 50%;
       transform: translateX(-50%);
       will-change: width, bottom;
-      transition: .3s;
+      transition: .2s;
     }
   }
 `

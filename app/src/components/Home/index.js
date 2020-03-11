@@ -4,31 +4,36 @@ import { useQuery } from '@apollo/react-hooks'
 
 // Components
 import Header from '../Header'
+import Search from '../Search'
 
-const GET_ALBUMS = gql`
-  {
-    queryArtists(byName: "Metallica") {
-      name
-      id
-      image
-      albums {
-        name
-        id
-        image
-      }
-    }
-  }
-`
+// const GET_ALBUMS = gql`
+//   {
+//     queryArtists(byName: "Metallica") {
+//       name
+//       id
+//       image
+//       albums {
+//         name
+//         id
+//         image
+//       }
+//     }
+//   }
+// `
 
 function Home() {
-  const { loading, error, data } = useQuery(GET_ALBUMS)
+  // const { loading, error, data } = useQuery(GET_ALBUMS)
 
-  if (loading) return 'Loading...'
-  if (error) return `Error! ${error.message}`
+  // if (loading) return 'Loading...'
+  // if (error) return `Error! ${error.message}`
 
   return (
     <>
       <Header />
+
+      <main>
+        <Search />
+      </main>
     </>
   )
 }

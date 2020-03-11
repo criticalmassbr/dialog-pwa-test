@@ -32,6 +32,11 @@ const GlobalStyle = createGlobalStyle`
   em {
     font-style: italic;
   }
+
+  main {
+    max-width: 700px;
+    margin: 0 auto;
+  }
 `
 
 export default GlobalStyle
