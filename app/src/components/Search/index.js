@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import gql from 'graphql-tag'
 import { useQuery } from '@apollo/react-hooks'
-import { ReactSVG } from 'react-svg'
 import { useDebounce } from 'use-lodash-debounce'
 
 // Components
@@ -46,8 +45,6 @@ function Search() {
         value={search}
         onChange={e => setSearchValue(e.target.value)}
       />
-
-      {console.log('artist', artist)}
 
       <Results
         queryArtists={data && data.queryArtists}
