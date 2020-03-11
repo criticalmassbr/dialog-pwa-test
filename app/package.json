@@ -9,11 +9,13 @@
     "@testing-library/user-event": "^7.1.2",
     "apollo-boost": "^0.4.7",
     "graphql": "^14.6.0",
+    "lodash.debounce": "^4.0.8",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "react-scripts": "3.4.0",
     "react-svg": "^11.0.13",
-    "styled-components": "^5.0.1"
+    "styled-components": "^5.0.1",
+    "use-lodash-debounce": "^1.1.0"
   },
   "scripts": {
     "dev": "react-scripts start",

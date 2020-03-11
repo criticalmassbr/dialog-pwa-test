@@ -1,12 +1,14 @@
 import styled from 'styled-components'
 
 export const SearchWrapper = styled.div`
-  background-color: rgba(255, 255, 255, 0.05);
+  background-color: #363636;
   display: flex;
   border-radius: 4px;
   align-items: flex-start;
+  position: relative;
+  z-index: 10;
 
-  button {
+  button[type='submit'] {
     height: 56px;
     flex: 0 0 56px;
     background: none;

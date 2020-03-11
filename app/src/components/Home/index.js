@@ -1,33 +1,12 @@
 import React from 'react'
-import gql from 'graphql-tag'
-import { useQuery } from '@apollo/react-hooks'
 
 // Components
 import Header from '../Header'
 import Search from '../Search'
 import Artist from '../Artist'
-
-// const GET_ALBUMS = gql`
-//   {
-//     queryArtists(byName: "Metallica") {
-//       name
-//       id
-//       image
-//       albums {
-//         name
-//         id
-//         image
-//       }
-//     }
-//   }
-// `
+import Albums from '../Albums'
 
 function Home() {
-  // const { loading, error, data } = useQuery(GET_ALBUMS)
-
-  // if (loading) return 'Loading...'
-  // if (error) return `Error! ${error.message}`
-
   return (
     <>
       <Header />
@@ -35,6 +14,8 @@ function Home() {
       <main>
         <Search />
         <Artist />
+
+        <Albums />
       </main>
     </>
   )
