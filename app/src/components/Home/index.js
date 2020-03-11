@@ -5,6 +5,7 @@ import { useQuery } from '@apollo/react-hooks'
 // Components
 import Header from '../Header'
 import Search from '../Search'
+import Artist from '../Artist'
 
 // const GET_ALBUMS = gql`
 //   {
@@ -33,6 +34,7 @@ function Home() {
 
       <main>
         <Search />
+        <Artist />
       </main>
     </>
   )
