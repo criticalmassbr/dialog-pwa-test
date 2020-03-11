@@ -8,9 +8,9 @@ export const Container = styled.div`
 export const Image = styled.img`
   display: block;
   height: auto;
-  max-width: 100px;
+  max-width: 10rem;
 `;
 
 export const Name = styled.div`
-  margin-left: 25px;
+  margin-left: 2.5rem;
 `;

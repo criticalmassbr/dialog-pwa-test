@@ -2,11 +2,11 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   align-items: center;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.1);
+  border-radius: 1rem;
   display: flex;
   flex-direction: column;
-  padding: 15px;
+  padding: 1.5rem;
 `;
 
 export const Image = styled.img`
@@ -19,7 +19,7 @@ export const Name = styled.div`
   align-items: center;
   display: flex;
   flex: 1;
-  font-size: 13px;
-  margin-top: 15px;
+  font-size: 1.3rem;
+  margin-top: 1.5rem;
   text-align: center;
 `;
