@@ -1,7 +1,7 @@
 import styled from 'styled-components';
+import { gridTemplate } from '../../screens/Home/style';
 
 export const Container = styled.div`
-  display: grid;
-  grid-gap: 2rem;
-  grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+  ${gridTemplate}
+  grid-area: 3 / 1 / 3 / -1;
 `;

@@ -1,32 +1,32 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+
+export const boxStyle = css`
+  background-color: #282828;
+  border-radius: 0.8rem;
+  display: flex;
+  padding: 2rem;
+`;
 
 export const Container = styled.div`
-  align-items: center;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
-  border-radius: 1rem;
-  display: flex;
+  ${boxStyle}
   flex-direction: column;
-  padding: 1.5rem;
-  transition: transform 300ms ease, box-shadow 300ms ease-out;
-
-  :hover {
-    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
-    transform: scale(1.1);
-  }
 `;
 
 export const Image = styled.img`
   display: block;
+  box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.3);
   height: auto;
   max-width: 100%;
 `;
 
 export const Name = styled.div`
-  align-items: center;
-  display: flex;
-  flex: 1;
+  color: #fff;
+  display: block;
   font-size: 1.3rem;
-  font-style: italic;
+  font-weight: 500;
   margin-top: 1.5rem;
+  overflow: hidden;
   text-align: center;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 `;

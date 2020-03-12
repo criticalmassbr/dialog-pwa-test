@@ -1,20 +1,24 @@
 import styled from 'styled-components';
+import { boxStyle } from '../AlbumListItem/style';
 
 export const Container = styled.div`
-  background-color: #fafafa;
+  ${boxStyle}
   align-items: center;
-  display: flex;
-  margin: 4rem 0 2rem;
-  padding: 1.5rem;
+  grid-area: 2 / 1 / 2 / span 2;
+  margin-bottom: 2rem;
 `;
 
 export const Image = styled.img`
+  border-radius: 50%;
+  box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.3);
   display: block;
-  height: auto;
-  max-width: 12.5rem;
+  height: 9rem;
+  object-fit: cover;
+  width: 9rem;
 `;
 
 export const Name = styled.div`
+  color: #fff;
   font-size: 2.5rem;
   font-weight: 500;
   margin-left: 2.5rem;

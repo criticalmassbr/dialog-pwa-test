@@ -1,19 +1,25 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+
+export const gridTemplate = css`
+  display: grid;
+  grid-gap: 2rem;
+  grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+`;
 
 export const Container = styled.main`
-  align-items: center;
-  display: grid;
-  min-height: 100vh;
-  padding: 2rem;
+  ${gridTemplate}
+  padding: 6rem;
 `;
 
 export const Form = styled.form`
-  max-width: 78rem;
+  grid-area: 1 / 1 / 1 / span 3;
+  margin-bottom: 4rem;
+  width: 100%;
 `;
 
 export const Title = styled.h1`
-  color: #121212;
-  font-size: 5rem;
+  color: #fff;
+  font-size: 3.5rem;
   font-weight: 500;
   line-height: 1;
   margin-bottom: 2rem;
