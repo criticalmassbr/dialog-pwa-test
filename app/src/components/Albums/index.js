@@ -4,23 +4,24 @@ import React from 'react'
 import Album from '../Album'
 
 // Styled
-import { AlbumsWrapper, AlbumList } from './styled'
+import { AlbumsWrapper, AlbumList, P } from './styled'
 
-const Albums = () => (
+const Albums = ({ albums }) => (
   <AlbumsWrapper>
-    <h2>albums</h2>
-
-    <AlbumList>
-      <li>
-        <Album />
-      </li>
-      <li>
-        <Album />
-      </li>
-      <li>
-        <Album />
-      </li>
-    </AlbumList>
+    {albums.length ? (
+      <>
+        <h2>albums</h2>
+        <AlbumList>
+          {albums.map((album, i) => (
+            <li key={i}>
+              <Album album={album} />
+            </li>
+          ))}
+        </AlbumList>
+      </>
+    ) : (
+      <P>search for an artist to see their information and albums!</P>
+    )}
   </AlbumsWrapper>
 )
 

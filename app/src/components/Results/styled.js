@@ -17,7 +17,7 @@ export const ResultsWrapper = styled.div`
     visibility: visible;
   }
 `
-export const Result = styled.button`
+export const ResultWrapper = styled.button`
   background-color: transparent;
   min-height: 56px;
   padding: 0 24px;
@@ -27,6 +27,12 @@ export const Result = styled.button`
   text-align: left;
   transition: 0.3s;
   cursor: pointer;
+
+  &.loading {
+    text-transform: uppercase;
+    font-size: 14px;
+    text-align: center;
+  }
 
   &:hover {
     background-color: rgba(255, 255, 255, 0.05);

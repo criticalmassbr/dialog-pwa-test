@@ -25,9 +25,15 @@ export const AlbumsWrapper = styled.section`
 export const AlbumList = styled.ul`
   display: flex;
   margin: 32px -16px 0;
+  flex-wrap: wrap;
 
   li {
-    flex: 33.33%;
-    padding: 0 16px;
+    flex: 0 0 33.33%;
+    padding: 0 16px 32px;
   }
+`
+
+export const P = styled.p`
+  text-align: center;
+  color: #666;
 `

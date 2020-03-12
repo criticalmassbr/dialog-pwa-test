@@ -13,7 +13,7 @@ export const AlbumWrapper = styled.a`
   .album-title {
     margin-top: 10px;
     font-weight: bold;
-    font-size: 18px;
+    font-size: 16px;
   }
 
   .album-year {
