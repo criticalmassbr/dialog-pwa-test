@@ -35,7 +35,13 @@ Para rodar o projeto você precisa apenas clonar o repositório e dar o comando 
 
 ```
 
-$ cd album_finder && yarn && yarn build && yarn server
+$ cd album_finder
+
+$ yarn
+
+$ yarn build
+
+$ yarn server
 
 ```
 
