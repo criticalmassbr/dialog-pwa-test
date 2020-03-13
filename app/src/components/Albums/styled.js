@@ -4,11 +4,20 @@ export const AlbumsWrapper = styled.section`
   margin-top: 60px;
   padding-bottom: 80px;
 
+  @media (max-width: 580px) {
+    margin-top: 30px;
+  }
+
   h2 {
     font-size: 24px;
     font-weight: bold;
     padding-bottom: 10px;
     position: relative;
+    margin-bottom: 32px;
+
+    @media (max-width: 700px) {
+      margin-bottom: 24px;
+    }
 
     &:after {
       content: '';
@@ -23,13 +32,18 @@ export const AlbumsWrapper = styled.section`
 `
 
 export const AlbumList = styled.ul`
-  display: flex;
-  margin: 32px -16px 0;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 32px;
 
-  li {
-    flex: 0 0 33.33%;
-    padding: 0 16px 32px;
+  @media (max-width: 700px) {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 16px;
+  }
+
+  @media (max-width: 580px) {
+    grid-template-columns: 1fr;
+    grid-gap: 24px;
   }
 `
 

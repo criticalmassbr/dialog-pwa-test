@@ -6,12 +6,20 @@ export const HeaderWrapper = styled.header`
   max-width: 700px;
   text-align: center;
 
+  @media (max-width: 959px) {
+    padding: 32px 0;
+  }
+
   .logo {
     font-size: 48px;
     color: #fff;
     text-decoration: none;
     font-weight: bold;
     position: relative;
+
+    @media (max-width: 580px) {
+      font-size: 32px;
+    }
 
     &:hover:after {
       width: 90%;

@@ -10,4 +10,9 @@ export const InputWrapper = styled.input`
   padding: 0 24px;
   color: #fff;
   font-size: 18px;
+
+  @media (max-width: 959px) {
+    height: 48px;
+    font-size: 16px;
+  }
 `
