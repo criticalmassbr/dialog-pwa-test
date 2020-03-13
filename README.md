@@ -25,4 +25,19 @@ Desenvolver uma aplicação para consultar álbuns de um determinado artista
 ## Pull Request
 Submeter uma PR [para esse repositório](https://github.com/criticalmassbr/cm-pwa-test) com o README atualizado sobre como executar o projeto.
 
-### Instruções para executar o projeto aqui:
+### Instruções para executar o projeto:
+
+Clone o projeto, após:
+
+```bash
+$ cd app/
+$ yarn install # pode ser npm também
+$ yarn run build
+$ yarn run start
+```
+
+Agora basta acessar http://localhost:5000/
+
+#### Projeto publicado
+
+[Clique aqui](https://flamboyant-bardeen-e8c1dc.netlify.com) para acessar o projeto no Netlify
