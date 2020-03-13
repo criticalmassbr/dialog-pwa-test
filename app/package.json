@@ -16,6 +16,7 @@
     "react-dom": "^16.13.0",
     "react-scripts": "3.4.0",
     "react-svg": "^11.0.13",
+    "serve": "^11.3.0",
     "styled-components": "^5.0.1",
     "use-lodash-debounce": "^1.1.0"
   },
@@ -23,7 +24,8 @@
     "dev": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "start": "serve -s build"
   },
   "eslintConfig": {
     "extends": "react-app"
