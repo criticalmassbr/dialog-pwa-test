@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 // Styled
 import { AlbumWrapper } from './styled'
@@ -14,5 +15,13 @@ const Album = ({ album: { id, image, name } }) => (
     <div className="album-title">{name}</div>
   </AlbumWrapper>
 )
+
+Album.propTypes = {
+  album: PropTypes.shape({
+    id: PropTypes.string,
+    image: PropTypes.string,
+    name: PropTypes.string
+  })
+}
 
 export default Album

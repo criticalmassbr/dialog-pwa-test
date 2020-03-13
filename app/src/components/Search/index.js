@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 // Components
 import Input from '../Input'
@@ -24,5 +25,13 @@ const Search = ({ search, setSearchValue, data, loading, setArtist }) => (
     />
   </SearchWrapper>
 )
+
+Search.propTypes = {
+  search: PropTypes.string,
+  setSearchValue: PropTypes.func.isRequired,
+  data: PropTypes.object,
+  loading: PropTypes.bool.isRequired,
+  setArtist: PropTypes.func.isRequired
+}
 
 export default Search

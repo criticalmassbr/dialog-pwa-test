@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 // Styled
 import { ResultsWrapper, ResultWrapper } from './styled'
@@ -29,6 +30,13 @@ function Results({ queryArtists, loading, setArtist, setSearchValue }) {
       )}
     </ResultsWrapper>
   )
+}
+
+Results.propTypes = {
+  queryArtists: PropTypes.array,
+  loading: PropTypes.bool.isRequired,
+  setArtist: PropTypes.func.isRequired,
+  setSearchValue: PropTypes.func.isRequired
 }
 
 export default Results

@@ -22,6 +22,7 @@ const GlobalStyle = createGlobalStyle`
 
   body, input, textarea, button {
     font-family: 'Helvetica Neue', sans-serif;
+    line-height: 150%;
   }
 
   body {
