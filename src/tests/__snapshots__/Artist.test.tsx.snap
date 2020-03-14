@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders artist image and name 1`] = `
+<div
+  className="sc-AxjAm UcREr"
+>
+  <div
+    className="sc-AxirZ dRbqjZ"
+  >
+    <img
+      alt="Artist"
+      className="sc-AxhCb fCPykX"
+      src="teste.jpg"
+    />
+  </div>
+  <div
+    className="sc-AxirZ sc-AxiKw dlHzCf"
+    title="artist name"
+  >
+    Test
+  </div>
+</div>
+`;
