@@ -5,6 +5,9 @@ export default {
     primary: '#7F96FF',
     secondary: '#E56399',
     background: '#f5f5f5',
-    text: '#333',
+    textRegular: '#333',
+    textHighEmphasis: '#f5f5f5',
+    inputBackground: 'rgba(0, 0, 0, 0.04)',
+    mainText: '#222',
   },
 };

@@ -2,9 +2,12 @@ export default {
   title: 'dark',
 
   colors: {
-    primary: '#333',
+    primary: '#3F3F46',
     secondary: '#7F96FF',
     background: '#0C1713',
-    text: '#fafafa',
+    textRegular: 'rgba(255, 255, 255, 0.7)',
+    textHighEmphasis: 'rgba(255, 255, 255, 0.87)',
+    inputBackground: '#3F3F46',
+    mainText: 'rgba(255, 255, 255, 0.95)',
   },
 };

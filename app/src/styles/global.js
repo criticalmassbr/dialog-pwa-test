@@ -20,7 +20,7 @@ export default createGlobalStyle`
   }
   body, input, button {
     font: 14px 'Roboto', sans-serif;
-    color: ${props => props.theme.colors.text}
+    color: ${props => props.theme.colors.textRegular}
   }
   a {
     text-decoration: none;
