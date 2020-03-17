@@ -1,24 +1,17 @@
 import React from 'react';
 
-import { Form } from '@unform/web';
-
 import { Container } from './styles';
-import Input from '~/components/Input';
 import Header from '~/components/Header';
+import Search from '~/components/Search';
+import Artist from '~/components/Artist';
 
 export default function Home() {
-  function handleSubmit(data) {
-    // eslint-disable-next-line no-console
-    console.log(data);
-  }
-
   return (
     <Container>
       <Header />
+      <Search />
 
-      <Form onSubmit={handleSubmit}>
-        <Input name="search" icon />
-      </Form>
+      <Artist />
     </Container>
   );
 }

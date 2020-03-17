@@ -1,13 +1,16 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useContext } from 'react';
 import { useField } from '@unform/core';
 import PropTypes from 'prop-types';
 import { MdSearch } from 'react-icons/md';
+import { ThemeContext } from 'styled-components';
 
-import { Container } from './styles';
+import { Container, Input as StyledInput } from './styles';
 
 export default function Input({ name, icon, ...rest }) {
   const inputRef = useRef(null);
   const { fieldName, defaultValue = '', registerField } = useField(name);
+
+  const { colors } = useContext(ThemeContext);
 
   useEffect(() => {
     registerField({
@@ -19,8 +22,8 @@ export default function Input({ name, icon, ...rest }) {
 
   return (
     <Container>
-      <input ref={inputRef} defaultValue={defaultValue} {...rest} />
-      {icon && <MdSearch size={20} />}
+      <StyledInput ref={inputRef} defaultValue={defaultValue} {...rest} />
+      {icon && <MdSearch size={26} color={colors.secondary} />}
     </Container>
   );
 }
