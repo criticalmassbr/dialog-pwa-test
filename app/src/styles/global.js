@@ -13,13 +13,14 @@ export default createGlobalStyle`
     outline: 0;
   }
   html, body, #root {
-    background-color: #f5f5f5
+    background-color: ${props => props.theme.colors.background}
   }
   body {
     -webkit-font-smoothing: antialiased;
   }
   body, input, button {
     font: 14px 'Roboto', sans-serif;
+    color: ${props => props.theme.colors.text}
   }
   a {
     text-decoration: none;
