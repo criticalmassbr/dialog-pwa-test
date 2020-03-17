@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react';
+import React, { useCallback } from 'react';
 import { ThemeProvider } from 'styled-components';
 
 import ToggleContext from '~/contexts/ToggleContext';
@@ -9,8 +9,13 @@ import Home from './pages/Home';
 import light from '~/styles/themes/light';
 import dark from '~/styles/themes/dark';
 
+import usePersistedState from '~/utils/usePersistedState';
+
 function App() {
-  const [theme, setTheme] = useState(light);
+  const [theme, setTheme] = usePersistedState({
+    key: 'theme',
+    initialState: light,
+  });
 
   const toggleTheme = useCallback(() => {
     setTheme(theme.title === 'light' ? dark : light);
