@@ -9,5 +9,7 @@ export default {
     textHighEmphasis: '#f5f5f5',
     inputBackground: 'rgba(0, 0, 0, 0.04)',
     mainText: '#222',
+
+    cardBackground: '#f5f5f5',
   },
 };
