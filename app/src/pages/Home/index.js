@@ -4,6 +4,7 @@ import { Form } from '@unform/web';
 
 import { Container } from './styles';
 import Input from '~/components/Input';
+import Header from '~/components/Header';
 
 export default function Home() {
   function handleSubmit(data) {
@@ -13,7 +14,8 @@ export default function Home() {
 
   return (
     <Container>
-      <h1>Album Finder</h1>
+      <Header />
+
       <Form onSubmit={handleSubmit}>
         <Input name="search" icon />
       </Form>
