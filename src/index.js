@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { ApolloClient, InMemoryCache, HttpLink } from 'apollo-boost';
 import { ApolloProvider } from '@apollo/react-hooks';
+import { persistCache } from 'apollo-cache-persist';
 import * as serviceWorker from './serviceWorker';
 import { GlobalStyle } from './style';
 import Home from './screens/Home';
@@ -9,6 +10,11 @@ import Home from './screens/Home';
 const cache = new InMemoryCache();
 const link = new HttpLink({
   uri: 'https://spotify-graphql-server.herokuapp.com/graphql',
+});
+
+persistCache({
+  cache,
+  storage: window.localStorage,
 });
 
 const client = new ApolloClient({
