@@ -3,7 +3,8 @@ import { gql } from 'apollo-boost';
 import { useLazyQuery } from '@apollo/react-hooks';
 import AlbumList from '../../components/AlbumList';
 import Artist from '../../components/Artist';
-import { Container, Form, Title, Input } from './style';
+import SearchForm from '../../components/SearchForm';
+import { Container, Message } from './style';
 
 const GET_ARTIST_ALBUMS = gql`
   query Albums($artist: String) {
@@ -24,6 +25,10 @@ const Home = () => {
   const [getArtist, { loading, error, data }] = useLazyQuery(GET_ARTIST_ALBUMS);
   const [search, setSearch] = useState('');
 
+  /**
+   * Handles the form submission
+   * @param {Object} e Event object
+   */
   const handleFormSubmit = async e => {
     e.preventDefault();
 
@@ -38,36 +43,48 @@ const Home = () => {
     });
   };
 
+  /**
+   * Returns the search form component
+   */
+  const renderSearchForm = () => (
+    <SearchForm onSubmit={handleFormSubmit} search={search} onSearchUpdate={setSearch} />
+  );
+
+  /**
+   * Returns the correct content
+   */
   const renderContent = () => {
     if (loading) {
-      return <span>Loading...</span>;
+      return <Message>Loading...</Message>;
     }
 
     if (error) {
-      return <span>{error}</span>;
+      return <Message>{error}</Message>;
     }
 
     if (!data) {
       return null;
     }
 
-    const { image, name, albums } = data.queryArtists[0];
+    const { queryArtists } = data;
+
+    if (!queryArtists.length) {
+      return <Message>No results found for &quot;{search}&quot;</Message>;
+    }
+
+    const { image, name, albums } = queryArtists[0];
 
     return (
       <>
         <Artist image={image} name={name} />
-        <AlbumList items={albums} />
+        <AlbumList albums={albums} />
       </>
     );
   };
 
   return (
     <Container>
-      <Form onSubmit={handleFormSubmit}>
-        <Title>Album Finder</Title>
-        <Input value={search} onChange={e => setSearch(e.target.value)} placeholder="Search..." />
-      </Form>
-
+      {useMemo(renderSearchForm, [search, setSearch])}
       {useMemo(renderContent, [loading, error, data])}
     </Container>
   );

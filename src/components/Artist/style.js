@@ -6,6 +6,12 @@ export const Container = styled.div`
   align-items: center;
   grid-area: 2 / 1 / 2 / span 2;
   margin-bottom: 2rem;
+
+  @media screen and (max-width: 768px) {
+    grid-area: 2 / 1 / 2 / -1;
+    justify-content: center;
+    flex-direction: column;
+  }
 `;
 
 export const Image = styled.img`
@@ -22,4 +28,8 @@ export const Name = styled.div`
   font-size: 2.5rem;
   font-weight: 500;
   margin-left: 2.5rem;
+
+  @media screen and (max-width: 768px) {
+    margin: 1rem 0 0 0;
+  }
 `;
