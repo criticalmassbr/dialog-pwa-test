@@ -19,7 +19,7 @@ function App() {
 
   const toggleTheme = useCallback(() => {
     setTheme(theme.title === 'light' ? dark : light);
-  }, [theme]);
+  }, [theme, setTheme]);
 
   return (
     <ThemeProvider theme={theme}>

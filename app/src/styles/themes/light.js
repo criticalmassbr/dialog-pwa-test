@@ -2,9 +2,11 @@ export default {
   title: 'light',
 
   colors: {
-    primary: '#7F96FF',
-    secondary: '#E56399',
-    background: '#f5f5f5',
+    primary: '#004346',
+    // primary: '#00A8E8',
+    // secondary: '#E56399',
+    secondary: '#15B097',
+    background: '#eee',
     textRegular: '#333',
     textHighEmphasis: '#f5f5f5',
     inputBackground: 'rgba(0, 0, 0, 0.04)',

@@ -14,7 +14,9 @@ export const Container = styled.div`
     font-weight: bold;
     text-align: center;
     flex: 1;
-    /* color: #f5f5f5 */
-    color: ${props => props.theme.colors.textHighEmphasis};
+    color: #f5f5f5;
+    text-transform: capitalize;
+    letter-spacing: 1.05px;
+    /* color: ${props => props.theme.colors.mainText}; */
   }
 `;

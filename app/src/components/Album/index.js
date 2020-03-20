@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { Container, Player } from './styles';
 
 export default function Album() {
-  const [hovering, setHovering] = useState(true);
+  const [hovering, setHovering] = useState(false);
 
   return (
     <Container
