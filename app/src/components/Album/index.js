@@ -1,23 +1,32 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import PropTypes from 'prop-types';
+import { ThemeContext } from 'styled-components';
 
 import { Container, Player } from './styles';
 
-export default function Album() {
+export default function Album({ album }) {
   const [hovering, setHovering] = useState(false);
+  const { title } = useContext(ThemeContext);
 
   return (
     <Container
+      border={title === 'light'}
       onMouseEnter={() => setHovering(true)}
       onMouseLeave={() => setHovering(false)}
     >
       <div>
-        <img
-          src="https://i.scdn.co/image/ab67616d0000b2730baa189d8d5e6ca03a5adfed"
-          alt="Album Folder"
-        />
+        <img src={album.image} alt="Album Folder" />
       </div>
-      <span>Visionary Powers</span>
+      <span>{album.name}</span>
       {hovering && <Player size={40} />}
     </Container>
   );
 }
+
+Album.propTypes = {
+  album: PropTypes.shape({
+    name: PropTypes.string,
+    id: PropTypes.string,
+    image: PropTypes.string,
+  }).isRequired,
+};
