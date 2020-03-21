@@ -24,7 +24,7 @@ const Spinner = styled.div`
     margin-left: -10px;
     border-radius: 50%;
     border: 2px solid #ccc;
-    border-top-color: #000;
+    border-top-color: #7159c1;
     animation: ${rotate} 0.6s linear infinite;
   }
 `;

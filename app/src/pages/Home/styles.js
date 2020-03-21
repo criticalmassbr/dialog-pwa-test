@@ -8,8 +8,7 @@ export const Container = styled.div`
   }
 `;
 
-export const Separator = styled.hr`
-  height: 1px;
-  width: 60%;
-  margin: 16px auto;
+export const WaitForSearch = styled.h1`
+  text-align: center;
+  color: #7159c1;
 `;
