@@ -6,9 +6,9 @@ import Artist from '../../components/Artist';
 import SearchForm from '../../components/SearchForm';
 import { Container, Message } from './style';
 
-const GET_ARTIST_ALBUMS = gql`
-  query Albums($artist: String) {
-    queryArtists(byName: $artist) {
+export const GET_ARTIST_ALBUMS = gql`
+  query Albums($name: String) {
+    queryArtists(byName: $name) {
       name
       id
       image
@@ -38,7 +38,7 @@ const Home = () => {
 
     getArtist({
       variables: {
-        artist: search,
+        name: search,
       },
     });
   };
@@ -59,7 +59,7 @@ const Home = () => {
     }
 
     if (error) {
-      return <Message>{error}</Message>;
+      return <Message>{error.message}</Message>;
     }
 
     if (!data) {
