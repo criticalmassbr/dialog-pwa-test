@@ -3,8 +3,9 @@ import styled from 'styled-components';
 export const Container = styled.div`
   display: flex;
   align-items: center;
+  justify-content: center;
 
-  width: 400px;
+  min-width: 400px;
   margin: 10px auto;
 `;
 
@@ -14,7 +15,7 @@ export const Avatar = styled.div`
   border-radius: 50%;
   position: relative;
   overflow: hidden;
-  border: 2.5px solid ${props => props.theme.colors.secondary};
+  border: 2.5px solid #7159c1;
 
   img {
     display: inline;
