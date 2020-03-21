@@ -35,6 +35,7 @@ module.exports = {
     'react/jsx-one-expression-per-line': 'off',
     'global-require': 'off',
     'react/jsx-props-no-spreading': 'off',
+    'no-shadow': 'off',
   },
   settings: {
     'import/resolver': {
