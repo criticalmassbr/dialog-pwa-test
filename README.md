@@ -25,5 +25,20 @@ Desenvolver uma aplicação para consultar álbuns de um determinado artista
 ## Pull Request
 Submeter uma PR [para esse repositório](https://github.com/criticalmassbr/cm-pwa-test) com o README atualizado sobre como executar o projeto.
 
-### Instruções para executar o projeto aqui:
-...
+### Instruções para executar o projeto:
+Para desenvolver:
+- Clonar o repositório
+- Executar o comando `yarn` ou `npm install` na raíz do projeto para instalar as dependências
+- Executar o comando `yarn start` ou `npm start` para executar o servidor de desenvolvimento
+
+Para executar os testes:
+- `yarn test` para executar os testes unitários
+- `yarn test --coverage --watchAll=false` para gerar o relatório de cobertura de código
+
+Como rodar o projeto:
+- `yarn` para instalar as dependências do projeto
+- `yarn build` para gerar a versão de produção
+- `npx serve -s build` executar servidor local
+- Abrir o endereço indicado no console ([http://localhost:5000](http://localhost:5000))
+
+Link do projeto em produção: [https://cm-pwa-test-b1g21qvyd.now.sh/](https://cm-pwa-test-b1g21qvyd.now.sh/)
