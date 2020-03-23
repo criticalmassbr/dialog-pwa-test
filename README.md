@@ -26,4 +26,5 @@ Desenvolver uma aplicação para consultar álbuns de um determinado artista
 Submeter uma PR [para esse repositório](https://github.com/criticalmassbr/cm-pwa-test) com o README atualizado sobre como executar o projeto.
 
 ### Instruções para executar o projeto aqui:
-...
+
+Para executar, basta abrir um terminal, se direcionar para a pasta search-albuns, e executar o comando <code>npm install</code>, e, logo após, <code>npm start</code>.
