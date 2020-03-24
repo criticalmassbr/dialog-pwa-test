@@ -2,6 +2,7 @@ import React, { useEffect, useCallback, useState } from 'react';
 import { ThemeProvider } from 'styled-components';
 import { ApolloProvider } from '@apollo/react-hooks';
 import { persistCache } from 'apollo-cache-persist';
+import { ToastContainer } from 'react-toastify';
 
 import ToggleContext from '~/contexts/ToggleContext';
 
@@ -21,7 +22,7 @@ function App() {
     initialState: light,
   });
 
-  const [loaded, setLoaded] = useState(false);
+  const [apolloCacheLoaded, setApolloCacheLoaded] = useState(false);
 
   const toggleTheme = useCallback(() => {
     setTheme(theme.title === 'light' ? dark : light);
@@ -34,7 +35,7 @@ function App() {
         storage: window.localStorage,
       });
 
-      setLoaded(true);
+      setApolloCacheLoaded(true);
     }
 
     loadApolloCache();
@@ -42,13 +43,14 @@ function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      {!loaded ? (
+      {!apolloCacheLoaded ? (
         <h1>loading</h1>
       ) : (
         <ApolloProvider client={apolloClient}>
           <GlobalStyles />
           <ToggleContext.Provider value={toggleTheme}>
             <Home />
+            <ToastContainer autoClose={3000} />
             <OfflineBar />
           </ToggleContext.Provider>
         </ApolloProvider>

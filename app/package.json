@@ -11,6 +11,7 @@
     "@unform/web": "^2.0.0",
     "apollo-boost": "^0.4.7",
     "apollo-cache-persist": "^0.1.1",
+    "apollo-link-error": "^1.1.12",
     "apollo-link-retry": "^2.2.15",
     "customize-cra": "^0.9.1",
     "graphql": "^14.6.0",
@@ -23,6 +24,7 @@
     "react-perfect-scrollbar": "^1.5.8",
     "react-scripts": "3.4.0",
     "react-switch": "^5.0.1",
+    "react-toastify": "^5.5.0",
     "styled-components": "^5.0.1",
     "use-debounce": "^3.4.0"
   },

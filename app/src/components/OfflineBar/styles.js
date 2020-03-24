@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { device } from '~/styles/sizes';
 
 export const Container = styled.div`
   position: fixed;
@@ -17,5 +18,9 @@ export const Container = styled.div`
   span {
     font-size: 20px;
     font-weight: bold;
+
+    @media ${device.mobileL} {
+      font-size: 14px;
+    }
   }
 `;
