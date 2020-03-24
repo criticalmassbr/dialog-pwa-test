@@ -41,7 +41,7 @@ export default function Search() {
   }
 
   return (
-    <Form onSubmit={() => {}}>
+    <Form>
       <Input
         name="search"
         placeholder="Search for an artist"

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import { Container, WaitForSearch } from './styles';
+import { Container, SelectText } from './styles';
 
 import Header from '~/components/Header';
 import Search from '~/components/Search';
@@ -26,7 +26,7 @@ export default function Home() {
             <Albums albums={artist?.albums} />
           </>
         ) : (
-          <WaitForSearch>Select an artist</WaitForSearch>
+          <SelectText>Select an artist</SelectText>
         )}
       </ArtistContext.Provider>
     </Container>

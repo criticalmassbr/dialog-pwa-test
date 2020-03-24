@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { device } from '~/styles/sizes';
 
 export const Container = styled.div`
   display: flex;
@@ -7,6 +8,12 @@ export const Container = styled.div`
 
   min-width: 400px;
   margin: 10px auto;
+
+  @media ${device.mobileL} {
+    min-width: auto;
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 export const Avatar = styled.div`
@@ -36,9 +43,20 @@ export const Info = styled.div`
 
   h1 {
     color: ${props => props.theme.colors.mainText};
+    @media ${device.mobileL} {
+      font-size: 20px;
+    }
   }
 
   span {
     font-size: 13px;
+  }
+
+  @media ${device.mobileL} {
+    margin-top: 14px;
+    margin-left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 `;

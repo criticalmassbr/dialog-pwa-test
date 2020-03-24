@@ -1,17 +1,21 @@
 import styled from 'styled-components';
 import { MdPlayCircleFilled } from 'react-icons/md';
+import { device } from '~/styles/sizes';
 
 export const Container = styled.a`
   display: flex;
   flex-direction: column;
+  align-items: center;
   cursor: pointer;
   position: relative;
 
-  width: 235px;
+  @media ${device.mobileL} {
+    margin: 12px auto;
+  }
+
   background-color: ${props => props.theme.colors.cardBackground};
   border-radius: 5px;
   padding: 16px;
-  /* box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24); */
   border: ${props => props.border && '1px solid #ddd'};
 
   img {
@@ -34,6 +38,12 @@ export const Player = styled(MdPlayCircleFilled).attrs(props => ({
   bottom: 10px;
   right: 15px;
   transition: transform 0.1s ease-in-out;
+
+  display: ${props => (props.visible ? 'block' : 'none')};
+
+  @media ${device.mobileL} {
+    display: block;
+  }
 
   &:hover {
     transform: scale(1.1);
