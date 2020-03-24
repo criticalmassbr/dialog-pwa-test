@@ -13,6 +13,7 @@ import dark from '~/styles/themes/dark';
 
 import usePersistedState from '~/utils/usePersistedState';
 import apolloClient, { cache } from './services/api';
+import OfflineBar from './components/OfflineBar';
 
 function App() {
   const [theme, setTheme] = usePersistedState({
@@ -48,6 +49,7 @@ function App() {
           <GlobalStyles />
           <ToggleContext.Provider value={toggleTheme}>
             <Home />
+            <OfflineBar />
           </ToggleContext.Provider>
         </ApolloProvider>
       )}
