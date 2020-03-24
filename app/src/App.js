@@ -1,6 +1,7 @@
-import React, { useCallback } from 'react';
+import React, { useEffect, useCallback, useState } from 'react';
 import { ThemeProvider } from 'styled-components';
 import { ApolloProvider } from '@apollo/react-hooks';
+import { persistCache } from 'apollo-cache-persist';
 
 import ToggleContext from '~/contexts/ToggleContext';
 
@@ -11,7 +12,7 @@ import light from '~/styles/themes/light';
 import dark from '~/styles/themes/dark';
 
 import usePersistedState from '~/utils/usePersistedState';
-import apolloClient from './services/api';
+import apolloClient, { cache } from './services/api';
 
 function App() {
   const [theme, setTheme] = usePersistedState({
@@ -19,18 +20,37 @@ function App() {
     initialState: light,
   });
 
+  const [loaded, setLoaded] = useState(false);
+
   const toggleTheme = useCallback(() => {
     setTheme(theme.title === 'light' ? dark : light);
   }, [theme, setTheme]);
 
+  useEffect(() => {
+    async function loadApolloCache() {
+      await persistCache({
+        cache,
+        storage: window.localStorage,
+      });
+
+      setLoaded(true);
+    }
+
+    loadApolloCache();
+  }, []);
+
   return (
     <ThemeProvider theme={theme}>
-      <ApolloProvider client={apolloClient}>
-        <GlobalStyles />
-        <ToggleContext.Provider value={toggleTheme}>
-          <Home />
-        </ToggleContext.Provider>
-      </ApolloProvider>
+      {!loaded ? (
+        <h1>loading</h1>
+      ) : (
+        <ApolloProvider client={apolloClient}>
+          <GlobalStyles />
+          <ToggleContext.Provider value={toggleTheme}>
+            <Home />
+          </ToggleContext.Provider>
+        </ApolloProvider>
+      )}
     </ThemeProvider>
   );
 }
