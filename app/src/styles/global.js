@@ -1,9 +1,9 @@
 import { createGlobalStyle } from 'styled-components';
+import 'react-perfect-scrollbar/dist/css/styles.css';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default createGlobalStyle`
   @import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
-  @import url'react-perfect-scrollbar/dist/css/styles.css';
-  @import url('react-toastify/dist/ReactToastify.css');
   
   * {
     margin: 0;
