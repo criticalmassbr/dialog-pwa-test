@@ -212,19 +212,6 @@ const LibsStyle = createGlobalStyle`
     background: ${C.RED};
   }
 
-  // STORETWO1
-  .bg-storeTwo {
-    background: ${C.STORETWO1};
-  }
-  // STORETHREE1
-  .bg-storeThree {
-    background: ${C.STORETHREE1};
-  }
-  // STOREFOUR1
-  .bg-storeFour {
-    background: ${C.STOREFOUR1};
-  }
-
   .bg-red-outlined{
     background: ${C.WHITE};
     border: 1px solid ${C.RED};
