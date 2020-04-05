@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import * as C from '~/styles/Constants';
+import media from "styled-media-query";
 
 export const CardAlbum = styled.div`
   background-color: ${C.WHITE};
@@ -17,4 +18,9 @@ export const CardAlbum = styled.div`
     display: block;
     margin: 0 auto;
   }
+
+  ${media.lessThan("768px")`
+    width: 80%;
+    margin: 0 auto;
+  `}
 `;

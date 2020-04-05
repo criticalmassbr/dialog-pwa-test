@@ -86,7 +86,7 @@ const Index = () => {
                     mobile={8}
                     className="no-margin"
                   >
-                    <p>
+                    <p className="tx-up fn-s30px">
                       {setArtists.name}
                     </p>
                   </GridStyle.Col>

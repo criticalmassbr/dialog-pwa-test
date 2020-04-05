@@ -15,7 +15,7 @@ const GlobalStyles = createGlobalStyle`
     background: #FFF;
     line-height: 1.3;
     font-size: 100%;
-    font-family: "Roboto", sans-serif;
+    font-family: "robotoregular", sans-serif;
   }
 
   a {
@@ -50,18 +50,18 @@ const GlobalStyles = createGlobalStyle`
   }
 
   .card {
-    border-radius: 10px;
-    border: 1px solid ${C.BLUE};
     padding: 10px;
-
+    
     a {
       color: ${C.DARK_GREY};
     }
-
+    
     img {
       display: inline-block;
       width: 100%;
       margin: 0 auto;
+      border-radius: 50%;
+      border: 1px solid ${C.MEDIUM_GREY};
     }
   }
 
