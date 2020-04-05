@@ -57,6 +57,12 @@ const GlobalStyles = createGlobalStyle`
     a {
       color: ${C.DARK_GREY};
     }
+
+    img {
+      display: inline-block;
+      width: 100%;
+      margin: 0 auto;
+    }
   }
 
   .icon-text-global {
