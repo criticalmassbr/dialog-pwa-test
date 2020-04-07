@@ -3,11 +3,10 @@ import * as C from '~/styles/Constants';
 import media from "styled-media-query";
 
 export const CardAlbum = styled.div`
-  background-color: ${C.WHITE};
-  border: 1px solid ${C.DARK_GREY};
+  background-color: ${C.DARK_GREY};
   border-radius: 6px;
   box-shadow: 0 0.5em 1em -0.125em rgba(10,10,10,.1), 0 0 0 1px rgba(10,10,10,.02);
-  color: ${C.DARK_GREY};
+  color: ${C.WHITE};
   display: block;
   padding: 1rem;
   overflow: scroll;
