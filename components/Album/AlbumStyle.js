@@ -11,6 +11,7 @@ export const CardAlbum = styled.div`
   display: block;
   padding: 1rem;
   overflow: scroll;
+  font-family: 'robotolight';
 
   .album-sprite {
     max-width: 100%;

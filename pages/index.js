@@ -69,21 +69,26 @@ const Index = () => {
           </GridStyle.Row>
 
           <GridStyle.Row>
+            <GridStyle.Col desktop={3}/>
             <GridStyle.Col
               mobile={12}
-              tablet={6}
+              tablet={12}
               desktop={6}
             >
               <div className="card has-text-centered">
                 <GridStyle.Row>
                   <GridStyle.Col
                     mobile={4}
+                    tablet={6}
+                    desktop={6}
                     className="no-margin"
                   >
                     <img src={setArtists.image} />
                   </GridStyle.Col>
                   <GridStyle.Col
                     mobile={8}
+                    tablet={6}
+                    desktop={6}
                     className="no-margin"
                   >
                     <p className="tx-up fn-s30px">
@@ -93,6 +98,7 @@ const Index = () => {
                 </GridStyle.Row>
               </div>
             </GridStyle.Col>
+            <GridStyle.Col desktop={3}/>
           </GridStyle.Row>
 
           <GridStyle.Row>
