@@ -1,11 +1,10 @@
-const withSass = require('@zeit/next-sass');
 const withImages = require('next-images');
 const path = require('path');
 const webpack = require('webpack');
 
 require('dotenv').config();
 
-module.exports = withSass(withImages({
+module.exports = withImages({
     // useFileSystemPublicRoutes: false,
     esModule: true,
 
@@ -29,28 +28,6 @@ module.exports = withSass(withImages({
                     },
                 ],
             },
-        );
-
-        config.module.rules.push(
-            {
-                test: /\.scss$/,
-                use: [
-                    {
-                        loader: 'style-loader' // creates style nodes from JS strings
-                    },
-                    {
-                        loader: 'css-loader', // translates CSS into CommonJS,
-                    },
-                    {
-                        loader: 'sass-loader', // compiles Sass to CSS
-                        options: {
-                            includePaths: [
-                                path.resolve('../node_modules'),
-                            ]
-                        }
-                    }
-                ]
-            }
         );
 
         config.module.rules.push(
@@ -91,4 +68,4 @@ module.exports = withSass(withImages({
 
         return config;
     },
-}));
+});
