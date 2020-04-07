@@ -12,7 +12,7 @@ const GlobalStyles = createGlobalStyle`
   }
 
   body {
-    background: #FFF;
+    background: ${C.MEDIUM_GREY};
     line-height: 1.3;
     font-size: 100%;
     font-family: "robotoregular", sans-serif;

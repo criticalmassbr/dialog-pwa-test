@@ -55,14 +55,14 @@ const Index = () => {
 
       <HeaderComponent
         link="/"
-        title={`Album Finder`}
+        title={`Spotify PWA Test`}
       />
 
       <div className="mt-125px">
         <GridStyle.Container>
           <GridStyle.Row>
             <GridStyle.Col general={12}>
-              <p className="fn-s30px has-text-centered tx-up tx-blue">
+              <p className="fn-s30px has-text-centered tx-up tx-green">
                 Album Finder
               </p>
             </GridStyle.Col>
@@ -91,7 +91,7 @@ const Index = () => {
                     desktop={6}
                     className="no-margin"
                   >
-                    <p className="tx-up fn-s30px">
+                    <p className="tx-up fn-s30px tx-green">
                       {setArtists.name}
                     </p>
                   </GridStyle.Col>

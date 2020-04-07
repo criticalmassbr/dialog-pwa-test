@@ -7,10 +7,10 @@ export const Header = styled.header`
   top: 0;
   left: 0;
   z-index: 9;
-  background: ${C.YELLOW};
+  background: ${C.DARK_GREY};
 
   .title {
-    color: ${C.BLUE};
+    color: ${C.GREEN};
   }
 
   p {

@@ -211,6 +211,9 @@ const LibsStyle = createGlobalStyle`
   .bg-red{
     background: ${C.RED};
   }
+  .bg-green{
+    background: ${C.GREEN};
+  }
 
   .bg-red-outlined{
     background: ${C.WHITE};
@@ -246,6 +249,10 @@ const LibsStyle = createGlobalStyle`
 
   .tx-red{
     color: red;
+  }
+
+  .tx-green{
+    color: ${C.GREEN};
   }
 
   /* BORDER COLORS */
