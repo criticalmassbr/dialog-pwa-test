@@ -315,6 +315,10 @@ const LibsStyle = createGlobalStyle`
     margin-top: 2.8125rem;
   }
 
+  .mt-65px {
+    margin-top: 4.063rem;
+  }
+
   .mt-85px {
     margin-top: 5.3125rem;
   }

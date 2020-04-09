@@ -58,7 +58,7 @@ const Index = () => {
         title={`Spotify PWA Test`}
       />
 
-      <div className="mt-125px">
+      <div className="mt-65px">
         <GridStyle.Container>
           <GridStyle.Row>
             <GridStyle.Col general={12}>

@@ -1,10 +1,7 @@
 import * as Style from "./HeaderStyle";
 import * as GridStyle from "~/styles/Grid";
-import { ArrowLeft } from "~/styles/Icons";
 
-import Link from "next/link";
-
-export default function header({ title, slugPage, directory, typeClass }) {
+export default function header({ title, typeClass }) {
   return (
     <Style.Header className={typeClass}>
       <GridStyle.Row className="no-gutters">
@@ -14,9 +11,6 @@ export default function header({ title, slugPage, directory, typeClass }) {
           tablet={3}
           desktop={1}
         >
-          <Link href={`${directory}`} as={`${slugPage}`}>
-            <ArrowLeft className="tx-white fn-wb" />
-          </Link>
         </GridStyle.Col>
 
         <GridStyle.Col
@@ -27,6 +21,7 @@ export default function header({ title, slugPage, directory, typeClass }) {
         >
           <p className="fn-s18px fn-wb title">{title}</p>
         </GridStyle.Col>
+        
         <GridStyle.Col
           className="flex align-itcenter no-margin"
           mobile={1}
