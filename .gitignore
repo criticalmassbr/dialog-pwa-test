@@ -243,6 +243,7 @@ temp/
 # Generated files
 bin/
 gen/
+out/
 release/
 
 # Gradle files
