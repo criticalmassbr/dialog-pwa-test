@@ -5,18 +5,21 @@ import * as GridStyle from "~/styles/Grid";
 import HeaderComponent from "~/components/Header/Header";
 import LoadingComponent from "~/components/Loading/Loading";
 import AlbumComponent from "~/components/Album/Album";
+import SearchComponent from "~/components/Search/Search";
 
-// import API from "~/Services/Api";
 import axios from "axios";
 
 const Index = () => {
   const [setArtists, setArtistsState] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [isVisibleSearch, setVisibleSearchState] = useState(false);
 
-  const loadArtists = useCallback(async () => {
-    const testBand = 'Metallica';
+  const loadArtists = useCallback(async term => {
+    if(term === undefined) {
+      term = "Metallica";
+    }
     const query = encodeURIComponent(`{
-      queryArtists(byName: "${testBand}") {
+      queryArtists(byName: "${term}") {
         name
         id
         image
@@ -31,9 +34,8 @@ const Index = () => {
     try {
       setLoading(true);
       axios(`https://spotify-graphql-server.herokuapp.com/graphql?query=${query}`).then(res => {
-        console.log(res);
         res.data.data.queryArtists !== null && res.data.data.queryArtists.length > 0 ? setArtistsState(res.data.data.queryArtists[0]) : console.log('error');
-        console.log(setArtists);
+        setVisibleSearchState(false);
       })
       .catch(err => {
         console.log(err);
@@ -44,6 +46,14 @@ const Index = () => {
 
     setLoading(false);
   });
+
+  function changeVisibleSearch(param) {
+    setVisibleSearchState(param);
+  }
+
+  async function searchArtists(term) {
+    loadArtists(term);
+  }
 
   useEffect(() =>{
     loadArtists();
@@ -65,6 +75,14 @@ const Index = () => {
               <p className="fn-s30px has-text-centered tx-up tx-green">
                 Album Finder
               </p>
+            </GridStyle.Col>
+
+            <GridStyle.Col general={12}>
+              <SearchComponent
+                searchArtists={e => searchArtists(e)}
+                isVisibleSearch={isVisibleSearch}
+                changeVisibleSearch={(e) => changeVisibleSearch(e)}
+              />
             </GridStyle.Col>
           </GridStyle.Row>
 
