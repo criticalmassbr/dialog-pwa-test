@@ -34,7 +34,12 @@ const Index = () => {
     try {
       setLoading(true);
       axios(`https://spotify-graphql-server.herokuapp.com/graphql?query=${query}`).then(res => {
-        res.data.data.queryArtists !== null && res.data.data.queryArtists.length > 0 ? setArtistsState(res.data.data.queryArtists[0]) : console.log('error');
+        if(res.data.data.queryArtists !== null && res.data.data.queryArtists.length > 0) {
+          setArtistsState(res.data.data.queryArtists[0]);
+          localStorage.setItem('Artists', JSON.stringify(res.data.data.queryArtists[0]));
+        } else {
+          console.log('error');
+        }
         setVisibleSearchState(false);
       })
       .catch(err => {
@@ -55,7 +60,7 @@ const Index = () => {
     loadArtists(term);
   }
 
-  useEffect(() =>{
+  useEffect(() => {
     loadArtists();
   }, []);
 
