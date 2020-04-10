@@ -1,0 +1,31 @@
+{
+    "parser": "babel-eslint",
+    "env": {
+        "browser": true,
+        "es6": true,
+        "commonjs": true
+    },
+    "globals": {
+        "process": true
+    },
+    "extends": "eslint:recommended",
+    "parserOptions": {
+        "ecmaVersion": 9,
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "sourceType": "module"
+    },
+    "plugins": [
+        "react"
+    ],
+    "rules": {
+        "react/prop-types": 0,
+        "react/react-in-jsx-scope": "off",
+        "react/jsx-uses-vars": [
+            2
+        ],
+        "react/jsx-no-undef": "error",
+        "no-console": 0
+    }
+}
