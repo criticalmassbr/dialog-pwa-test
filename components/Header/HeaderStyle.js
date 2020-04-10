@@ -23,7 +23,8 @@ export const Header = styled.header`
   }
 
   img {
-    max-width: 61px;
+    max-width: 50px;
+    max-height: 25px;
     width: 100%;
     height: auto;
   }

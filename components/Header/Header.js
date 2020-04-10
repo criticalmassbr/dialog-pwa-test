@@ -19,6 +19,7 @@ export default function header({ title, typeClass }) {
           tablet={3}
           desktop={10}
         >
+          <img src="/images/icons/spotify.svg" />
           <p className="fn-s18px fn-wb title">{title}</p>
         </GridStyle.Col>
         

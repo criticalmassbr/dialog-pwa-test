@@ -76,7 +76,12 @@ const searchArtists = (props) => {
         <GridStyle.Row className="no-gutters w-100">
           <GridStyle.Col className="no-margin no-padding" general={12}>
             <GridStyle.Row>
-              <GridStyle.Col className="no-margin" general={9}>
+              <GridStyle.Col
+                className="no-margin"
+                mobile={9}
+                tablet={10}
+                desktop={10}
+              >
                 <InputSearch
                   placeholder="Search your Artists"
                   value={textSearch}
@@ -89,7 +94,12 @@ const searchArtists = (props) => {
                 />
               </GridStyle.Col>
 
-              <GridStyle.Col className="no-margin" general={3}>
+              <GridStyle.Col
+                className="no-margin"
+                mobile={3}
+                tablet={2}
+                desktop={2}
+              >
                 <FlagSearch />
               </GridStyle.Col>
             </GridStyle.Row>
