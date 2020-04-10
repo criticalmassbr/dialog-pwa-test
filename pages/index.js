@@ -62,6 +62,7 @@ const Index = () => {
 
   useEffect(() => {
     loadArtists();
+    document.title = "Spotify Artist Album";
   }, []);
 
   return (
