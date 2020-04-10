@@ -62,7 +62,6 @@ export const SuggestionsSearch = styled.ul`
     li {
       display: block;
       padding: 0 10px;
-      max-width: 280px;
       font-size: 14px;
       font-weight: normal;
       line-height: 36px;
