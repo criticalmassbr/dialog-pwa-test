@@ -16,7 +16,7 @@ export default function header({ title, typeClass }) {
         <GridStyle.Col
           className="flex align-itcenter cont-center no-margin"
           mobile={10}
-          tablet={3}
+          tablet={6}
           desktop={10}
         >
           <img src="/images/icons/spotify.svg" />
