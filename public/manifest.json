@@ -1,0 +1,18 @@
+{
+  "name": "Critical Mass PWA Test",
+  "short_name": "CM-PWA",
+  "theme_color": "#005f97",
+  "background_color": "#005f97",
+  "display": "standalone",
+  "scope": "/",
+  "start_url": "/?utm_source=homescreen",
+  "lang": "pt-BR",
+  "orientation": "any",
+  "icons": [
+    {
+      "src": "logo512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
