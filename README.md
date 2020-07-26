@@ -1,29 +1,95 @@
-# Critical Mass PWA Test
+# Dialog FullStack (react/pwa/node) Test
 
 ## Objetivo
 
-Desenvolver uma aplicação para consultar álbuns de um determinado artista
+Desenvolver uma API GraphQL node e um front-end React/PWA:
 
-## Stack
+## Descrição da API
 
+Deve conter uma query `list()`.
+
+A chamada query `list` sem parâmetro (o termo da busca por nome) deverá retornar todos os itens.
+
+Se fornecido o argumento da busca `name` (considerar first e last), deverá retornar os dados que contém parte da string, usar RegEx no filtro.
+
+Download: [Data JSON](db.json)
+
+Modelo:
+```javascript
+[
+    {
+        "_id": "5f1b3f4b7917ef26107bd58c",
+        "index": 0,
+        "picture": "https://i.pravatar.cc/200?u=5f1b3f4b7917ef26107bd58c",
+        "age": 37,
+        "eyeColor": "brown",
+        "name": { "first": "Weber", "last": "Stein" },
+        "company": "VIAGRAND",
+        "email": "weber.stein@viagrand.ca",
+        "phone": "+1 (866) 533-3564",
+        "friends": [
+          {
+            "_id": "5f1d7f3e8882c9c811b111ce",
+            "index": 0,
+            "picture": "https://i.pravatar.cc/200?u=5f1d7f3e8882c9c811b111ce",
+            "age": 23,
+            "eyeColor": "green",
+            "name": "Patti Mckenzie",
+            "company": "DAISU",
+            "email": "pattimckenzie@daisu.com",
+            "phone": "+1 (960) 566-3327"
+          },
+        ],
+        "greeting": "Hello, Weber! You have 9 unread messages."
+    }
+]
+```
+
+### Stack:
+- GraphQL (apollo ou relay)
+- Express
+
+### Requisitos:
+- colocar um middleware no Express para log dos requests
+- no final desse `README.md` colocar uma chamada funcional para a API em `curl`.
+
+### Diferencial
+
+- Usar TypeScript
+
+### Executar o projeto
+
+Deverá executar com `yarn start` na porta 4000
+
+
+## Descrição do React/PWA
+
+### Tela Inicial
+![tela_incial](./docs/browser02.png)
+
+### Tela detalhe de amigos
+![tela_detalhe_amigos](./docs/browser03.png)
+
+
+### Stack:
 - React
+- React Hooks
+- React Router
+- Apollo client (opcional)
 - styled-components
-  - CSS Grid
-- React Hooks _ou_ MobX
-- [API GraphQL Spotify](https://spotify-graphql-server.herokuapp.com/graphql?query=%7B%0A%20%20queryArtists(byName%3A%20%22Metallica%22)%20%7B%0A%20%20%20%20name%0A%20%20%20%20id%0A%20%20%20%20image%0A%20%20%20%20albums%20%7B%0A%20%20%20%20%20%20name%0A%20%20%20%20%20%20id%0A%20%20%20%20%20%20image%20%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D%0A)
-  - Para simplificar o App, considere o primeiro item do array de `queryArtists`
+- CSS Grid
+  - deve ser responsivo, no celular exibir apenas um card na horizontal.
 - Service Worker
-  - App deve funcionar off-line (manter buscas no cache)
+  - app deve funcionar off-line (páginas que foram visitadas)
 
-## Wireframes
-### Desktop Browser
-![web](./docs/browser01.png)
+### Diferencial
 
-### Mobile Browser
-![mobo](./docs/mobo01.png)
+- Usar TypeScript
 
-## Pull Request
-Submeter uma PR [para esse repositório](https://github.com/criticalmassbr/cm-pwa-test) com o README atualizado sobre como executar o projeto.
+### Executar o projeto
 
-### Instruções para executar o projeto aqui:
+Deverá executar com `yarn start` na porta 3000
+
+
+### Anotações que valem menção colocar aqui:
 ...
