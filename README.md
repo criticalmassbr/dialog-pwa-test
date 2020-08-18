@@ -10,7 +10,7 @@ Deve conter uma query `list()`.
 
 A chamada query `list` sem parâmetro (o termo da busca por nome) deverá retornar todos os itens.
 
-Se fornecido o argumento da busca `name` (considerar first e last), deverá retornar os dados que contém parte da string, usar RegEx no filtro.
+Se fornecido o argumento da busca `name`, deverá retornar os dados que contém parte da string, usar RegEx no filtro.
 
 Download: [Data JSON](db.json)
 
@@ -23,7 +23,7 @@ Modelo:
         "picture": "https://i.pravatar.cc/200?u=5f1b3f4b7917ef26107bd58c",
         "age": 37,
         "eyeColor": "brown",
-        "name": { "first": "Weber", "last": "Stein" },
+        "name": "Weber Stein",
         "company": "VIAGRAND",
         "email": "weber.stein@viagrand.ca",
         "phone": "+1 (866) 533-3564",
