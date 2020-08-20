@@ -92,6 +92,7 @@ Deverá executar com `yarn start` na porta 3000
 
 
 ### Anotações que valem menção colocar aqui:
+<<<<<<< HEAD
 
 Este projeto foi solicitado pela Dialog.ci como parte do processo de seleção de recursos humanos.
 
@@ -156,3 +157,6 @@ Todas as telas utilizam os componentes estruturais personalizados criados no pro
 
 
 
+=======
+...
+>>>>>>> 7e3f769eb6fb5588e540ea8001f5d17ba99ca601
