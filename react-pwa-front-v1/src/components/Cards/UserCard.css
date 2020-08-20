@@ -1,0 +1,16 @@
+.UserCard{
+    margin: 1rem;
+    padding: 1rem;
+    border: 1px solid #aaa;
+    border-radius: 20px;
+}
+
+.UserCard img{
+    border-radius: 20px;
+    width: 100%;
+}
+.UserCard p{
+    color: #888;
+    font-size: 15px;
+    line-height: 20px;
+}

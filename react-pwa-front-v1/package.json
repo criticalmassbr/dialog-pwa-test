@@ -1,0 +1,46 @@
+{
+  "name": "dialog-react-pwa-front-v1",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.3.2",
+    "@testing-library/user-event": "^7.1.2",
+    "bootstrap": "^4.5.2",
+    "idb": "^5.0.4",
+    "idb-keyval": "^3.2.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-relay": "0.0.0-experimental-8058ef82",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "3.4.2",
+    "relay-runtime": "^10.0.1"
+  },
+  "scripts": {
+    "start": "yarn run relay && react-scripts start",
+    "build": "yarn run relay && react-scripts build",
+    "relay": "yarn run relay-compiler --schema schema.graphql --src ./src/ --watchman false $@",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "babel-plugin-relay": "^10.0.1",
+    "graphql": "^15.3.0",
+    "relay-compiler": "^10.0.1"
+  }
+}

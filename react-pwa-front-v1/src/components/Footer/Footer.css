@@ -1,0 +1,11 @@
+.footer{
+    position: static;
+    bottom: 0;
+    height: 25px;
+    padding: 0px 15px;
+}
+
+.footer div{
+    font-size: 15px;
+    line-height: 25px;
+}

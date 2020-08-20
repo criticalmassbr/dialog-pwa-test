@@ -1,0 +1,7 @@
+.row{
+    margin: 1rem 0;
+    padding: 0 1rem;
+    display: flex;
+    flex: 1 0 100%;
+    flex-wrap: wrap;
+}
