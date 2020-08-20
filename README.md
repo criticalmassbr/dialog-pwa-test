@@ -92,7 +92,6 @@ Deverá executar com `yarn start` na porta 3000
 
 
 ### Anotações que valem menção colocar aqui:
-<<<<<<< HEAD
 
 Este projeto foi solicitado pela Dialog.ci como parte do processo de seleção de recursos humanos.
 
@@ -156,7 +155,9 @@ No Mockup da tela de visualização do perfil do usuário foi mantido o campo fi
 Todas as telas utilizam os componentes estruturais personalizados criados no projeto, Container, Row e Grid. Os quais foram criados de forma responsiva.
 
 
+## Requisição Curl para comunicação com servidor de Backend
 
-=======
-...
->>>>>>> 7e3f769eb6fb5588e540ea8001f5d17ba99ca601
+`curl 'http://localhost:4000/graphql' -X POST -H 'Content-Type: application/json' --data '{ "query": "{ list(name: \"\") { _id name picture age eyeColor company } }" }'`
+
+
+
