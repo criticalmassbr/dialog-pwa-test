@@ -102,7 +102,7 @@ curl \
 -X POST \
 -H "Content-Type: application/json" \
 --data '{ "query": "{ list { name, _id, age, email, company, picture } }" }' \
-http://localhost:8000/graphql
+http://localhost:4000/graphql
 ```
  - Chamada para query.list com parâmetro name:
 ```bash
@@ -110,4 +110,5 @@ curl \
 -X POST \
 -H "Content-Type: application/json" \
 --data '{ "query": "{ list(name: \"Sears\") { name, _id, age, email, company, picture } }" }' \
+http://localhost:4000/graphql
 ```

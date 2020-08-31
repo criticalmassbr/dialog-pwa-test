@@ -6,7 +6,7 @@ import * as Users from '../db.json'
 
 import typeDefs from './typeDefs'
 
-const PORT: number = 8000
+const PORT: number = 4000
 const corsOptions: Object = {
   origin: '*',
   // credentials: true,
