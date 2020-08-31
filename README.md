@@ -93,3 +93,21 @@ Deverá executar com `yarn start` na porta 3000
 
 ### Anotações que valem menção colocar aqui:
 ...
+
+
+### Chamada para a API em curl
+ - Chamada para query.list sem paramêtro name: 
+```bash
+curl \
+-X POST \
+-H "Content-Type: application/json" \
+--data '{ "query": "{ list { name, _id, age, email, company, picture } }" }' \
+http://localhost:8000/graphql
+```
+ - Chamada para query.list com paramêtro name:
+```bash
+curl \
+-X POST \
+-H "Content-Type: application/json" \
+--data '{ "query": "{ list(name: \"Sears\") { name, _id, age, email, company, picture } }" }' \
+```
