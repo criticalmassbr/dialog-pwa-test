@@ -4,5 +4,9 @@
   "main": "index.js",
   "repository": "https://github.com/ZarathosDeath/dialog-pwa-test.git",
   "author": "Ernando",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5"
+  }
 }
