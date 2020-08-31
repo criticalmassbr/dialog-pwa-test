@@ -1,0 +1,8 @@
+{
+  "name": "dialog-pwa-test",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/ZarathosDeath/dialog-pwa-test.git",
+  "author": "Ernando",
+  "license": "MIT"
+}
