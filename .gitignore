@@ -82,3 +82,5 @@ typings/
 
 # VSCode
 .vscode
+
+dist
