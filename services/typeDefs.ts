@@ -1,7 +1,7 @@
 import { gql } from 'apollo-server'
 
 const typeDefs = gql`
-  type User {
+  type Friend {
     _id: ID!
     name: String!
     picture: String
@@ -12,11 +12,11 @@ const typeDefs = gql`
     company: String
     phone: String
     greeting: String
-    friends: [User!]!
+    friends: [Friend!]!
   }
 
   type Query {
-    list(name: String): [User!]
+    list(name: String): [Friend!]
   }
 `
 

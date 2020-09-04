@@ -1,7 +1,16 @@
 import * as React from 'react'
+import { ApolloProvider } from '@apollo/client'
 import { render } from 'react-dom'
 import { createGlobalStyle } from 'styled-components'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  useHistory
+} from 'react-router-dom'
+import UserPage from './components/UserPage'
 
+import graphqlClient from './api/graphql'
 import Root from './components/Root'
 
 const GlobalStyle = createGlobalStyle`
@@ -11,8 +20,11 @@ const GlobalStyle = createGlobalStyle`
   }
 `
 
-render(<>
-  <GlobalStyle />
-  <Root />
-  </>, document.getElementById("app"))
+render(
+  <ApolloProvider client={graphqlClient}>
+    <GlobalStyle />
+    <Root />
+  </ApolloProvider>,
+  document.getElementById("app")
+)
 
