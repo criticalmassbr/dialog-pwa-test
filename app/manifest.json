@@ -1,0 +1,9 @@
+
+{
+  "short_name": "Dialog PWA",
+  "name": "Dialog Progressive Web App",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}

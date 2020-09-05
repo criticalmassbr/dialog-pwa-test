@@ -2,13 +2,7 @@ import * as React from 'react'
 import { ApolloProvider } from '@apollo/client'
 import { render } from 'react-dom'
 import { createGlobalStyle } from 'styled-components'
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  useHistory
-} from 'react-router-dom'
-import UserPage from './components/UserPage'
+import * as ServiceWorker from './serviceWorker' 
 
 import graphqlClient from './api/graphql'
 import Root from './components/Root'
@@ -28,3 +22,4 @@ render(
   document.getElementById("app")
 )
 
+ServiceWorker.register()
