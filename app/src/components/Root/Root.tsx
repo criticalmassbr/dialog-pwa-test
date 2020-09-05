@@ -8,9 +8,10 @@ import {
   Route,
   Link
 } from 'react-router-dom'
-import userPage from '../UserPage'
 
+import userPage from '../UserPage'
 import Friends from '../Friends'
+import Search from '../Search'
 
 interface Friend {
   _id: string,
@@ -29,14 +30,9 @@ interface QueryData {
   list: Friend[]
 }
 
-const Heading = styled.strong`
-  display: block;
-  font-size: 2rem;
-  margin: 0.75em 0 1em;
-`
-
 const Wrapper = styled.div`
   margin: 0 auto;
+  padding: 1rem;
   width: 100rem;
 `
 
@@ -82,14 +78,14 @@ const List = () => {
   if(loading) {
     return (
       <Wrapper>
-        <Heading>MySocial</Heading>
+        <Search></Search>
         <div>Carregando...</div>
       </Wrapper>
     )
   } else {
     return (
       <Wrapper>
-        <Heading>MySocial</Heading>
+        <Search></Search>
         {data && data.list.map(friend => (
           <Link to={Path(friend)} style={{ textDecoration: 'none', color: 'inherit'}} key={friend._id}>
             <Friends friend={friend}></Friends>

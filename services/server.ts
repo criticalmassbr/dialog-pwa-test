@@ -11,7 +11,8 @@ const PORT: number = 4000
 const resolvers: IResolvers = {
   Query: {
     list: (context: any, {name}: {name?: string}): typeof Friends  => {
-      if(name) {                          
+      console.log(name)
+      if(name) {                              
         const regex = new RegExp(`\\b(\\w*${name}\\w*)\\b`)
         return Friends.filter(user => regex.test(user.name))
       } else {

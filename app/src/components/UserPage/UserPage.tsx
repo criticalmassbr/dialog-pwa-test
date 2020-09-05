@@ -2,6 +2,7 @@ import * as React from 'react'
 import styled from 'styled-components'
 
 import Friend from '../Friends'
+import Search from '../Search'
 
 interface FriendProps {
   name: string,
@@ -36,7 +37,10 @@ const Heading = styled.strong`
 `
 
 const Wrapper = styled.div`
-display: grid
+  display: grid;
+  margin: 0 auto;
+  padding: 1rem;
+  width: 100rem;
 `
 
 const UserWrapper = styled.div`
@@ -67,7 +71,7 @@ const UserPage = (props: Props) => {
     
   return (
     <Wrapper>
-      <Heading>MySocial</Heading>
+      <Search></Search>
       <UserContainer user={friend}></UserContainer>
       <Heading>Friends: </Heading>
       <FriendsWrapper>
