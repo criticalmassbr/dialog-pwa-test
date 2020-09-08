@@ -14,7 +14,8 @@
     "react-relay": "0.0.0-experimental-8058ef82",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.2",
-    "relay-runtime": "^10.0.1"
+    "relay-runtime": "^10.0.1",
+    "styled-components": "^5.2.0"
   },
   "scripts": {
     "start": "yarn run relay && react-scripts start",
