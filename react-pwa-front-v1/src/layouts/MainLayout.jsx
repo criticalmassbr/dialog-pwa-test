@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useEffect, useCallback } from 'react';
 import { Route, Switch } from 'react-router-dom';
 
 import Container from '../components/Container/Container';
@@ -9,36 +9,44 @@ import ViewUserPage from '../views/users/ViewUserPage';
 
 import idb from '../storage/idb';
 
-
-class MainLayout extends Component {
-    constructor(props) {
-        super(props);
-        idb.set("network-status", 1);
-    }
-    storeNetworkStatus = (event) => {
+const MainLayout = prop => {
+    const storeNetworkStatus = useCallback((event) => {
         idb.set("network-status", event.type === 'offline' ? 0 : 1);
-    }
+    }, [])
 
-    componentDidMount() {
-        window.addEventListener('offline', this.storeNetworkStatus)
-        window.addEventListener('online', this.storeNetworkStatus)
-    }
+    useEffect(() => {
+        async function initNetworkStatus() {
+            await idb.set("network-status", 1)
+        }
+        initNetworkStatus();
+    }, [])
 
-    componentWillUnmount() {
-        window.removeEventListener('online', this.storeNetworkStatus)
-        window.removeEventListener('offline', this.storeNetworkStatus)
-    }
-    render() {
-        return (
-            <Container>
-                <Switch>
-                    <Route exact path='/adm/users' component={UsersPage} />
-                    <Route path='/adm/users/view/:id' component={ViewUserPage} />
-                </Switch>
-                <Footer />
-            </Container>
-        );
-    }
+    useEffect(() => {
+        async function addListeners() {
+            await window.addEventListener('offline', storeNetworkStatus)
+            await window.addEventListener('online', storeNetworkStatus)
+        }
+        addListeners();
+
+        return function cleanup() {
+            async function removeListeners() {
+                window.removeEventListener('online', storeNetworkStatus)
+                window.removeEventListener('offline', storeNetworkStatus)
+            }
+            removeListeners();
+        }
+
+    }, [storeNetworkStatus])
+
+    return (
+        <Container>
+            <Switch>
+                <Route exact path='/adm/users' component={UsersPage} />
+                <Route path='/adm/users/view/:id' component={ViewUserPage} />
+            </Switch>
+            <Footer />
+        </Container>
+    )
 }
 
 MainLayout.propTypes = {

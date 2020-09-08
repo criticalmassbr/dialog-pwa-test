@@ -1,37 +1,48 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 
-import { withRouter } from "react-router-dom";
-// import RelayEnvironment from '../../RelayEnvironment';
+import { useHistory } from "react-router-dom";
 
 import UserService from '../../services/UserService'
 
-import Row from '../../components/Row/Row';
-import Grid from '../../components/Grid/Grid';
+import Grid from '../../components/CSSGrid/Grid';
 import UserCard from '../../components/Cards/UserCard';
 import Filter from '../../components/Filter/Filter'
 
-class UsersPage extends Component {
+const UsersPage = props => {
+    let history = useHistory();
+    const [users, setUsers] = useState([])
+    const [filter, setFilter] = useState('')
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            users: [],
-            filter: ""
-        };
-        this.handleCardClick = this.handleCardClick.bind(this);
-        this.handleLogoClick = this.handleLogoClick.bind(this);
+    const handleCardClick = (_id) => {
+        history.push(`/adm/users/view/${_id}`);
+    }
+    const handleLogoClick = () => {
+        history.push(`/adm/users`);
     }
 
-    componentDidMount() {
-        this.refreshUserContent("");
+    useEffect(() => {
+        refreshUserContent("");
+    }, [])
+
+    const handleFilterChange = (event) => {
+        setFilter(event.target.value);
+        refreshUserContent(event.target.value);
+    };
+
+    const refreshUserContent = (filter) => {
+        UserService.getAllFilterByName(filter)
+            .then(data => {
+                console.log("Data: ", data);
+                setUsers(data.list);
+            });
     }
 
-    renderCards(users) {
-        if (users) {
-            return users.map((user) => {
+    const renderCards = (list) => {
+        if (list) {
+            return list.map((item) => {
                 return (
-                    <Grid sm='1' md='1' lg='4' xl='4' xll='4' key={user._id}>
-                        <UserCard user={user} handleClick={this.handleCardClick} />
+                    <Grid key={item._id}>
+                        <UserCard user={item} handleClick={handleCardClick} />
                     </Grid>
                 );
             });
@@ -39,40 +50,12 @@ class UsersPage extends Component {
         return null
     }
 
-    handleCardClick(_id) {
-        const { history } = this.props;
-        history.push(`/adm/users/view/${_id}`);
-    }
-
-    handleLogoClick() {
-        const { history } = this.props;
-        history.push(`/adm/users`);
-    }
-
-    handleFilterChange = (event) => {
-        this.setState({ filter: event.target.value });
-        this.refreshUserContent(event.target.value);
-    };
-
-    refreshUserContent(filter) {
-        UserService.getAllFilterByName(filter)
-            .then(data => {
-                console.log("Data: ", data);
-                this.setState({ users: data.list });
-            });
-    }
-
-    render() {
-        const { users, filter } = this.state;
-        return (
-            <React.Fragment>
-                <Filter value={filter} onChange={this.handleFilterChange} handleLogoClick={this.handleLogoClick} />
-                <Row>
-                    {this.renderCards(users)}
-                </Row>
-            </React.Fragment>
-        );
-    }
+    return (
+        <React.Fragment>
+            <Filter value={filter} onChange={handleFilterChange} handleLogoClick={handleLogoClick} />
+            {renderCards(users)}
+        </React.Fragment>
+    );
 }
 
-export default (withRouter)(UsersPage);
+export default UsersPage;
