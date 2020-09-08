@@ -1,24 +1,34 @@
 import React from "react";
-import Grid from '../Grid/Grid';
-import Row from '../Row/Row';
+import styled from 'styled-components'
 
-import './UserProfile.css'
+import Grid from '../CSSGrid/Grid';
+
+const UserProfileImage = styled.img`
+    width: 100%;
+    border-radius: 20px;
+    max-width: 140px;
+`
+const UserProfileParagraph = styled.p`
+    padding: 0.7rem;
+    font - size: 20px;
+    line - height: 30px;
+`
 
 export default (props) => {
     const { user } = props;
     return (
-        <Row additionalClassName="UserProfile">
-            <Grid sm='1' md='1' lg='6' xl='6' xll='6'>
-                <img src={user.picture} alt="User Profile" />
+        <React.Fragment>
+            <Grid>
+                <UserProfileImage src={user.picture} alt="User Profile" />
             </Grid>
-            <Grid sm='1' md='1' lg='2' xl='2' xll='2'>
-                <p>
+            <Grid>
+                <UserProfileParagraph>
                     Name: {user.name} <br />
                     Age: {user.age} <br />
                     Email: {user.email}
-                </p>
+                </UserProfileParagraph>
             </Grid>
-        </Row>
+        </React.Fragment>
     );
 }
 

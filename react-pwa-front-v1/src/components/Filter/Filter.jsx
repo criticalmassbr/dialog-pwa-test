@@ -1,22 +1,26 @@
 import React from "react";
-import Grid from '../Grid/Grid';
+import styled from 'styled-components'
+
+import Grid from '../CSSGrid/Grid';
 import CustomInput from '../Inputs/CustomInput'
-import Row from '../Row/Row';
 
 export default (props) => {
     const { value, onChange, handleLogoClick } = props;
+
+    const Logo = styled.h1`
+        float:left; margin-right: 1em;
+    `;
+
     return (
-        <Row>
-            <Grid sm='1' md='5' lg='6' xl='6' xll='6'>
-                <h1 onClick={handleLogoClick}> MySocial</h1>
-            </Grid>
-            <Grid sm='1' md='4' lg='4' xl='4' xll='4'>
+        <React.Fragment>
+            <Grid column="1 / -1">
+                <Logo onClick={handleLogoClick}>MySocial</Logo>
                 <CustomInput
                     value={value}
                     onChange={onChange}
                 />
             </Grid>
-        </Row>
+        </React.Fragment>
     );
 }
 
