@@ -1,16 +1,4 @@
 # Dialog FullStack (react/pwa/node) Test
-
-#### Sobre clonagem do repositório: 
-
-#### Para clonar o repositório é necessario usar a tag --recursive para carregar os submodules que dependem de outros repositórios.
-#### git clone https://github.com/guidovin/dialogSocialDemo.git --recursive
-
-
-#### Para importar de outra forma, como checkout, é necessário rodar o comando: 
-#### git submodules update --init --recursive
-
-Caso contrário backend/ e frontend/ estarão vazias.
-
 #### Instruções para rodar o projeto:
 
 cd dialogSocialDemo && cd challenge_backend && yarn install && yarn start; 
