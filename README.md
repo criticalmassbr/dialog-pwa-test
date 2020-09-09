@@ -92,7 +92,8 @@ Deverá executar com `yarn start` na porta 3000
 
 
 ### Anotações que valem menção colocar aqui:
-...
+Para subir a api, na pasta services: yarn start
+Para subir o PWA, na pasta app: yarn start
 
 
 ### Chamada para a API em curl
