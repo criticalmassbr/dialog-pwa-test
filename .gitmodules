@@ -1,0 +1,6 @@
+[submodule "frontend"]
+	path = frontend
+	url = https://github.com/guidovin/socialDemoFront.git
+[submodule "backend"]
+	path = backend
+	url = https://github.com/guidovin/socialDemo.git
