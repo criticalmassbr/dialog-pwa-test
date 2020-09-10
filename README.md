@@ -1,8 +1,8 @@
 # Dialog FullStack (react/pwa/node) Test
 #### Instruções para rodar o projeto:
 
-cd dialogSocialDemo && cd challenge_backend && yarn install && yarn start; 
-cd dialogSocialDemo && cd challenge_frontend && yarn install && yarn start;
+cd backend && yarn install && yarn start; 
+cd frontend && yarn install && yarn start;
 
 Npm pode ser usado ao invés de yarn.
 Construído com Node v12.18.2.
