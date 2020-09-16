@@ -1,0 +1,325 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tests Snapshot 1`] = `
+.c7 {
+  border: solid 1px #a89f71;
+  border-radius: 1em;
+  background-color: #fffcef;
+  box-shadow: 1px 2px #758888;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 1em;
+  max-height: 400px;
+  width: 250px;
+  cursor: pointer;
+}
+
+.c10 {
+  width: calc(100%);
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.c8 {
+  min-height: 200px;
+  margin: auto;
+}
+
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  margin: auto;
+}
+
+.c1 {
+  background-color: #374785;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  height: 13%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.c2 {
+  font-size: 2em;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin: 0px 20px 0px 20px;
+  cursor: pointer;
+  color: #14204c;
+}
+
+.c5 {
+  border-width: 2px;
+  border-radius: 35px;
+  padding: 0.1em 0.1em 0.1em calc(10px + 0.1em);
+  font-size: 2em;
+  min-width: inherit;
+  margin: 0px 25px 0px 25px;
+}
+
+.c5:focus {
+  outline: none;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 140px;
+}
+
+.c3 {
+  font-size: 1.4em;
+}
+
+.c6 {
+  padding: 25px;
+  min-width: 270px;
+  background-color: #cbe5f4;
+  display: grid;
+  grid-gap: 2em;
+  grid-template-columns: 1fr;
+}
+
+.c0 {
+  background-color: #cbe5f4;
+  min-width: 332px;
+  overflow: hidden;
+}
+
+@media (max-width:450px) {
+  .c1 {
+    min-width: 320px;
+  }
+}
+
+@media (max-width:450px) {
+  .c2 {
+    display: none;
+  }
+}
+
+@media (min-width:660px) {
+  .c6 {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width:1000px) {
+  .c6 {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media (min-width:1320px) {
+  .c6 {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1"
+  >
+    <div
+      class="c2"
+    >
+      <b
+        class="c3"
+      >
+        MySocial
+      </b>
+    </div>
+    <span
+      class="c4"
+    >
+      <input
+        class="c5"
+        data-testid="searchBar"
+        placeholder="Search"
+      />
+    </span>
+  </div>
+  <div
+    class="c6"
+    data-testid="userContainer"
+  >
+    <div
+      class="c7"
+      data-testid="userCard"
+    >
+      <span
+        class="c8"
+        id="imgContainer"
+      >
+        <img
+          alt="avatar loading..."
+          class="asyncImage"
+          src="avatar_loader.gif"
+        />
+      </span>
+      <span
+        class="c9"
+      >
+        <span
+          class="c10"
+          data-testid="Cecilia Phillips"
+        >
+          Name: Cecilia Phillips
+        </span>
+        <span
+          class="c10"
+        >
+          Age: undefined
+        </span>
+        <span
+          class="c10"
+        >
+          Eye color: undefined
+        </span>
+        <span
+          class="c10"
+        >
+          Company: undefined
+        </span>
+        <span
+          class="c10"
+        >
+          Email: undefined
+        </span>
+      </span>
+    </div>
+    <div
+      class="c7"
+      data-testid="userCard"
+    >
+      <span
+        class="c8"
+        id="imgContainer"
+      >
+        <img
+          alt="avatar loading..."
+          class="asyncImage"
+          src="avatar_loader.gif"
+        />
+      </span>
+      <span
+        class="c9"
+      >
+        <span
+          class="c10"
+          data-testid="CeasdPhillips"
+        >
+          Name: CeasdPhillips
+        </span>
+        <span
+          class="c10"
+        >
+          Age: undefined
+        </span>
+        <span
+          class="c10"
+        >
+          Eye color: undefined
+        </span>
+        <span
+          class="c10"
+        >
+          Company: undefined
+        </span>
+        <span
+          class="c10"
+        >
+          Email: undefined
+        </span>
+      </span>
+    </div>
+    <div
+      class="c7"
+      data-testid="userCard"
+    >
+      <span
+        class="c8"
+        id="imgContainer"
+      >
+        <img
+          alt="avatar loading..."
+          class="asyncImage"
+          src="avatar_loader.gif"
+        />
+      </span>
+      <span
+        class="c9"
+      >
+        <span
+          class="c10"
+          data-testid="Cec ps"
+        >
+          Name: Cec ps
+        </span>
+        <span
+          class="c10"
+        >
+          Age: undefined
+        </span>
+        <span
+          class="c10"
+        >
+          Eye color: undefined
+        </span>
+        <span
+          class="c10"
+        >
+          Company: undefined
+        </span>
+        <span
+          class="c10"
+        >
+          Email: undefined
+        </span>
+      </span>
+    </div>
+  </div>
+</div>
+`;
