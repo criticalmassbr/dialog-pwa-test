@@ -80,7 +80,12 @@ function ContentContainer() {
           <UserContainer data-testid="userContainer">
           { data && 
             data.list && 
-            data.list.map((user: User) => <UserCard key={user.id+Date.now()+"user"} user={user} onClick={() => setSelectedUser(user)}/>)
+            data.list.map((user: User) => 
+              <UserCard 
+                key={user.id+Date.now()+"user"}
+                user={user}
+                onClick={() => { setSelectedUser(user); setFilter(""); }}
+              />)
           }
           </UserContainer>
         :
@@ -89,7 +94,12 @@ function ContentContainer() {
               selectedUser
                 .friends
                 .filter(user => user.name?.toLocaleLowerCase().includes(filter.toLocaleLowerCase()))
-                .map((user: User) => <UserCard key={user.id+Date.now()+"friend"} user={user} onClick={() => setSelectedUser(user)}/>)
+                .map((user: User) => 
+                  <UserCard 
+                    key={user.id+Date.now()+"friend"}
+                    user={user}
+                    onClick={() =>{ setSelectedUser(user); setFilter("");}}
+                  />)
             }
           </UserContainer>
       }
