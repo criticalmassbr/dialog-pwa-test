@@ -15,19 +15,10 @@ const UserContainer = styled.div<ContainerProps>`
   padding:25px;
   min-width:270px;
   background-color:${colors.background};
-  
+  margin:auto;
   display:grid;
   grid-gap:2em;
-  grid-template-columns: 1fr;
-  @media (min-width: 660px) {
-    grid-template-columns: 1fr 1fr
-  };
-  @media (min-width: 1000px) {
-    grid-template-columns: 1fr 1fr 1fr
-  };
-  @media (min-width: 1320px) {
-    grid-template-columns: 1fr 1fr 1fr 1fr
-  };   
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
 `;
 
 const Container = styled.div`
