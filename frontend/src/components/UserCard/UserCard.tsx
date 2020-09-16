@@ -50,6 +50,7 @@ const UserInfoArea = styled.span`
   flex-direction:column;
   justify-content:flex-start;
   margin:auto;
+  width:100%;
 `;
 
 const UserCard: FunctionComponent<{ user: User, onClick: Function }> = ({ user, onClick }) => {
