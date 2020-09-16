@@ -27,6 +27,7 @@ const Container = styled.div<ContainerProps>`
   flex-direction:column;
   padding:1em;
   max-height:400px;
+  margin:auto;
   /*width could be replaced by max/min for more fluidity of user card width, fitting more to the screensize:*/
   /* 
     min-width: 240px; 
