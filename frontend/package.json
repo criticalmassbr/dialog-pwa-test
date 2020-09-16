@@ -26,12 +26,14 @@
     "react-icons": "^3.11.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3",
+    "serve": "^11.3.2",
     "styled-components": "^5.1.1",
     "typescript": "^3.7.5"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build && serve -l 3000 build/",
+    "build": "react-scripts build",
+    "start": "react-scripts build && serve -l 3000 build/",
+    "start:no_sw": "react-scripts start",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
