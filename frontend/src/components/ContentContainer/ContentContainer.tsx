@@ -66,6 +66,7 @@ function ContentContainer() {
         setFilter={(name: string) => { list({ variables: { name }}); setFilter(name); }} 
         setSelectedUser={setSelectedUser} 
         selected={!!selectedUser}
+        filter={filter}
       />
       { selectedUser && 
         <UserDetails user={selectedUser}/>

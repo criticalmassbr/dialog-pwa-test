@@ -62,18 +62,27 @@ const LogoTypography = styled.b`
   font-size:1.4em;
 `;
  
-const Header: FunctionComponent<{ setFilter: Function, setSelectedUser: Function, selected: boolean }> = ({ setFilter, setSelectedUser, selected }) => {
+const Header: FunctionComponent<{ 
+                setFilter: Function, 
+                setSelectedUser: Function, 
+                selected: boolean, 
+                filter: string }> = ({ filter , setFilter, setSelectedUser, selected }) => {
   const onClick = (e: SyntheticEvent) => {
     e.preventDefault(); 
     setFilter(""); 
-    setSelectedUser(null)
+    setSelectedUser(null);
   };
 
   return(
     <Container>
       <Logo onClick={onClick}><LogoTypography>MySocial</LogoTypography></Logo>
       <AlignVertical>
-        <SearchBar data-testid="searchBar" onChange={(e) => setFilter(e.target.value)} placeholder="Search"/>
+        <SearchBar
+          data-testid="searchBar"
+          value={filter}
+          onChange={(e) => setFilter(e.target.value)} 
+          placeholder="Search"
+        />
       </AlignVertical>
       {selected && <WipeSearch onClick={onClick}/>}
     </Container>);
