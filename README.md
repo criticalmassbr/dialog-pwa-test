@@ -59,14 +59,14 @@ Nesta PWA, foram utilizados os conceitos de:
 -[x] Intenção de pesquisa A/B (dispor feature exequível, porém, não desenvolvida, para captar intenções de uso daquela feature)
 
 ### Telas
-![tela_incial_1](./pwa/prints/light-mobile-home.jpg)
-![tela_incial_2](./pwa/prints/dark-mobile-home.jpg)
-![tela_incial_3](./pwa/prints/light-mobile-user.jpg)
-![tela_incial_4](./pwa/prints/dark-mobile-user.jpg)
-![tela_incial_5](./pwa/prints/light-desktop-home.jpg)
-![tela_incial_6](./pwa/prints/dark-desktop-home.jpg)
-![tela_incial_7](./pwa/prints/light-desktop-user.jpg)
-![tela_incial_8](./pwa/prints/dark-desktop-user.jpg)
+![light-mobile-home](./pwa/prints/light-mobile-home.jpg)
+![dark-mobile-home](./pwa/prints/dark-mobile-home.jpg)
+![light-mobile-user](./pwa/prints/light-mobile-user.jpg)
+![dark-mobile-user](./pwa/prints/dark-mobile-user.jpg)
+![light-desktop-home](./pwa/prints/light-desktop-home.jpg)
+![dark-desktop-home](./pwa/prints/dark-desktop-home.jpg)
+![light-desktop-user](./pwa/prints/light-desktop-user.jpg)
+![dark-desktop-user](./pwa/prints/dark-desktop-user.jpg)
 
 ### Stack:
 - React
