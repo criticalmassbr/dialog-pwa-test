@@ -1,0 +1,1 @@
+curl 'http://localhost:4000/graphql' -sH 'Accept-Encoding: gzip, deflate, br' -H 'Content-Type: application/json' -H 'Accept: application/json' -H 'Connection: keep-alive' -H 'DNT: 1' -H 'Origin: http://localhost:4000' --data-binary '{"query":"{list {_id index picture age eyeColor name company email phone greeting}}"}'

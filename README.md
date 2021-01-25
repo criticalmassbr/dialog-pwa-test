@@ -1,95 +1,114 @@
 # Dialog FullStack (react/pwa/node) Test
 
-## Objetivo
+## Apresentação
+Olá, avaliador(a)!
 
-Desenvolver uma API GraphQL node e um front-end React/PWA:
+Me chamo Pedro Mihael, e esta é a resposta ao teste do processo seletivo para desenvolvedor full stack.
+
+As descrições para rodar os serviços estão logo abaixo.
+
+Se desejar, pode ver histórico de commits, esforço demandando, progresso e afins nos repositórios originais.
+
+-[API](https://github.com/pedromihael/express-graphql-api)
+-[PWA](https://github.com/pedromihael/react-social-network)
+
+Agradeço desde já pela oportunidade.
 
 ## Descrição da API
+A API possui uma query `list` polimórfica, podendo ser feita sem parâmetro nenhum, ou passando um `name: String` como parâmetro.
 
-Deve conter uma query `list()`.
+Dado o nome, um algoritmo com regex faz a busca dos itens na camada de dados.
 
-A chamada query `list` sem parâmetro (o termo da busca por nome) deverá retornar todos os itens.
+A cada requisição, um middleware faz o registro da request num arquivo em `/src/infrastructure/`.
 
-Se fornecido o argumento da busca `name`, deverá retornar os dados que contém parte da string, usar RegEx no filtro.
-
-Download: [Data JSON](db.json)
-
-Modelo:
+Exemplo:
 ```javascript
-[
-    {
-        "_id": "5f1b3f4b7917ef26107bd58c",
-        "index": 0,
-        "picture": "https://i.pravatar.cc/200?u=5f1b3f4b7917ef26107bd58c",
-        "age": 37,
-        "eyeColor": "brown",
-        "name": "Weber Stein",
-        "company": "VIAGRAND",
-        "email": "weber.stein@viagrand.ca",
-        "phone": "+1 (866) 533-3564",
-        "friends": [
-          {
-            "_id": "5f1d7f3e8882c9c811b111ce",
-            "index": 0,
-            "picture": "https://i.pravatar.cc/200?u=5f1d7f3e8882c9c811b111ce",
-            "age": 23,
-            "eyeColor": "green",
-            "name": "Patti Mckenzie",
-            "company": "DAISU",
-            "email": "pattimckenzie@daisu.com",
-            "phone": "+1 (960) 566-3327"
-          },
-        ],
-        "greeting": "Hello, Weber! You have 9 unread messages."
+  {
+    list {
+      _id
+      name
+      picture
+      age
+      eyeColor
+      company
+      email
+      phone
+      greeting
+      friends {
+        _id
+        name
+        picture
+        age
+        eyeColor
+        company
+        email
+        phone
+      }
     }
-]
+  }
 ```
 
 ### Stack:
-- GraphQL (apollo ou relay)
-- Express
+- [x] NodeJS
+- [x] GraphQL com Apollo Server
+- [x] Express
+- [x] Morgan
+- [x] Jest
+- [x] Typescript
 
-### Requisitos:
-- colocar um middleware no Express para log dos requests
-- no final desse `README.md` colocar uma chamada funcional para a API em `curl`.
+### Conceitos utilizados:
+- [x] Clean Architecture
+- [x] DDD
+- [x] Injeção de dependência
+- [x] Testes unitários
+- [x] SOLID (S, O, I, D)
+- [x] Build Pattern
+- [x] Singleton Pattern
+- [x] Repository Pattern
 
-### Diferencial
-
-- Usar TypeScript
 
 ### Executar o projeto
+`yarn` baixa e instala os pacotes necessários.
+`yarn start` serve a api na porta 4000.
 
-Deverá executar com `yarn start` na porta 4000
+### Testes
+`yarn test` executa os testes unitários.
+
+### cURL
+curl 'http://localhost:4000/graphql' -sH 'Accept-Encoding: gzip, deflate, br' -H 'Content-Type: application/json' -H 'Accept: application/json' -H 'Connection: keep-alive' -H 'DNT: 1' -H 'Origin: http://localhost:4000' --data-binary '{"query":"{list {_id index picture age eyeColor name company email phone greeting}}"}'
 
 
 ## Descrição do React/PWA
+Esta PWA entrega uma rede social de amigos básica, com página principal, página de amigos, uma barra de pesquisa e a possibilidade de trocar de tema de claro para escuro, e vice-versa.
+### Capturas de tela
+![tela_incial](./pwa/prints/light-mobile-home.jpg)
+![tela_incial](./pwa/prints/light-desktop-home.jpg)
 
-### Tela Inicial
-![tela_incial](./docs/browser02.png)
+![tela_incial](./pwa/prints/dark-mobile-home.jpg)
+![tela_incial](./pwa/prints/dark-desktop-home.jpg)
 
-### Tela detalhe de amigos
-![tela_detalhe_amigos](./docs/browser03.png)
+![tela_amigos](./pwa/prints/light-mobile-user.jpg)
+![tela_amigos](./pwa/prints/light-desktop-user.jpg)
 
+![tela_amigos](./pwa/prints/dark-mobile-user.jpg)
+![tela_amigos](./pwa/prints/dark-desktop-user.jpg)
 
 ### Stack:
-- React
-- React Hooks
-- React Router
-- Apollo client (opcional)
-- styled-components
-- CSS Grid
-  - deve ser responsivo, no celular exibir apenas um card na horizontal.
-- Service Worker
-  - app deve funcionar off-line (páginas que foram visitadas)
+-[x] React com Typescript
+-[x] React Hooks (useState, useEffect, useCallback, useMemo, useContext)
+-[x] Custom Hooks
+-[x] React Router
+-[x] Apollo client
 
-### Diferencial
-
-- Usar TypeScript
+### Conceitos utilizados
+-[x] CSS-in-JS com Styled-components
+-[x] Responsividade com CSS Grid e Flexbox
+-[x] Service Worker para uso offline
+-[x] Arquitetura SMACSS
+-[x] Acessibilidade (modo noturno)
+-[x] Disposição intencional de feature não implementada para validar hipótese (conceito de gestão de produtos)
 
 ### Executar o projeto
+`yarn` baixa e instala os pacotes necessários.
+`yarn start` serve a pwa na porta 3000.
 
-Deverá executar com `yarn start` na porta 3000
-
-
-### Anotações que valem menção colocar aqui:
-...
