@@ -93,4 +93,24 @@ Deverá executar com `yarn start` na porta 3000
 
 
 ### Anotações que valem menção colocar aqui:
-...
+Para subir a api, na pasta services: yarn start
+Para subir o PWA, na pasta app: yarn start
+
+
+### Chamada para a API em curl
+ - Chamada para query.list sem parâmetro name: 
+```bash
+curl \
+-X POST \
+-H "Content-Type: application/json" \
+--data '{ "query": "{ list { name, _id, age, email, company, picture } }" }' \
+http://localhost:4000/graphql
+```
+ - Chamada para query.list com parâmetro name:
+```bash
+curl \
+-X POST \
+-H "Content-Type: application/json" \
+--data '{ "query": "{ list(name: \"Sears\") { name, _id, age, email, company, picture } }" }' \
+http://localhost:4000/graphql
+```
