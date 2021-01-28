@@ -1,0 +1,30 @@
+"""Exposes a URL that specifies the behaviour of this scalar."""
+directive @specifiedBy(
+  """The URL that specifies the behaviour of this scalar."""
+  url: String!
+) on SCALAR
+
+type Mutation {
+  createUser(name: String!, repo: String!, age: Int!): User
+}
+
+type Query {
+  user(_id: ID): User
+  users: [User]
+  list(name: String): [User]
+}
+
+type User {
+  _id: ID
+  index: Int
+  picture: String
+  age: Int
+  eyeColor: String
+  name: String
+  company: String
+  email: String
+  phone: String
+  friends: [User]
+  greeting: String
+}
+
