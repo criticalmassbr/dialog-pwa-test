@@ -56,6 +56,7 @@ Modelo:
 ### Diferencial
 
 - Usar TypeScript
+- Regex da pesquisa: considerar caractere de espaço, dado o payload acima `name: Weber Stein`, se entrar com `we in` deve retornar no resultado `Weber Stein`
 
 ### Executar o projeto
 
