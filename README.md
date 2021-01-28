@@ -94,3 +94,9 @@ Deverá executar com `yarn start` na porta 3000
 
 ### Anotações que valem menção colocar aqui:
 ...
+
+### Chamada funcional para a API em `curl`:
+
+curl 'http://localhost:4000/graphql' -sH 'Accept-Encoding: gzip, deflate, br' -H 'Content-Type: application/json' -H 'Accept: application/json' -H 'Connection: keep-alive' -H 'DNT: 1' -H 'Origin: http://localhost:4000' --data-binary '{"query":"{list {id index picture age eyeColor name company email phone greeting}}"}' | gunzip
+
+
