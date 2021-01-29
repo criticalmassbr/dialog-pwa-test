@@ -93,4 +93,7 @@ Deverá executar com `yarn start` na porta 3000
 
 
 ### Anotações que valem menção colocar aqui:
-...
+
+Chamada usando curl:
+
+curl 'http://localhost:4000/graphql' -X POST -H 'Content-Type: application/json'  -d '{"operationName":"ListarUsuarios","variables":{"name":"fu"},"query":"query ListarUsuarios($name: String) {list(name: $name) {_id picture age name eyeColor email company friends { _id picture age name eyeColor email company __typename  } __typename }}"}'
