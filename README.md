@@ -93,4 +93,12 @@ Deverá executar com `yarn start` na porta 3000
 
 
 ### Anotações que valem menção colocar aqui:
-...
+
+-chamada funcional para a API em `curl`.
+
+curl 'http://localhost:4000/graphql' \
+  -X POST \
+  -H 'content-type: application/json' \
+  --data '{
+    "query": "{ users { name age phone} }"
+  }'

@@ -33,6 +33,3 @@ type Friend {
   phone: String
 }
 `
-
-
-
