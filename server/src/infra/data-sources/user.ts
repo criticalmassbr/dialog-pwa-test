@@ -1,4 +1,6 @@
-export const users = [
+import { UserInfraModel } from '@/infra/models';
+
+export const users :UserInfraModel[] = [
 	{
 		_id: '5f1d7f3e5dc58af42fc39242',
 		index: 0,

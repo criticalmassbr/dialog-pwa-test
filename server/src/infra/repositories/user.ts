@@ -1,10 +1,11 @@
+/* eslint-disable consistent-return */
 /* eslint-disable array-callback-return */
 import { LoadUsersRepository } from '@/data/contracts';
-
 import { users } from '@/infra/data-sources';
+import { UserInfraModel } from '@/infra/models/user';
 
 export class UserRepository implements LoadUsersRepository {
-	async loadUsers(name: string): Promise<any[]> {
+	async loadUsers(name: string): Promise<UserInfraModel[]> {
 		if (!name) {
 			return users;
 		}

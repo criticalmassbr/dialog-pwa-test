@@ -9,5 +9,5 @@ export type User = {
 	email: string;
 	phone: string;
 	greeting: string;
-	friends: User[];
+	friends: Omit<User, 'friends' | 'greeting'>[];
 };
