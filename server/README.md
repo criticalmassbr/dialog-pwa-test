@@ -23,7 +23,7 @@ obs: se passar apenas list (sem parâmetro) retorna todos os registros.
 ### Diferencial aplicado
 
 - Usa TypeScript
-- Regex da pesquisa está considerando caractere de espaço. No exemplo, dado o payload acima `name: Weber Stein`, se entrar com `we in` a api retorna no resultado `Weber Stein`
+- Regex da pesquisa está considerando caractere de espaço. No exemplo, dado o payload acima `name: Weber Stein`, se entrar com `we in` a api retorna no resultado `Weber Stein`. A api se comporta da mesma forma para mais de um sobrenome. 
 
 ### Executar o projeto
 
