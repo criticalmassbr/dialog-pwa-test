@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist",
+    "module": "commonjs",
+    "skipLibCheck": true,
+    "target": "es2020",
+    "typeRoots": ["./custom_typings", "./node_modules/@types"],
+    "esModuleInterop": true,
+    "allowJs": true,
+    "rootDir": "src",
+    "baseUrl": "src",
+    "paths": {
+      "@/*": ["*"]
+    },
+    "sourceMap": true
+  },
+  "include": ["src"]
+}
