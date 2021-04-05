@@ -46,7 +46,7 @@ Executa com `yarn start` na porta 4000
 - React Query
 - styled-components
 - CSS Grid
-  - Grid responsiva, no celular exibir apenas um card na horizontal.
+  - Grid responsiva, no celular apenas um card é exibido na horizontal.
 - Service Worker
   - app funciona off-line (páginas que foram visitadas exibem elementos HTML em cache)
 
@@ -54,13 +54,13 @@ Executa com `yarn start` na porta 4000
 
 - Usa TypeScript
 
-### Executar o projeto
+### Execução do projeto
 
 Executa com `yarn start` na porta 3000
 
 
 ### Anotações que valem menção colocar aqui:
-...
+
 A página de detalhes de usuário recebe pela rota o nome do usuário e realiza a busca na api através do nome. É passado na rota o _id também (caso em futura implementação possa ser buscado através dele).
 Como os registros dentro do array Friends de cada usuário não possuem seu respectivo registro na base de dados, ao clicar em um card de um amigo a mesma página de detalhes será carregada com a busca por nome efetuada podendo ou não encontrar o usuário correto.
 
