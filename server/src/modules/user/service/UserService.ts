@@ -8,7 +8,8 @@ export default class UserService {
     return args.name ? this.users.filter(user =>  {
       let reg = "";
       const searchedName = args.name.toLocaleLowerCase();
-      searchedName.split(" ").forEach(word => reg += (reg ? " " : "") + `[a-z]?${word}[a-z]?`);
+      searchedName.split(" ").forEach(word => reg += (reg ? "\\s" : "") + `(${word}[a-z]+?)`);
+      console.log(reg);
       return new RegExp(reg).test(user.name.toLocaleLowerCase());
     }) : this.users;
   }
