@@ -1,0 +1,38 @@
+{
+  "name": "dialog-pwa-test",
+  "version": "1.0.0",
+  "description": "Desenvolver uma API GraphQL node e um front-end React/PWA:",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "start": "nodemon"
+  },
+  "dependencies": {
+    "@types/express": "^4.17.11",
+    "@types/ws": "^7.4.1",
+    "apollo-server-express": "^2.23.0",
+    "body-parser": "^1.19.0",
+    "class-validator": "^0.13.1",
+    "express": "^4.17.1",
+    "graphql": "^15.5.0",
+    "nodemon": "^2.0.7",
+    "reflect-metadata": "^0.1.13",
+    "ts-node": "^9.1.1",
+    "type-graphql": "^1.1.1",
+    "typescript": "^4.2.4"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jagimenes/dialog-pwa-test.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jagimenes/dialog-pwa-test/issues"
+  },
+  "homepage": "https://github.com/jagimenes/dialog-pwa-test#readme"
+}
