@@ -16,7 +16,7 @@ plugins:
 
 provider:
   name: aws
-  stackName: ${opt:stack-name, 'vizir-staging'}
+  stackName: ${opt:stack-name, 'dialog-staging'}
   stage: ${opt:stage, 'staging'}
   runtime: nodejs12.x
   region: sa-east-1

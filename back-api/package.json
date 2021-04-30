@@ -4,10 +4,10 @@
   "main": "src/index.ts",
   "scripts": {
     "start": "ts-node-dev --inspect -- src/index.ts",
-    "deploy": "sls deploy --stage staging --stack-name vizir-staging",
-    "deploy-prod": "sls deploy --stage prod --stack-name vizir-prod",
-    "deploy:function": "sls deploy --stage staging --stack-name vizir-staging --function app",
-    "deploy-prod:function": "sls deploy --stage prod --stack-name vizir-prod --function app",
+    "deploy": "sls deploy --stage staging --stack-name dialog-staging",
+    "deploy-prod": "sls deploy --stage prod --stack-name dialog-prod",
+    "deploy:function": "sls deploy --stage staging --stack-name dialog-staging --function app",
+    "deploy-prod:function": "sls deploy --stage prod --stack-name dialog-prod --function app",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
