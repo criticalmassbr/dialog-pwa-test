@@ -1,12 +1,9 @@
-import { APIGatewayProxyHandler } from 'aws-lambda';
-import 'source-map-support/register';
+import 'source-map-support/register'
+import * as serverlessHttp from 'serverless-http'
+import app from './src/config/server'
 
-export const run: APIGatewayProxyHandler = async (event, _context) => {
-  return {
-    statusCode: 200,
-    body: JSON.stringify({
-      message: 'Vizir teste prático!',
-      input: event,
-    }, null, 2),
-  };
+const handler = serverlessHttp(app)
+
+export const run = (event, context) => {
+  return handler(event, context)
 }
