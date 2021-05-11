@@ -1,0 +1,29 @@
+type Query {
+  list(name: String): [User]
+  getById(id: String!): [User]
+}
+
+type User {
+  _id: ID
+  index: Int
+  picture: String
+  age: Int
+  eyeColor: String
+  name: String
+  company: String
+  email: String
+  phone: String
+  friends: [Friends]
+}
+
+type Friends {
+  _id: ID
+  index: Int
+  picture: String
+  age: Int
+  eyeColor: String
+  name: String
+  company: String
+  email: String
+  phone: String
+}
