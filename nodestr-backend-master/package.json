@@ -1,0 +1,29 @@
+{
+  "name": "node-str",
+  "version": "1.0.0",
+  "main": "index.js",
+  "dependencies": {
+    "@sendgrid/mail": "^7.3.0",
+    "body-parser": "^1.19.0",
+    "compose": "^0.1.2",
+    "debug": "^4.2.0",
+    "docker": "^1.0.0",
+    "express": "^4.17.1",
+    "gulp": "^4.0.2",
+    "http": "0.0.1-security",
+    "mongoose": "^5.10.11"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  },
+  "scripts": {
+    "start": "node ./bin/server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bin": {
+    "node-str": "server.js"
+  },
+  "description": ""
+}
