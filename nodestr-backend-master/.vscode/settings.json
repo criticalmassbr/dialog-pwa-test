@@ -1,0 +1,27 @@
+{
+    "totvsLanguageServer.welcomePage": false,
+    "atlascode.bitbucket.explorer.relatedBitbucketIssues.enabled": false,
+    "atlascode.bitbucket.explorer.relatedJiraIssues.enabled": false,
+    "atlascode.bitbucket.issues.explorerEnabled": false,
+    "atlascode.bitbucket.issues.monitorEnabled": false,
+    "totvsLanguageServer.folder.extensionsAllowed": [
+    
+        ".PRW",
+        ".PRX",
+        ".PRG",
+        ".PPX",
+        ".PPP",
+        ".TLPP",
+        ".APW",
+        ".APH",
+        ".APL",
+        ".AHU",
+        ".TRES",
+        ".PNG",
+        ".BMP",
+        ".RES",
+        ".4GL",
+        ".PER",
+        ".JS"
+    ]
+}
