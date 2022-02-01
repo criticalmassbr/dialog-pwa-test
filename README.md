@@ -1,96 +1,46 @@
-# Dialog FullStack (react/pwa/node) Test
+# Getting Started with Create React App
 
-## Objetivo
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-Desenvolver uma API GraphQL node e um front-end React/PWA:
+## Available Scripts
 
-## Descrição da API
+In the project directory, you can run:
 
-Deve conter uma query `list()`.
+### `yarn start`
 
-A chamada query `list` sem parâmetro (o termo da busca por nome) deverá retornar todos os itens.
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-Se fornecido o argumento da busca `name`, deverá retornar os dados que contém parte da string, usar RegEx no filtro.
+The page will reload if you make edits.\
+You will also see any lint errors in the console.
 
-Download: [Data JSON](db.json)
+### `yarn test`
 
-Modelo:
-```javascript
-[
-    {
-        "_id": "5f1b3f4b7917ef26107bd58c",
-        "index": 0,
-        "picture": "https://i.pravatar.cc/200?u=5f1b3f4b7917ef26107bd58c",
-        "age": 37,
-        "eyeColor": "brown",
-        "name": "Weber Stein",
-        "company": "VIAGRAND",
-        "email": "weber.stein@viagrand.ca",
-        "phone": "+1 (866) 533-3564",
-        "friends": [
-          {
-            "_id": "5f1d7f3e8882c9c811b111ce",
-            "index": 0,
-            "picture": "https://i.pravatar.cc/200?u=5f1d7f3e8882c9c811b111ce",
-            "age": 23,
-            "eyeColor": "green",
-            "name": "Patti Mckenzie",
-            "company": "DAISU",
-            "email": "pattimckenzie@daisu.com",
-            "phone": "+1 (960) 566-3327"
-          },
-        ],
-        "greeting": "Hello, Weber! You have 9 unread messages."
-    }
-]
-```
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### Stack:
-- GraphQL (apollo ou relay)
-- Express
+### `yarn build`
 
-### Requisitos:
-- colocar um middleware no Express para log dos requests
-- no final desse `README.md` colocar uma chamada funcional para a API em `curl`.
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-### Diferencial
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-- Usar TypeScript
-- Regex da pesquisa: considerar caractere de espaço, dado o payload acima `name: Weber Stein`, se entrar com `we in` deve retornar no resultado `Weber Stein`
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### Executar o projeto
+### `yarn eject`
 
-Deverá executar com `yarn start` na porta 4000
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-## Descrição do React/PWA
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-### Tela Inicial
-![tela_incial](./docs/browser02.png)
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-### Tela detalhe de amigos
-![tela_detalhe_amigos](./docs/browser03.png)
+## Learn More
 
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-### Stack:
-- React
-- React Hooks
-- React Router
-- Apollo client (opcional)
-- styled-components
-- CSS Grid
-  - deve ser responsivo, no celular exibir apenas um card na horizontal.
-- Service Worker
-  - app deve funcionar off-line (páginas que foram visitadas)
-
-### Diferencial
-
-- Usar TypeScript
-
-### Executar o projeto
-
-Deverá executar com `yarn start` na porta 3000
-
-
-### Anotações que valem menção colocar aqui:
-...
+To learn React, check out the [React documentation](https://reactjs.org/).
