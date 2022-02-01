@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { UsersContext } from "../../providers/users";
+import FriendCard from "../../components/friendCard";
 const Home = () => {
   const { friends } = useContext(UsersContext);
 
