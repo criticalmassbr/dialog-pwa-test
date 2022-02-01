@@ -1,12 +1,6 @@
 import { createContext, useState, useEffect, ReactNode } from "react";
 import axios from "axios";
 
-interface UserProviderData {
-  users: User[];
-}
-interface UsersProviderProps {
-  children: ReactNode;
-}
 interface User {
   age: number;
   company: string;
@@ -17,16 +11,27 @@ interface User {
   profilePic: string;
 }
 
+interface UserProviderData {
+  friends: User[];
+  user?: User;
+}
+interface UsersProviderProps {
+  children: ReactNode;
+}
+
 export const UsersContext = createContext({} as UserProviderData);
 
 export const UsersProvider = ({ children }: UsersProviderProps) => {
-  const [users, setUsers] = useState<User[]>([]);
-
+  const [friends, setFriends] = useState<User[]>([]);
+  const [user, setUser] = useState<User>();
   useEffect(() => {
     axios
       .get("/users")
       .then((response) => {
-        setUsers(response.data);
+        const data = response.data;
+        const splicedUser = data.splice(0, 1);
+        setUser(splicedUser[0]);
+        setFriends(data);
       })
       .catch((error) => {
         console.log(error);
@@ -34,6 +39,8 @@ export const UsersProvider = ({ children }: UsersProviderProps) => {
   }, []);
 
   return (
-    <UsersContext.Provider value={{ users }}>{children}</UsersContext.Provider>
+    <UsersContext.Provider value={{ friends, user }}>
+      {children}
+    </UsersContext.Provider>
   );
 };
