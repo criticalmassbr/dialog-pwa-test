@@ -4,6 +4,6 @@ import FriendCard from "../../components/friendCard";
 const Home = () => {
   const { friends } = useContext(UsersContext);
 
-  return <FriendCard card={friends[0]}></FriendCard>;
+  return <h1>Home page</h1>;
 };
 export default Home;
