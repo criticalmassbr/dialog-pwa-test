@@ -1,9 +1,5 @@
-import { useContext } from "react";
-import { UsersContext } from "../../providers/users";
-import FriendCard from "../../components/friendCard";
+import FriendsList from "../../components/friendsList";
 const Home = () => {
-  const { friends } = useContext(UsersContext);
-
-  return <h1>Home page</h1>;
+  return <FriendsList />;
 };
 export default Home;
