@@ -5,18 +5,19 @@ export const Container = styled.header`
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  margin-bottom: 20px;
   img {
     width: 200px;
   }
   @media (min-width: 768px) {
     justify-content: left;
     flex-direction: row;
-    margin-bottom: 0;
   }
 `;
 export const Input = styled.div`
   display: flex;
+  background-color: #fff;
+  border-radius: 10px 10px 10px 10px;
+
   input {
     width: 200px;
     padding: 10px;
