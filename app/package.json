@@ -47,6 +47,7 @@
     ]
   },
   "devDependencies": {
-    "@types/styled-components": "^5.1.21"
+    "@types/styled-components": "^5.1.21",
+    "eslint-plugin-react-hooks": "^4.3.0"
   }
 }

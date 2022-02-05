@@ -1,12 +1,16 @@
+import React, { createContext, useState } from "react";
 import styled from "styled-components";
 
-function SearchInput({className}:{className?:string}){
+function SearchInput({className, setState}:{className?:string, setState: Function}){
+
+    const getValue = (ev:React.FormEvent)=>{ return (ev.target as HTMLInputElement).value }
+
     return(
-        <input className={className} type="text" placeholder="Type to search friends" onInput={(ev)=>console.log((ev.target as HTMLInputElement).value)}/>
+        <input className={className} type="text" placeholder="Type to search friends" onInput={ev => setState(getValue(ev))}/>
     ) 
 }
 
-const Title = styled.span`
+export const Title = styled.span`
     font-size: 30px;
     color: #0EB27B;
     font-weight: bold;
@@ -14,7 +18,7 @@ const Title = styled.span`
     margin: 0px 30px 0px 15px;
 `;
 
-const SearchBar = styled(SearchInput)`
+export const SearchBar = styled(SearchInput)`
     padding: 10px 15px;
     border-radius: 20px;
     border: none;
@@ -23,7 +27,7 @@ const SearchBar = styled(SearchInput)`
     font-size: 14px;
 `;
 
-const Menu = styled.div`
+export const Menu = styled.div`
     min-height: max-content;
     height: max-content;
     padding: 20px;
@@ -33,11 +37,11 @@ const Menu = styled.div`
     }
 `;
 
-export default function NavBar(){
-    return(
-        <Menu>
-            <Title>MySocial</Title>
-            <SearchBar></SearchBar>
-        </Menu>
-    )
-}
+// export default function NavBar(){
+//     return(
+//         <Menu>
+//             <Title>MySocial</Title>
+//             <SearchBar/>
+//         </Menu>
+//     )
+// }

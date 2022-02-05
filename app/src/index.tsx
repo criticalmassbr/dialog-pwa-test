@@ -1,13 +1,13 @@
-// import React from 'react';
+import { useState} from 'react';
 import ReactDOM from 'react-dom';
 import { createGlobalStyle } from 'styled-components';
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import {ApolloClient, InMemoryCache, ApolloProvider, useQuery, gql} from "@apollo/client"
+import {ApolloClient, InMemoryCache, ApolloProvider} from "@apollo/client"
 
-import NavBar from "./components/NavBar"
-import {FriendList} from "./components/FriendList"
-import {UserInfo} from "./components/UserInfo"
+import { Menu, SearchBar, Title } from "./components/NavBar"
+import FriendList from "./components/FriendList"
+import ProfilePage from "./components/ProfilePage"
 
 const client = new ApolloClient({uri: "http://localhost:4000", cache: new InMemoryCache()});
 const GlobalStyle = createGlobalStyle`
@@ -34,29 +34,33 @@ const GlobalStyle = createGlobalStyle`
 // 	.catch( err => console.error(err))
 
 function App(){
+	
+	// const [users, setUsers] = useState([]);
+	// const [profile, setProfile] = useState({});
+	const [search, setSearch] = useState("");
+
+	console.log("Parent render")
+
   	return (
 		<div>
 			<GlobalStyle/>
-			<NavBar/>
-			<div>
-				<Routes>
-					<Route path='/' element={<FriendList>Your friends</FriendList>}/>
-					<Route path='friend_detail' element={
-						<div>
-							<UserInfo>This guy's info</UserInfo>
-							<FriendList>This guy's friends</FriendList>
-						</div>
-					}/>
-				</Routes>
-			</div>
+			<Menu>
+				<Title>MySocial</Title>
+				<SearchBar setState={setSearch}/>
+			</Menu>
+			<Routes>
+				<Route path='/' element={<FriendList state={search}/>}/>
+				<Route path='/friend_profile' element={<ProfilePage/>}/>
+			</Routes>
 		</div>
   	)
 }
 
-
 ReactDOM.render( 
-	<BrowserRouter>
-		{App()}
-	</BrowserRouter>, 
+	<ApolloProvider client={client}>
+		<BrowserRouter>
+			<App/>
+		</BrowserRouter>
+	</ApolloProvider>, 
 	document.getElementById('root')
 );
