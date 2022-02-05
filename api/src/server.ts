@@ -48,9 +48,11 @@ function initServer(){
     }
 
     let express = require("express");
+    let cors = require("cors");
     app = express();
 
     app.use( morgan("tiny") );
+    app.use(cors());
     app.use('/graphql',
         graphqlHTTP({
             schema: schema,
@@ -77,3 +79,42 @@ function findName(name?:string){
 
 
 initServer();
+
+
+// var users: Person[];
+// var typedef: string;
+// var resolvers: object;
+
+// function loadDependencies(){
+//     try{
+//         let data = readFileSync("dist/server/json/users.json").toString();
+//         users = JSON.parse(data);
+//     }catch(e){
+//         console.error(`Failed to load users DB: (${e}).`);
+//         return false;
+//     }
+
+//     typedef =  `
+//         type Query {
+//             list(name:String): [Person]
+//         }
+
+//         type Person {
+//             _id: String!
+//             index: Int,
+//             picture: String,
+//             age: Int,
+//             eyeColor: String,
+//             name: String,
+//             company: String,
+//             email: String,
+//             phone: String,
+//             greeting: String,
+//             friends: [Person]
+//         }
+//     `;
+
+//     resolvers = {
+//         list: ({name})=>{return findName(name)}
+//     }
+// }
