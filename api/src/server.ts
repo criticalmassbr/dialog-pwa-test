@@ -49,17 +49,12 @@ function initServer(){
 
     let express = require("express");
     let cors = require("cors");
-    app = express();
 
+    app = express();
+    
     app.use( morgan("tiny") );
     app.use(cors());
-    app.use('/graphql',
-        graphqlHTTP({
-            schema: schema,
-            graphiql: true,
-            rootValue: handlers
-        })
-    );
+    app.use( graphqlHTTP({ schema: schema, graphiql: true, rootValue: handlers}));
     
     app.listen(4000);
     console.log(`GraphQL server running on port 4000`)
