@@ -3,11 +3,13 @@ import ReactDOM from 'react-dom';
 import { createGlobalStyle } from 'styled-components';
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import {ApolloClient, InMemoryCache, ApolloProvider} from "@apollo/client"
+import {ApolloClient, InMemoryCache, ApolloProvider, gql, useQuery} from "@apollo/client"
 
 import { Menu, SearchBar, Title } from "./components/NavBar"
-import FriendList from "./components/FriendList"
-import ProfilePage from "./components/ProfilePage"
+import { FilteredFriends, CardContainer } from './components/FriendList';
+// import ProfilePage, { UserInfo } from "./components/ProfilePage"
+import { AppContext } from './components/AppContext';
+import UserPanel from './components/ProfilePage';
 
 const client = new ApolloClient({uri: "http://localhost:4000", cache: new InMemoryCache()});
 const GlobalStyle = createGlobalStyle`
@@ -18,39 +20,33 @@ const GlobalStyle = createGlobalStyle`
 		font-family: Arial;
 	}
 `
-// client.query(
-// 	{
-// 		query: gql`
-// 			query getUsers {
-// 				list{
-// 					_id,
-// 					name
-// 				}
-// 			}
-// 		`
-// 	}
-// )
-// 	.then( ({data}) => console.log(data.list))
-// 	.catch( err => console.error(err))
 
 function App(){
 	
-	// const [users, setUsers] = useState([]);
-	// const [profile, setProfile] = useState({});
-	const [search, setSearch] = useState("");
-
-	console.log("Parent render")
+	const [filter, setFilter] = useState<string>("");
+	const [profile, setProfile] = useState<Person | undefined>(undefined);
 
   	return (
 		<div>
 			<GlobalStyle/>
 			<Menu>
 				<Title>MySocial</Title>
-				<SearchBar setState={setSearch}/>
+				<SearchBar setFilter={setFilter}/>
 			</Menu>
 			<Routes>
-				<Route path='/' element={<FriendList state={search}/>}/>
-				<Route path='/friend_profile' element={<ProfilePage/>}/>
+				<Route path='/' element={
+					<AppContext.Provider value={{setProfile}}>
+						<FilteredFriends filter={filter}/>
+					</AppContext.Provider>
+				}/>
+				<Route path='/user_profile' element={	
+					<div>
+						<AppContext.Provider value={{profile, setProfile}}>
+							<UserPanel/>
+							<CardContainer users={profile?.friends} status="Loaded."/> {/*TODO:understand "?"" use here*/}
+						</AppContext.Provider>
+					</div>
+				}/>
 			</Routes>
 		</div>
   	)
@@ -64,3 +60,4 @@ ReactDOM.render(
 	</ApolloProvider>, 
 	document.getElementById('root')
 );
+

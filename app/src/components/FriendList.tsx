@@ -1,7 +1,8 @@
 import styled from "styled-components"
-import {useEffect, useRef} from "react"
 import { gql, useQuery } from "@apollo/client";
-
+import {useNavigate} from "react-router"
+import { useContext } from "react";
+import { AppContext } from "./AppContext";
 
 const Card = styled.span`
     height: 300px;
@@ -14,8 +15,7 @@ const Card = styled.span`
         height:50px;
     }
 `
-
-const CardContainer = styled.div`
+const Container = styled.div`
     height: auto;
     background-color: gray;
     display: grid;
@@ -25,9 +25,13 @@ const CardContainer = styled.div`
 `;
 
 function UserCard({user}:{user:Person}){
+   
+    const {setProfile} = useContext(AppContext);
+    const nav = useNavigate();
+    const showUserProfile = ()=>{ setProfile(user); nav("/user_profile?user_id="+user._id) }
 
     return (
-        <Card key={user._id}>
+        <Card onClick={showUserProfile}>
             <img src={user.picture}></img>
             <div>Name: {user.name} </div>
             <div>Eye Color: {user.eyeColor} </div>
@@ -37,52 +41,62 @@ function UserCard({user}:{user:Person}){
     )
 }
 
-export default function FriendList({state}:{state:string}){
-    //TODO: this needs to be stored somewhere
+export function CardContainer({users, status}: {status:string, users?:Person[]}){
+
+    const buildCards = ()=>{
+        if(users){
+            // return users.length > 0 ? users.map( (usr:Person) => <UserCard user={usr} key={usr._id}></UserCard>) : <div>Nenhum resultado encontrado</div>
+            if(users.length == 0){ return <div>Nenhum resultado encontrado</div>}
+            return  users.map( (usr:Person) => <UserCard user={usr} key={usr.index}></UserCard>)
+        }
+
+        return <div>{status}</div> 
+    }
+
+    return (
+        <Container>
+            {buildCards()}
+        </Container>
+    )
+}
+
+
+export function FilteredFriends({filter}:{filter: string}){
+
     const users_query = gql`
         query GetUsers($name:String){
         	list(name: $name){
         		_id
-                index
-                picture
-                age
-                eyeColor
-                name
-                company
-                email
-                phone
-                greeting
-                friends{
-                    index
-                    picture
-                    age
-                    eyeColor
-                    name
-                    company
-                    email
-                    phone
-                    greeting
-                }
+        		index
+        		picture
+        		age
+        		eyeColor
+        		name
+        		company
+        		email
+        		phone
+        		greeting
+        		friends{
+        			index
+        			picture
+        			age
+        			eyeColor
+        			name
+        			company
+        			email
+        			phone
+        			greeting
+        		}
         	}
         }
     `;
 
-    const {loading, error, data}:QueryResult = useQuery(users_query,{variables:{name:state}});
-   
+    const {loading, error, data}:QueryResult = useQuery(users_query, {variables: {name: filter}}) 
 
-    const buildCards = ()=>{
-        if(loading){ return <div>Loading...</div>}
-
-        if(error){ return <div> Error: {error}</div> }
-
-        if(data){
-            return data.list.length > 0 ?  data.list.map( (usr:Person) => <UserCard user={usr} key={usr._id}></UserCard>) : <div>Nenhum resultado encontrado</div>
-        }
-    }
-    
     return (
-        <CardContainer>
-            {buildCards()}
-        </CardContainer>
+        <CardContainer 
+            status={ loading ? "Loading..." : "Something went wrong: " + JSON.stringify(error) }
+            users = {data ? data.list : undefined} 
+        />
     )
 }

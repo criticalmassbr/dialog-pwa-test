@@ -1,12 +1,11 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useContext, useState } from "react";
 import styled from "styled-components";
 
-function SearchInput({className, setState}:{className?:string, setState: Function}){
-
+function SearchInput({className, setFilter}:{className?:string, setFilter: Function}){
     const getValue = (ev:React.FormEvent)=>{ return (ev.target as HTMLInputElement).value }
-
+   
     return(
-        <input className={className} type="text" placeholder="Type to search friends" onInput={ev => setState(getValue(ev))}/>
+        <input className={className} type="text" placeholder="Type to search friends" onInput={ev => setFilter(getValue(ev))}/>
     ) 
 }
 
@@ -36,12 +35,3 @@ export const Menu = styled.div`
         vertical-align: middle
     }
 `;
-
-// export default function NavBar(){
-//     return(
-//         <Menu>
-//             <Title>MySocial</Title>
-//             <SearchBar/>
-//         </Menu>
-//     )
-// }

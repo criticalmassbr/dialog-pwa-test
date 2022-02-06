@@ -17,3 +17,8 @@ type QueryResult = {
     error?: any,
     loading: boolean
 }
+
+type AppContext = {
+    profile?:Person,
+    setProfile: Function
+}
