@@ -9,28 +9,43 @@ function SearchInput({className, setFilter}:{className?:string, setFilter: Funct
 }
 
 export const Title = styled.span`
-    font-size: 30px;
-    color: #0EB27B;
+    font-size: 35px;
+    color: #FFF;
     font-weight: bold;
     display: inline;
-    margin: 0px 30px 0px 15px;
+    margin: 0px 20px 0px 15px;
+
+    @media (max-width: 800px){
+        display: block;
+        text-align:center;
+        margin: 10px 0px;
+    }
 `;
 
 export const SearchBar = styled(SearchInput)`
     padding: 10px 15px;
     border-radius: 20px;
     border: none;
-    min-width: 250px;
-    border: 1px solid #0EB27B;
+    min-width: 300px;
+    border: none;
     font-size: 14px;
 `;
 
 export const Menu = styled.div`
-    min-height: max-content;
     height: max-content;
+    margin-bottom: 10px;
     padding: 20px;
+    background-color: #0EB27B;
+    position: sticky;
+    top: 0px;
 
     ${Title}, ${SearchBar} {
         vertical-align: middle
+    }
+
+    @media (max-width: 800px){
+        text-align:center;
+        padding: 10px;
+        
     }
 `;

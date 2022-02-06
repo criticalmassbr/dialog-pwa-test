@@ -1,28 +1,8 @@
-import styled from "styled-components"
 import { gql, useQuery } from "@apollo/client";
-import {useNavigate} from "react-router"
+import { useNavigate } from "react-router"
 import { useContext } from "react";
 import { AppContext } from "./AppContext";
-
-const Card = styled.span`
-    height: 300px;
-    width: 200px;
-    background-color: lightblue;
-    display: inline;
-    grid-row-start: 1;
-
-    img{
-        height:50px;
-    }
-`
-const Container = styled.div`
-    height: auto;
-    background-color: gray;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-gap: 25px;
-    overflow-x: auto;
-`;
+import {Card, CardDescription, PanelTitle, Container} from "./Base"
 
 function UserCard({user}:{user:Person}){
    
@@ -32,16 +12,22 @@ function UserCard({user}:{user:Person}){
 
     return (
         <Card onClick={showUserProfile}>
+
+            <div>
             <img src={user.picture}></img>
-            <div>Name: {user.name} </div>
-            <div>Eye Color: {user.eyeColor} </div>
-            <div>Company: {user.company} </div>
-            <div>Email: {user.email} </div>
+            </div>
+            <CardDescription>
+                <div><b>Name:</b> {user.name} </div>
+                <div><b>Eye Color:</b> {user.eyeColor} </div>
+                <div><b>Age: </b>{user.age} </div>
+                <div><b>Company: </b>{user.company} </div>
+                <div><b>Email: </b> <a href={user.email}>{user.email}</a> </div>
+            </CardDescription>
         </Card>
     )
 }
 
-export function CardContainer({users, status}: {status:string, users?:Person[]}){
+export function CardContainer({users, status, label}: {status:string, users?:Person[], label?:string}){
 
     const buildCards = ()=>{
         if(users){
@@ -54,14 +40,20 @@ export function CardContainer({users, status}: {status:string, users?:Person[]})
     }
 
     return (
-        <Container>
-            {buildCards()}
-        </Container>
+        <div>
+            <PanelTitle>
+                <h3>{label}</h3>
+            </PanelTitle>
+            <Container>
+                {buildCards()}
+            </Container>
+        </div>
+       
     )
 }
 
 
-export function FilteredFriends({filter}:{filter: string}){
+export function FilteredFriends({filter, label}:{filter: string, label?:string}){
 
     const users_query = gql`
         query GetUsers($name:String){
@@ -94,9 +86,13 @@ export function FilteredFriends({filter}:{filter: string}){
     const {loading, error, data}:QueryResult = useQuery(users_query, {variables: {name: filter}}) 
 
     return (
-        <CardContainer 
-            status={ loading ? "Loading..." : "Something went wrong: " + JSON.stringify(error) }
-            users = {data ? data.list : undefined} 
-        />
+        <div>
+            <CardContainer 
+                status={ loading ? "Loading..." : "Something went wrong: " + JSON.stringify(error) }
+                users = {data ? data.list : undefined} 
+                label = { `My friends${ filter == "" ? "" : ' (looking for "' + filter + '")'}` }
+            />
+        </div>
+
     )
 }

@@ -8,8 +8,8 @@ import {ApolloClient, InMemoryCache, ApolloProvider, gql, useQuery} from "@apoll
 
 import { Menu, SearchBar, Title } from "./components/NavBar"
 import { FilteredFriends, CardContainer } from './components/FriendList';
-// import ProfilePage, { UserInfo } from "./components/ProfilePage"
 import { AppContext } from './components/AppContext';
+import {Panel} from "./components/Base";
 import UserPanel from './components/ProfilePage';
 
 register();
@@ -20,7 +20,9 @@ const GlobalStyle = createGlobalStyle`
 		margin: 0px;
 		width: 100vw;
 		height: 100vh;
+		padding: 0px;
 		font-family: Arial;
+		background-color: #F3FEFA;
 	}
 `
 
@@ -39,14 +41,20 @@ function App(){
 			<Routes>
 				<Route path='/' element={
 					<AppContext.Provider value={{setProfile}}>
-						<FilteredFriends filter={filter}/>
+						<Panel>
+							<FilteredFriends filter={filter}/>
+						</Panel>			
 					</AppContext.Provider>
 				}/>
 				<Route path='/user_profile' element={	
 					<div>
 						<AppContext.Provider value={{profile, setProfile}}>
-							<UserPanel/>
-							<CardContainer users={profile?.friends} status="Loaded."/> {/*TODO:understand "?"" use here*/}
+							<Panel>
+								<UserPanel/>
+							</Panel>
+							<Panel>
+								<CardContainer label={profile?.name + "'s friends"}users={profile?.friends} status=""/> {/*TODO:understand "?"" use here*/}
+							</Panel>
 						</AppContext.Provider>
 					</div>
 				}/>
