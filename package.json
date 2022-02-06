@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "@apollo/client": "^3.5.8",
+    "react-router-dom": "^6.2.1"
+  },
+  "devDependencies": {
+    "@types/react-router-dom": "^5.3.3"
+  }
+}

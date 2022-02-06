@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import {useContext} from "react";
+import { useContext } from "react";
 import { AppContext } from "./AppContext";
 
 const UserInfo = styled.div`
@@ -10,7 +10,6 @@ const UserInfo = styled.div`
 export default function UserPanel(){
 
     const {profile} = useContext(AppContext);
-    console.log(profile)
 
     return (
         <div>

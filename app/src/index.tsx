@@ -1,6 +1,7 @@
 import { useState} from 'react';
 import ReactDOM from 'react-dom';
 import { createGlobalStyle } from 'styled-components';
+import {register} from "./serviceWorkerRegistration"
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import {ApolloClient, InMemoryCache, ApolloProvider, gql, useQuery} from "@apollo/client"
@@ -10,6 +11,8 @@ import { FilteredFriends, CardContainer } from './components/FriendList';
 // import ProfilePage, { UserInfo } from "./components/ProfilePage"
 import { AppContext } from './components/AppContext';
 import UserPanel from './components/ProfilePage';
+
+register();
 
 const client = new ApolloClient({uri: "http://localhost:4000", cache: new InMemoryCache()});
 const GlobalStyle = createGlobalStyle`
