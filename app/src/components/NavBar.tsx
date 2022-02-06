@@ -1,4 +1,3 @@
-import React, { createContext, useContext, useState } from "react";
 import styled from "styled-components";
 
 function SearchInput({className, setFilter}:{className?:string, setFilter: Function}){
