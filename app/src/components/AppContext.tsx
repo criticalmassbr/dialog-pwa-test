@@ -1,4 +1,4 @@
 import { createContext } from "react";
 
-const context:AppContext = {setProfile: ()=>{}}
+const context:AppContext = {}
 export const AppContext = createContext(context);

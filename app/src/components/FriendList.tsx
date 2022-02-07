@@ -1,14 +1,11 @@
 import { gql, useQuery } from "@apollo/client";
 import { useNavigate } from "react-router"
-import { useContext } from "react";
-import { AppContext } from "./AppContext";
 import {Card, CardDescription, PanelTitle, Container} from "./Base"
 
 function UserCard({user}:{user:Person}){
    
-    const {setProfile} = useContext(AppContext);
     const nav = useNavigate();
-    const showUserProfile = ()=>{ setProfile(user); nav("/user_profile", {state: {profile: user}}) }
+    const showUserProfile = ()=>{ nav("/user_profile", {state: {profile: user}}) }
 
     return (
         <Card onClick={showUserProfile}>

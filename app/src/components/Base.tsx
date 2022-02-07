@@ -1,4 +1,16 @@
 import styled from "styled-components"
+import {createGlobalStyle} from "styled-components"
+
+export const GlobalStyle = createGlobalStyle`
+	body{
+		margin: 0px;
+		width: 100vw;
+		height: 100vh;
+		padding: 0px;
+		font-family: Arial;
+		background-color: #FFF;
+	}
+`
 
 export const Panel = styled.div`
     margin: 10px 0px;
@@ -15,6 +27,8 @@ export const Card = styled.span`
 
     img{
         width: 260px;
+        height: 260px;
+        background-color: gray
     }
 
     &:hover{

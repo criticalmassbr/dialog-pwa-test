@@ -19,6 +19,5 @@ type QueryResult = {
 }
 
 type AppContext = {
-    profile?:Person,
-    setProfile: Function
+    profile?:Person
 }

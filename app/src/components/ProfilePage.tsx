@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { AppContext } from "./AppContext";
 import {PanelTitle} from "./Base"
 
@@ -27,21 +27,19 @@ const UserInfo = styled.div`
 
 export default function UserPanel(){
 
-    const {profile, setProfile} = useContext(AppContext); 
-    console.log("prof: ", profile);
-    console.log("prof_hist: ", window.history.state.usr?.profile);
-
+    const {profile} = useContext(AppContext); 
+    
     return (
         <div>
             <PanelTitle>
-                <h3>{ profile.name + "'s profile" }</h3>
+                <h3>{ profile ? profile.name + "'s profile" : "" }</h3>
             </PanelTitle>
             <UserInfo>
                 <img key="profile_img" src={profile ? profile.picture : ""}></img>
                 <span key="profile_text">
-                    <div><b>Name:</b> {profile.name} </div>
-                    <div><b>Age: </b>{profile.age} </div>
-                    <div><b>Email: </b> <a href={"mailto: "+ profile.email}>{profile.email}</a> </div>
+                    <div><b>Name:</b> { profile ? profile.name : "-"} </div>
+                    <div><b>Age: </b>{ profile ? profile.age : "-"} </div>
+                    <div><b>Email: </b> <a href={profile ? "mailto: "+ profile.email : ""}>{profile ? profile.email : "-"}</a> </div>
                 </span>            
             </UserInfo>
         </div>
