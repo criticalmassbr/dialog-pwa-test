@@ -4,7 +4,6 @@ import {createGlobalStyle} from "styled-components"
 export const GlobalStyle = createGlobalStyle`
 	body{
 		margin: 0px;
-		width: 100vw;
 		height: 100vh;
 		padding: 0px;
 		font-family: Arial;
@@ -43,7 +42,7 @@ export const Card = styled.span`
 `
 export const Container = styled.div`
     display: inline-grid;
-    width: 100vw;
+    width: 100%;
     padding:10px 20px;
     overflow-x: auto;
     margin: 10px 0px;
@@ -63,20 +62,30 @@ export const CardDescription = styled.div`
 `;
 
 export const PanelTitle = styled.div`
-
-padding:5px;
-background-color: #0EB27B;
-margin: 10px 0px;
-display: inline-block;
-min-width: max-content;
-border: 2px solid #097752;
-border-left: none;
-width: 300px;
-border-radius: 0px 15px 15px 0px;
-color: #FFF;
-h3{
-    margin: 0px;
-    font-size: 20px;
+    padding:5px;
+    background-color: #0EB27B;
+    margin: 10px 0px;
     display: inline-block;
-}
+    min-width: max-content;
+    border: 2px solid #097752;
+    border-left: none;
+    width: 300px;
+    border-radius: 0px 15px 15px 0px;
+    color: #FFF;
+    h3{
+        margin: 0px;
+        font-size: 20px;
+        display: inline-block;
+    }
 `;
+
+export const ErrorPanel =  styled.div`
+    width: 100%;
+    padding: 10px 0px;
+    text-align: center;
+    color: gray;
+    font-size: 24px;
+    font-weight: bold;
+    box-sizing: border-box;
+    margin: 10vh 0;
+`

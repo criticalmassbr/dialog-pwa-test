@@ -5,7 +5,7 @@ import {register} from "./serviceWorkerRegistration"
 import { BrowserRouter, Routes, Route, useNavigate } from 'react-router-dom';
 import {ApolloClient, InMemoryCache, ApolloProvider, gql, useQuery} from "@apollo/client"
 
-import { GlobalStyle, Panel } from './components/Base';
+import { ErrorPanel, GlobalStyle, Panel } from './components/Base';
 import { Menu, SearchBar, Title } from "./components/NavBar"
 import { FilteredFriends, CardContainer } from './components/FriendList';
 import { AppContext } from './components/AppContext';
@@ -22,8 +22,6 @@ function App(){
 
 	const nav = useNavigate(); 
 	
-	console.log("app render")
-
   	return (
 		<div>
 			<GlobalStyle/>
@@ -53,7 +51,7 @@ function App(){
 							
 							: 
 							
-							<div>Nothing to see here :(</div>
+							<ErrorPanel>Nothing to see here :(</ErrorPanel>
 							}
 							
 						</AppContext.Provider>

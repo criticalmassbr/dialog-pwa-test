@@ -1,6 +1,6 @@
 import { gql, useQuery } from "@apollo/client";
 import { useNavigate } from "react-router"
-import {Card, CardDescription, PanelTitle, Container} from "./Base"
+import {Card, CardDescription, PanelTitle, Container, ErrorPanel} from "./Base"
 
 function UserCard({user}:{user:Person}){
    
@@ -23,15 +23,14 @@ function UserCard({user}:{user:Person}){
     )
 }
 
-export function CardContainer({users, status, label}: {status:string, users?:Person[], label?:string}){
+export function CardContainer({users = [], status, label}: {status?:string, users:Person[], label?:string}){
 
     const buildCards = ()=>{
-        if(users){
-            if(users.length == 0){ return <div>Your search returned no results :(</div>}
-            return  users.map( (usr:Person) => <UserCard user={usr} key={usr.index}></UserCard>)
+        if(users.length == 0){ 
+            return <ErrorPanel>{ status || "Nothing to see here :("} </ErrorPanel>
         }
 
-        return <div>{status}</div> 
+        return  <Container>{users.map( (usr:Person) => <UserCard user={usr} key={usr.index}></UserCard>)}</Container>
     }
 
     return (
@@ -39,9 +38,7 @@ export function CardContainer({users, status, label}: {status:string, users?:Per
             <PanelTitle>
                 <h3>{label}</h3>
             </PanelTitle>
-            <Container>
                 {buildCards()}
-            </Container>
         </div>
        
     )
@@ -83,7 +80,7 @@ export function FilteredFriends({filter, label}:{filter: string, label?:string})
     return (
         <div>
             <CardContainer 
-                status={ loading ? "Loading..." : "Something went wrong: " + JSON.stringify(error) }
+                status={ loading ? "Loading..." : "No friends match the search criteria" }
                 users = {data ? data.list : undefined} 
                 label = { "My Friends" }
             />

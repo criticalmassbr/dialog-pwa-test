@@ -13,7 +13,9 @@ const UserInfo = styled.div`
     }
 
     img{
-        width: 100px;
+        width: 80px;
+        height: 80px;
+        background-color: gray;
         display: inline-block;
     }
 
