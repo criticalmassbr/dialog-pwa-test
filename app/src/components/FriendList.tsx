@@ -12,16 +12,15 @@ function UserCard({user}:{user:Person}){
 
     return (
         <Card onClick={showUserProfile}>
-
             <div>
-            <img src={user.picture}></img>
+                <img src={user.picture}></img>
             </div>
             <CardDescription>
                 <div><b>Name:</b> {user.name} </div>
                 <div><b>Eye Color:</b> {user.eyeColor} </div>
                 <div><b>Age: </b>{user.age} </div>
                 <div><b>Company: </b>{user.company} </div>
-                <div><b>Email: </b> <a href={user.email}>{user.email}</a> </div>
+                <div><b>Email: </b>{user.email}</div>
             </CardDescription>
         </Card>
     )
@@ -31,8 +30,7 @@ export function CardContainer({users, status, label}: {status:string, users?:Per
 
     const buildCards = ()=>{
         if(users){
-            // return users.length > 0 ? users.map( (usr:Person) => <UserCard user={usr} key={usr._id}></UserCard>) : <div>Nenhum resultado encontrado</div>
-            if(users.length == 0){ return <div>Nenhum resultado encontrado</div>}
+            if(users.length == 0){ return <div>Your search returned no results :(</div>}
             return  users.map( (usr:Person) => <UserCard user={usr} key={usr.index}></UserCard>)
         }
 
@@ -90,7 +88,7 @@ export function FilteredFriends({filter, label}:{filter: string, label?:string})
             <CardContainer 
                 status={ loading ? "Loading..." : "Something went wrong: " + JSON.stringify(error) }
                 users = {data ? data.list : undefined} 
-                label = { `My friends${ filter == "" ? "" : ' (looking for "' + filter + '")'}` }
+                label = { "My Friends" }
             />
         </div>
 

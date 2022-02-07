@@ -4,22 +4,17 @@ export const Panel = styled.div`
     margin: 10px 0px;
 `;
 export const Card = styled.span`
-    height: 340px;
-    width: 240px;
+    height: 380px;
+    width: 260px;
     background-color: #ffffff;
     display: inline;
-    grid-row-start: 1;
     border-radius: 5px;
     overflow: hidden;
     box-shadow: 2px 2px 2px lightgray;
     color: gray;
 
-    a{
-        color:#0EB27B
-    }
-
     img{
-        width: 240px;
+        width: 260px;
     }
 
     &:hover{
@@ -34,16 +29,23 @@ export const Card = styled.span`
 `
 export const Container = styled.div`
     display: inline-grid;
-    grid-gap: 10vw;
     width: 100vw;
-    padding:10px;
+    padding:10px 20px;
     overflow-x: auto;
     margin: 10px 0px;
+    box-sizing: border-box;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    justify-items: center;
+    grid-gap: 40px;
 `;
 
 export const CardDescription = styled.div`
     padding: 10px;
     font-size: 13px;
+
+    div{
+        margin-bottom: 4px;
+    }
 `;
 
 export const PanelTitle = styled.div`

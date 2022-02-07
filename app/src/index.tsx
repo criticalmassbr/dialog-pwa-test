@@ -22,7 +22,7 @@ const GlobalStyle = createGlobalStyle`
 		height: 100vh;
 		padding: 0px;
 		font-family: Arial;
-		background-color: #F3FEFA;
+		background-color: #FFF;
 	}
 `
 
@@ -35,7 +35,7 @@ function App(){
 		<div>
 			<GlobalStyle/>
 			<Menu>
-				<Title>MySocial</Title>
+				<Title onClick={() => document.location = "/"}>MySocial</Title>
 				<SearchBar setFilter={setFilter}/>
 			</Menu>
 			<Routes>
@@ -53,7 +53,7 @@ function App(){
 								<UserPanel/>
 							</Panel>
 							<Panel>
-								<CardContainer label={profile?.name + "'s friends"}users={profile?.friends} status=""/> {/*TODO:understand "?"" use here*/}
+								<CardContainer label={profile?.name + "'s friends"} users={profile?.friends} status=""/> {/*TODO:understand "?"" use here*/}
 							</Panel>
 						</AppContext.Provider>
 					</div>

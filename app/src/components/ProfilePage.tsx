@@ -39,7 +39,7 @@ export default function UserPanel(){
                 <span key="profile_text">
                     <div><b>Name:</b> {profile.name} </div>
                     <div><b>Age: </b>{profile.age} </div>
-                    <div><b>Email: </b> <a href={profile.email}>{profile.email}</a> </div>
+                    <div><b>Email: </b> <a href={"mailto: "+ profile.email}>{profile.email}</a> </div>
                 </span>            
             </UserInfo>
         </div>
