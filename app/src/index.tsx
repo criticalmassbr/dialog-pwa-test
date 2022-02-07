@@ -35,7 +35,7 @@ function App(){
 						<FilteredFriends filter={filter}/>
 					</Panel>			
 				}/>
-				<Route path='/user_profile' element={/* TODO:This element should not render on profile = undefined */	
+				<Route path='/user_profile' element={
 					<div>
 						<AppContext.Provider value={{profile}}>
 							{ profile ? 
