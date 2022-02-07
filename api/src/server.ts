@@ -2,13 +2,20 @@ import { graphqlHTTP } from "express-graphql"
 import { buildSchema } from "graphql"
 import { readFileSync } from "fs"
 
+
 import { matchName } from "./modules/string_matcher.js";
+import { logRequest } from "./modules/log.js";
 import { ApolloServer } from "apollo-server";
 
 var users: Person[];
 var typeDefs: string;
 var resolvers: object;
 
+/**
+ * Loads needed dependencies like files and definitions.
+ * 
+ * @returns {boolean} Flag result of loading process
+ */
 function loadDependencies():boolean{
     try{
         let data = readFileSync("dist/server/json/users.json").toString();
@@ -45,12 +52,19 @@ function loadDependencies():boolean{
     return true;
 }
 
-function initApollo(){
-    const server = new ApolloServer({typeDefs, resolvers: { Query: {list: (parent, {name})=>{return findName(name)} }}});
+/**
+ * Creates Apollo Server instance
+ */
+function initApollo(): void{
+    const morgan = require("morgan");
+    const server = new ApolloServer({typeDefs, resolvers: { Query: {list: (parent, {name})=>{return findName(name)} }}, plugins: [logRequest] });
     server.listen().then( ()=>{ console.log("ApolloServer running on port 4000") } )
 }
 
-function initHTTPGraphQL():void{
+/**
+ * Creates an ExpressGraphQL server instance.
+ */
+function initExpressGraphQL():void{
     const express = require("express");
     const cors = require("cors");
     const morgan = require("morgan");
@@ -66,14 +80,14 @@ function initHTTPGraphQL():void{
 }
 
 if(loadDependencies()){
-    // initHTTPGraphQL(); //Did this one before realizing the apollo-server requirement.
+    // initExpressGraphQL(); //Did this one before realizing the apollo-server requirement.
     initApollo();
 }
 else{
     console.log("Failed to load dependencies.")
 }
 
-//TODO: Add JSDoc comments
+
 function findName(name?:string){
     if(name){
         return users.filter(

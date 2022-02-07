@@ -4,10 +4,16 @@ const express_graphql_1 = require("express-graphql");
 const graphql_1 = require("graphql");
 const fs_1 = require("fs");
 const string_matcher_js_1 = require("./modules/string_matcher.js");
+const log_js_1 = require("./modules/log.js");
 const apollo_server_1 = require("apollo-server");
 var users;
 var typeDefs;
 var resolvers;
+/**
+ * Loads needed dependencies like files and definitions.
+ *
+ * @returns {boolean} Flag result of loading process
+ */
 function loadDependencies() {
     try {
         let data = fs_1.readFileSync("dist/server/json/users.json").toString();
@@ -41,11 +47,18 @@ function loadDependencies() {
     };
     return true;
 }
+/**
+ * Creates Apollo Server instance
+ */
 function initApollo() {
-    const server = new apollo_server_1.ApolloServer({ typeDefs, resolvers: { Query: { list: (parent, { name }) => { return findName(name); } } } });
+    const morgan = require("morgan");
+    const server = new apollo_server_1.ApolloServer({ typeDefs, resolvers: { Query: { list: (parent, { name }) => { return findName(name); } } }, plugins: [log_js_1.logRequest] });
     server.listen().then(() => { console.log("ApolloServer running on port 4000"); });
 }
-function initHTTPGraphQL() {
+/**
+ * Creates an ExpressGraphQL server instance.
+ */
+function initExpressGraphQL() {
     const express = require("express");
     const cors = require("cors");
     const morgan = require("morgan");
@@ -57,13 +70,12 @@ function initHTTPGraphQL() {
     console.log(`HTTPGraphQL running on port 4000`);
 }
 if (loadDependencies()) {
-    // initHTTPGraphQL(); //Did this one before realizing the apollo-server requirement.
+    // initExpressGraphQL(); //Did this one before realizing the apollo-server requirement.
     initApollo();
 }
 else {
     console.log("Failed to load dependencies.");
 }
-//TODO: Add JSDoc comments
 function findName(name) {
     if (name) {
         return users.filter((usr) => { return string_matcher_js_1.matchName(name, usr.name); });
