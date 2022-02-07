@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "outDir": "../dist/server",
+        "watch": false,
+        "target": "es2020",
+        "moduleResolution": "Node",
+        "skipLibCheck": true
+    },
+    "exclude": [
+        "node_modules"
+    ],
+
+}
