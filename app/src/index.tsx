@@ -1,9 +1,9 @@
-import { useState} from 'react';
+import { useState } from 'react';
 import ReactDOM from 'react-dom';
 import { createGlobalStyle } from 'styled-components';
 import {register} from "./serviceWorkerRegistration"
 
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useNavigate } from 'react-router-dom';
 import {ApolloClient, InMemoryCache, ApolloProvider, gql, useQuery} from "@apollo/client"
 
 import { Menu, SearchBar, Title } from "./components/NavBar"
@@ -29,13 +29,16 @@ const GlobalStyle = createGlobalStyle`
 function App(){
 	
 	const [filter, setFilter] = useState<string>("");
-	const [profile, setProfile] = useState<Person | undefined>(undefined);
+	const [profile, setProfile] = useState<Person | undefined>(window.history.state.usr?.profile);
+	const nav = useNavigate();
+	 console.log("App", profile)
+	 console.log("App_hist", window.history.state.usr?.profile)
 
   	return (
 		<div>
 			<GlobalStyle/>
 			<Menu>
-				<Title onClick={() => document.location = "/"}>MySocial</Title>
+				<Title onClick={() => nav("/")}>MySocial</Title>
 				<SearchBar setFilter={setFilter}/>
 			</Menu>
 			<Routes>
@@ -48,12 +51,12 @@ function App(){
 				}/>
 				<Route path='/user_profile' element={	
 					<div>
-						<AppContext.Provider value={{profile, setProfile}}>
+						<AppContext.Provider value={{profile:window.history.state.usr?.profile || profile , setProfile}}>
 							<Panel>
 								<UserPanel/>
 							</Panel>
 							<Panel>
-								<CardContainer label={profile?.name + "'s friends"} users={profile?.friends} status=""/> {/*TODO:understand "?"" use here*/}
+								<CardContainer label={profile?.name + "'s friends"} users={ window.history.state.usr?.profile.friends || profile.friends} status=""/> {/*TODO:understand "?"" use here*/}
 							</Panel>
 						</AppContext.Provider>
 					</div>

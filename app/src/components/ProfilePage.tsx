@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AppContext } from "./AppContext";
 import {PanelTitle} from "./Base"
 
@@ -27,7 +27,9 @@ const UserInfo = styled.div`
 
 export default function UserPanel(){
 
-    const {profile} = useContext(AppContext);
+    const {profile, setProfile} = useContext(AppContext); 
+    console.log("prof: ", profile);
+    console.log("prof_hist: ", window.history.state.usr?.profile);
 
     return (
         <div>

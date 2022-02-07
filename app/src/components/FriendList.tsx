@@ -8,7 +8,7 @@ function UserCard({user}:{user:Person}){
    
     const {setProfile} = useContext(AppContext);
     const nav = useNavigate();
-    const showUserProfile = ()=>{ setProfile(user); nav("/user_profile?user_id="+user._id) }
+    const showUserProfile = ()=>{ setProfile(user); nav("/user_profile", {state: {profile: user}}) }
 
     return (
         <Card onClick={showUserProfile}>
