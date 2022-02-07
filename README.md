@@ -93,4 +93,6 @@ Deverá executar com `yarn start` na porta 3000
 
 
 ### Anotações que valem menção colocar aqui:
-...
+  - Os arquivos estão divididos por projeto: pasta "app" (pwa) e "api".
+  - Ambos os projetos estão hard coded para localhost nas portas solicitadas.
+  - Na api existe uma implementação usando ExpressGraphQL que fiz antes de ver o requisito de apollo-server. Deixei a chamada comentada.
