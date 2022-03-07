@@ -4,11 +4,15 @@
 ``$ npm init -y``
 
 ## 2. Install dependencies
+...
+``$ npm install -g ts-node``
 
 ## 3. Init Typescript Configs 
 ``$ npx tsc --init``
 https://www.typescriptlang.org/docs/handbook/tsconfig-json.html
 
+## start
+``$ npm run dev`` or ``$ yarn dev``
 -------------
 
 ## How to setup & deploy an Express GraphQL server with Apollo, Prisma, TypeScript, Postgres & Heroku
