@@ -17,3 +17,6 @@ https://www.typescriptlang.org/docs/handbook/tsconfig-json.html
 
 ## How to setup & deploy an Express GraphQL server with Apollo, Prisma, TypeScript, Postgres & Heroku
 https://tomray.dev/setup-and-deploy-graphql-server
+
+## Using Express with GraphQL – How to create a GraphQL server with Node.js/Express
+https://www.apollographql.com/blog/backend/using-express-with-graphql-server-node-js/
