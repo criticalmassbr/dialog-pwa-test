@@ -1,18 +1,11 @@
 # Server
 
-## 1. create project
-``$ npm init -y``
+## 1. Install dependencies
+``$ yarn install -g ts-node``
+``$ yarn install``
 
-## 2. Install dependencies
-...
-``$ npm install -g ts-node``
-
-## 3. Init Typescript Configs 
-``$ npx tsc --init``
-https://www.typescriptlang.org/docs/handbook/tsconfig-json.html
-
-## start
-``$ npm run dev`` or ``$ yarn dev``
+## 2. start server
+``$ yarn dev``
 
 ----------------
 
