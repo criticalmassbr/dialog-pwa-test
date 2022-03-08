@@ -11,15 +11,21 @@ const getListData = (): Array<any> => {
 	return JSON.parse(aux);
 };
 
-function list(name: String): any {
+function list(search: string): any {
 	const data = getListData();
 
-	if (name) {
-		const search = name.toLowerCase();
+	if (search) {
+		return data.filter((item) => {
 
-        return data.filter(({ name }) => {
-			const auxName = name.toLowerCase();
-			return (auxName.indexOf(search) > -1);
+			if (search.indexOf(" ") > -1) {
+				// const [s0, s1] = search.split(" "); // dividir a string
+				// return filterName(s0) && filterName(s1);
+			} else {
+				const regex = new RegExp(search, "i");
+
+				const res = regex.test(item.name);
+				return res;
+			}
 		});
 	} else {
 		return data;
@@ -27,7 +33,7 @@ function list(name: String): any {
 };
 
 interface listSearchInput {
-    name: String
+    name: string
 }
 
 export const resolvers = {
