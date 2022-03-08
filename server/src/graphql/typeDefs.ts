@@ -7,7 +7,34 @@ export const typeDefs = gql`
 		status: Int
 	}
 
+	type Friends {
+		_id: ID!
+		index: Int!
+		picture: String!
+		age: Int!
+		eyeColor: String!
+		name: String!
+		company: String!
+		email: String!
+		phone: String!
+	}
+
+	type User {
+		_id: ID!
+		index: Int!
+		picture: String!
+		age: Int!
+		eyeColor: String!
+		name: String!
+		company: String!
+		email: String!
+		phone: String!
+		friends: [Friends!]!
+		greeting: String!
+	}
+
 	type Query {
 		rootQuery: RootQuery
+		list: [User!]!
 	}
 `;
