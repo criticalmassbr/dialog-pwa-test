@@ -94,3 +94,13 @@ Deverá executar com `yarn start` na porta 3000
 
 ### Anotações que valem menção colocar aqui:
 ...
+
+## apollo-server-express
+https://www.apollographql.com/docs/apollo-server/integrations/middleware/#apollo-server-express
+
+## Apollo Server - Metrics and logging
+https://www.apollographql.com/docs/apollo-server/monitoring/metrics/
+
+utils: 
+  https://www.npmjs.com/package/apollo-log
+  https://docs.datadoghq.com/integrations/apollo/
