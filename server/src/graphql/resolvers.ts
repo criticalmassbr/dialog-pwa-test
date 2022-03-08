@@ -15,25 +15,31 @@ function list(search: string): any {
 	const data = getListData();
 
 	if (search) {
-		return data.filter((item) => {
+		let regex0: RegExp, regex1: RegExp, regex : RegExp;
+		const searchHasSpace = search.indexOf(" ") > -1
 
-			if (search.indexOf(" ") > -1) {
-				// const [s0, s1] = search.split(" "); // dividir a string
-				// return filterName(s0) && filterName(s1);
+		if (searchHasSpace) {
+			const [s0, s1] = search.split(" ");
+			regex0 = new RegExp(s0, "i");
+			regex1 = new RegExp(s1, "i");
+		} else {
+			regex = new RegExp(search, "i");
+		}
+
+		return data.filter(({ name }) => {
+			if (searchHasSpace) {
+				return regex0.test(name) && regex1.test(name);
 			} else {
-				const regex = new RegExp(search, "i");
-
-				const res = regex.test(item.name);
-				return res;
+				return regex.test(name);
 			}
 		});
 	} else {
 		return data;
 	}
-};
+}
 
 interface listSearchInput {
-    name: string
+	name: string;
 }
 
 export const resolvers = {
