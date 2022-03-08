@@ -1,17 +1,26 @@
 import { gql } from "apollo-server-express";
 
 export const typeDefs = gql`
-	type Query {
+	type RootQuery {
 		hello: String
 		message: String
 		status: Int
 	}
+
+  type Query {
+    rootQuery: RootQuery
+  }
 `;
+
+const rootQuery = {
+	hello: "Hello world",
+	message: "server running!",
+	status: 200,
+};
 
 export const resolvers = {
 	Query: {
-		hello: () => "Hello world",
-		message: () => "server running!",
-		status: () => 200,
+    rootQuery: () => rootQuery,
 	},
+	// Mutations: {...}
 };
