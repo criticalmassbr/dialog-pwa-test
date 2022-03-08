@@ -6,15 +6,34 @@ const rootQuery = {
 	status: 200,
 };
 
-const list = (): Array<any> => {
+const getListData = (): Array<any> => {
 	const aux: any = fs.readFileSync("db.json");
 	return JSON.parse(aux);
 };
 
+function list(name: String): any {
+	const data = getListData();
+
+	if (name) {
+		const search = name.toLowerCase();
+
+        return data.filter(({ name }) => {
+			const auxName = name.toLowerCase();
+			return (auxName.indexOf(search) > -1);
+		});
+	} else {
+		return data;
+	}
+};
+
+interface listSearchInput {
+    name: String
+}
+
 export const resolvers = {
 	Query: {
 		rootQuery: () => rootQuery,
-		list: () => list(),
+		list: (_: any, { name }: listSearchInput) => list(name),
 	},
 	// Mutations: {...}
 };

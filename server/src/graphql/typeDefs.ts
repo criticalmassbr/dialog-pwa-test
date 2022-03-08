@@ -35,6 +35,6 @@ export const typeDefs = gql`
 
 	type Query {
 		rootQuery: RootQuery
-		list: [User!]!
+		list(name: String): [User]!
 	}
 `;
