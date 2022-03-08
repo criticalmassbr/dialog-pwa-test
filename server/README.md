@@ -11,11 +11,9 @@
 
 ## Descrição da API
 
-Deve conter uma query `list()`.
-
-A chamada query `list` sem parâmetro (o termo da busca por nome) deverá retornar todos os itens.
-
-Se fornecido o argumento da busca `name`, deverá retornar os dados que contém parte da string, usar RegEx no filtro.
+- [x] Deve conter uma query `list()`.
+- [x] A chamada query `list` sem parâmetro (o termo da busca por nome) deverá retornar todos os itens.
+- [x] Se fornecido o argumento da busca `name`, deverá retornar os dados que contém parte da string, usar RegEx no filtro.
 
 Download: [Data JSON](db.json)
 
@@ -55,17 +53,17 @@ Modelo:
 - Express
 
 ### Requisitos:
-- colocar um middleware no Express para log dos requests
-- no final desse `README.md` colocar uma chamada funcional para a API em `curl`.
+- [x] colocar um middleware no Express para log dos requests
+- [x] no final do `README.md` principal colocar uma chamada funcional para a API em `curl`.
 
 ### Diferencial
 
-- Usar TypeScript
-- Regex da pesquisa: considerar caractere de espaço, dado o payload acima `name: Weber Stein`, se entrar com `we in` deve retornar no resultado `Weber Stein`
+- [x] Usar TypeScript
+- [x] Regex da pesquisa: considerar caractere de espaço, dado o payload acima `name: Weber Stein`, se entrar com `we in` deve retornar no resultado `Weber Stein`
 
 ### Executar o projeto
 
-Deverá executar com `yarn start` na porta 4000
+- [x] Deverá executar com `yarn start` na porta 4000
 
 -------------
 
