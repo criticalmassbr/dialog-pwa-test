@@ -92,11 +92,3 @@ https://www.apollographql.com/docs/apollo-server/monitoring/metrics/
 utils: 
   https://www.npmjs.com/package/apollo-log
   https://docs.datadoghq.com/integrations/apollo/
-
-docker
-  https://www.digitalocean.com/community/tutorials/containerizing-a-node-js-application-for-development-with-docker-compose
-
-  https://github.com/cerino-ligutom/GraphQL-Starter/blob/main/Dockerfile.dev
-
-other
-https://dev.to/nditah/how-to-build-a-graphql-api-with-node-prisma-and-postgres-ajg
