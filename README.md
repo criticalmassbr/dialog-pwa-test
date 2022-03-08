@@ -93,12 +93,18 @@ Deverá executar com `yarn start` na porta 3000
 
 
 ### Anotações que valem menção colocar aqui:
-...
+chamada funcional para a API em `curl`;
+```
+curl --request POST \
+  --header 'content-type: application/json' \
+  --url http://localhost:4000/api \
+  --data '{"query":"query { __typename }"}'
+```
 
-## apollo-server-express
+### apollo-server-express
 https://www.apollographql.com/docs/apollo-server/integrations/middleware/#apollo-server-express
 
-## Apollo Server - Metrics and logging
+### Apollo Server - Metrics and logging
 https://www.apollographql.com/docs/apollo-server/monitoring/metrics/
 
 utils: 
