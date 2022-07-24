@@ -94,3 +94,22 @@ Deverá executar com `yarn start` na porta 3000
 
 ### Anotações que valem menção colocar aqui:
 ...
+
+### Chamada para a API em `curl`:
+curl --location --request POST 'http://localhost:4000/graphql' \
+--header 'Accept: application/json' \
+--header 'Accept-Language: pt-BR,pt;q=0.9,en-US;q=0.8,en;q=0.7' \
+--header 'Cache-Control: no-cache' \
+--header 'Connection: keep-alive' \
+--header 'Content-Type: application/json' \
+--header 'Origin: http://localhost:4000' \
+--header 'Pragma: no-cache' \
+--header 'Referer: http://localhost:4000/' \
+--header 'Sec-Fetch-Dest: empty' \
+--header 'Sec-Fetch-Mode: cors' \
+--header 'Sec-Fetch-Site: same-origin' \
+--header 'User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36' \
+--header 'sec-ch-ua: ".Not/A)Brand";v="99", "Google Chrome";v="103", "Chromium";v="103"' \
+--header 'sec-ch-ua-mobile: ?0' \
+--header 'sec-ch-ua-platform: "Linux"' \
+--data-raw '{"query":"query FindUserByName{\n  list(name: \"ceci\") {\n    _id\n    name\n    index\n    picture\n    age\n    eyeColor\n    company\n    email\n    phone\n    friends {\n      _id\n      index\n      picture\n      age\n      eyeColor\n      name\n      company\n      email\n      phone\n    }\n    greeting\n  }\n}", "variables":null}'
