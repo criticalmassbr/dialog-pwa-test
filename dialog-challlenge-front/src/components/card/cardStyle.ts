@@ -6,13 +6,17 @@ export const CardContainer = styled.div`
   min-height: 420px;
   background-color: #022a4f;
   border-radius: 5px;
-  align-items: start;
   flex: 0 0 auto;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   grid-gap: 32px;
   cursor: pointer;
+
+  &:hover {
+    transition: all 0.5s ease-in-out;
+    border: 1px solid white;
+  }
 `;
 
 export const CardImage = styled.img`
