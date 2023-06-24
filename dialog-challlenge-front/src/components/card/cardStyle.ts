@@ -12,6 +12,7 @@ export const CardContainer = styled.div`
   justify-content: center;
   flex-direction: column;
   grid-gap: 32px;
+  cursor: pointer;
 `;
 
 export const CardImage = styled.img`
