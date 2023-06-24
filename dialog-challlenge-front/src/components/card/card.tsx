@@ -1,3 +1,4 @@
+import { IPerson } from '../../interface/user';
 import {
   CardContainer,
   CardImage,
@@ -6,12 +7,16 @@ import {
   ContainerDetails,
 } from './cardStyle';
 
-export const Card = () => {
+interface CardProps {
+  user: IPerson;
+}
+
+export const Card = ({ user }: CardProps) => {
   return (
     <>
       <CardContainer>
         <div>
-          <CardImage src='https://blog.unyleya.edu.br/wp-content/uploads/2017/12/saiba-como-a-educacao-ajuda-voce-a-ser-uma-pessoa-melhor.jpeg'></CardImage>
+          <CardImage src={user.picture}></CardImage>
         </div>
         <ContainerDetails>
           <div>
@@ -22,11 +27,11 @@ export const Card = () => {
             <CardSubTitle>Email</CardSubTitle>
           </div>
           <div>
-            <CardSubTitleProps>Camila Correia</CardSubTitleProps>
-            <CardSubTitleProps>28</CardSubTitleProps>
-            <CardSubTitleProps>Castanhos</CardSubTitleProps>
-            <CardSubTitleProps>MJV</CardSubTitleProps>
-            <CardSubTitleProps>camila@mjv.com.br</CardSubTitleProps>
+            <CardSubTitleProps>{user.name}</CardSubTitleProps>
+            <CardSubTitleProps>{user.age}</CardSubTitleProps>
+            <CardSubTitleProps>{user.eyeColor}</CardSubTitleProps>
+            <CardSubTitleProps>{user.company}</CardSubTitleProps>
+            <CardSubTitleProps>{user.email}</CardSubTitleProps>
           </div>
         </ContainerDetails>
       </CardContainer>
