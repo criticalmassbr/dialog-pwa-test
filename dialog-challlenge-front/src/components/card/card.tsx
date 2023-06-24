@@ -11,6 +11,27 @@ interface CardProps {
   user: IPerson;
 }
 
+
+const verifyColor = (color: string) => {
+  switch (color) {
+    case 'blue':
+      return 'Azul';
+    case 'green':
+      return 'Verde';
+    case 'brown':
+      return 'Castanho';
+    default:
+      return color;
+  }
+};
+const verifyAge = (age: number) => {
+  if (age > 1) {
+    return `${age} anos`;
+  } else {
+    return `${age} ano`;
+  }
+};
+
 export const Card = ({ user }: CardProps) => {
   return (
     <>
@@ -28,8 +49,8 @@ export const Card = ({ user }: CardProps) => {
           </div>
           <div>
             <CardSubTitleProps>{user.name}</CardSubTitleProps>
-            <CardSubTitleProps>{user.age}</CardSubTitleProps>
-            <CardSubTitleProps>{user.eyeColor}</CardSubTitleProps>
+            <CardSubTitleProps>{verifyAge(user.age)}</CardSubTitleProps>
+            <CardSubTitleProps>{verifyColor(user.eyeColor)}</CardSubTitleProps>
             <CardSubTitleProps>{user.company}</CardSubTitleProps>
             <CardSubTitleProps>{user.email}</CardSubTitleProps>
           </div>
