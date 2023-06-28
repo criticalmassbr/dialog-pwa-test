@@ -1,0 +1,63 @@
+{
+  "name": "MySocial - A Social Media App",
+  "short_name": "MySocial",
+  "start_url": "/",
+  "description": "A Social Media App",
+  "background_color": "#011528",
+  "theme_color": "#011528",
+  "display": "standalone",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "icon_16x16.ico",
+      "sizes": "16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "icon_32x32.ico",
+      "sizes": "32x32",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "icon_48x48.ico",
+      "sizes": "48x48",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "icon_64x64.ico",
+      "sizes": "64x64",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "icon_128x128.ico",
+      "sizes": "128x128",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "icon_180x180.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "pwa-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "pwa-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "display_override": ["minimal-ui"],
+  "edge_side_panel": "none",
+  "handle_links": {
+    "enabled": true
+  },
+  "purpose": ["any"],
+  "appID": "Mysocial",
+  "launch_handler": {
+    "enabled": true,
+    "url": "/launch"
+  }
+}
