@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "target": "ES6",
+    "module": "CommonJS",
+    "outDir": "./dist",
+    "resolveJsonModule": true,
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
+  }
+}
